@@ -783,7 +783,7 @@ Template.scheme.editColor = (type, hsl) ->
       """
   new Handlebars.SafeString """
     <div class="#{cssClass}">
-      <div class="hint--left" data-hint="click to choose '#{type}' as standart representation">
+      <div class="hint--left" data-hint="click to choose '#{type}' as standard representation">
         <span data-type="#{type}">#{type}</span>
       </div>
       #{inputs}
