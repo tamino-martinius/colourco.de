@@ -1,0 +1,675 @@
+﻿@import 'nib'
+
+/*************
+* Animations *
+*************/
+@keyframes rotateTopSideFirst
+  40%
+    transform rotateX(15deg)
+    opacity .8
+    animation-timing-function ease-out
+  100%
+    transform scale(0.8) translateZ(-200px)
+    opacity 0
+
+@keyframes moveFromTop
+  from
+    transform: translateY(-100%);
+
+.page-rotateTopSideFirst
+  transform-origin 50% 100%
+  animation rotateTopSideFirst .8s both ease-in
+
+.page-moveFromTop
+  animation moveFromTop .6s ease both
+
+.page-delay200
+  animation-delay .2s
+
+/****************
+* Base elements *
+****************/
+html
+body
+  height 100%
+  margin 0
+  padding 0
+  overflow hidden
+
+table
+  border-spacing 0
+  border-collapse collapse
+  tr
+  td
+    padding 0
+
+html
+body
+body > table
+  height 100%
+  width 100%
+
+* // TODO - Ugly and slow - needs to be specified
+  font-family "open sans"
+  font-weight 300
+
+b
+  font-weight 400
+
+/********
+* Icons *
+********/
+@font-face
+  font-family 'colourcode-icomoon'
+  src url('/css/fonts/icomoon.eot?20130621')
+  src:url('/css/fonts/icomoon.eot?20130621#iefix') format('embedded-opentype'),
+      url('/css/fonts/icomoon.woff?20130621') format('woff'),
+      url('/css/fonts/icomoon.ttf?20130621') format('truetype'),
+      url('/css/fonts/icomoon.svg?20130621#icomoon') format('svg');
+  font-weight normal
+  font-style normal
+
+*[class*=icon]
+  &
+  & * // TODO - Ugly and slow - needs to be specified
+    font-family 'colourcode-icomoon'
+    font-weight normal
+    font-style normal
+    height 1em
+
+// code / schemes
+.menu-item
+  .icon-scheme
+    list-style none
+    margin 0
+    padding 0
+
+    li
+      position absolute
+      font-weight 700 !important
+
+    &.scheme-none
+      li:nth-child( 1):before { content: 'a'; }
+      li:nth-child( 2):before { content: 'c'; }
+      li:nth-child( 3):before { content: 'e'; }
+      li:nth-child( 4):before { content: 'g'; }
+      li:nth-child( 5):before { content: 'i'; }
+      li:nth-child( 6):before { content: 'k'; }
+      li:nth-child( 7):before { content: 'm'; }
+      li:nth-child( 8):before { content: 'o'; }
+      li:nth-child( 9):before { content: 'q'; }
+      li:nth-child(10):before { content: 's'; }
+      li:nth-child(11):before { content: 'u'; }
+      li:nth-child(12):before { content: 'w'; }
+
+    &.scheme-monochrome
+      li:nth-child(1):before { content: 'u'; }
+      li:nth-child(2):before { content: 'w'; }
+      li:nth-child(3):before { content: 'a'; }
+      li:nth-child(4):before { content: 'c'; }
+      li:nth-child(5):before { content: 'e'; }
+
+    &.scheme-monochrome-dark
+      li:nth-child(1):before { content: 't'; }
+      li:nth-child(2):before { content: 'v'; }
+      li:nth-child(3):before { content: 'b'; }
+      li:nth-child(4):before { content: 'd'; }
+      li:nth-child(5):before { content: 'f'; }
+
+    &.scheme-monochrome-light
+      li:nth-child(1):before { content: 't'; }
+      li:nth-child(2):before { content: 'v'; }
+      li:nth-child(3):before { content: 'x'; }
+      li:nth-child(4):before { content: 'd'; }
+      li:nth-child(5):before { content: 'f'; }
+
+    &.scheme-analogic
+      li:nth-child(1):before { content: 's'; }
+      li:nth-child(2):before { content: 'v'; }
+      li:nth-child(3):before { content: 'a'; }
+      li:nth-child(4):before { content: 'd'; }
+      li:nth-child(5):before { content: 'g'; }
+
+    &.scheme-analogic-complement
+      li:nth-child(1):before { content: 'v'; }
+      li:nth-child(2):before { content: 'a'; }
+      li:nth-child(3):before { content: 'd'; }
+      li:nth-child(4):before { content: 'l'; }
+      li:nth-child(5):before { content: 'n'; }
+
+    &.scheme-complement
+      li:nth-child(1):before { content: 'w'; }
+      li:nth-child(2):before { content: 'a'; }
+      li:nth-child(3):before { content: 'c'; }
+      li:nth-child(4):before { content: 'l'; }
+      li:nth-child(5):before { content: 'n'; }
+
+    &.scheme-triad
+      li:nth-child(1):before { content: 'w'; }
+      li:nth-child(2):before { content: 'a'; }
+      li:nth-child(3):before { content: 'c'; }
+      li:nth-child(4):before { content: 'j'; }
+      li:nth-child(5):before { content: 'p'; }
+
+    &.scheme-quad
+      li:nth-child(1):before { content: 'x'; }
+      li:nth-child(2):before { content: 'b'; }
+      li:nth-child(3):before { content: 'g'; }
+      li:nth-child(4):before { content: 'm'; }
+      li:nth-child(5):before { content: 's'; }
+
+  &:hover
+  &.active
+    .scheme-none
+      li:nth-child( 1):before { color: hsl(  0, 50%, 50%); }
+      li:nth-child( 2):before { color: hsl( 30, 50%, 50%); }
+      li:nth-child( 3):before { color: hsl( 60, 50%, 50%); }
+      li:nth-child( 4):before { color: hsl( 90, 50%, 50%); }
+      li:nth-child( 5):before { color: hsl(120, 50%, 50%); }
+      li:nth-child( 6):before { color: hsl(150, 50%, 50%); }
+      li:nth-child( 7):before { color: hsl(180, 50%, 50%); }
+      li:nth-child( 8):before { color: hsl(210, 50%, 50%); }
+      li:nth-child( 9):before { color: hsl(240, 50%, 50%); }
+      li:nth-child(10):before { color: hsl(270, 50%, 50%); }
+      li:nth-child(11):before { color: hsl(300, 50%, 50%); }
+      li:nth-child(12):before { color: hsl(330, 50%, 50%); }
+
+    .scheme-monochrome
+      li:nth-child(1):before { color: hsl(0, 40%, 40%); }
+      li:nth-child(2):before { color: hsl(0, 45%, 45%); }
+      li:nth-child(3):before { color: hsl(0, 50%, 50%); }
+      li:nth-child(4):before { color: hsl(0, 55%, 55%); }
+      li:nth-child(5):before { color: hsl(0, 60%, 60%); }
+
+    .scheme-monochrome-dark
+      li:nth-child(1):before { color: hsl(0,  0%, 20%); }
+      li:nth-child(2):before { color: hsl(0,  0%, 35%); }
+      li:nth-child(3):before { color: hsl(0, 50%, 50%); }
+      li:nth-child(4):before { color: hsl(0, 55%, 55%); }
+      li:nth-child(5):before { color: hsl(0, 60%, 60%); }
+
+    .scheme-monochrome-light
+      li:nth-child(1):before { color: hsl(0, 40%, 40%); }
+      li:nth-child(2):before { color: hsl(0, 45%, 45%); }
+      li:nth-child(3):before { color: hsl(0, 50%, 50%); }
+      li:nth-child(4):before { color: hsl(0,  0%, 65%); }
+      li:nth-child(5):before { color: hsl(0,  0%, 80%); }
+
+    .scheme-analogic
+      li:nth-child(1):before { color: hsl(240, 40%, 40%); }
+      li:nth-child(2):before { color: hsl(300, 45%, 45%); }
+      li:nth-child(3):before { color: hsl(  0, 50%, 50%); }
+      li:nth-child(4):before { color: hsl( 60, 55%, 55%); }
+      li:nth-child(5):before { color: hsl(120, 60%, 60%); }
+
+    .scheme-analogic-complement
+      li:nth-child(1):before { color: hsl(300, 45%, 45%); }
+      li:nth-child(2):before { color: hsl(  0, 50%, 50%); }
+      li:nth-child(3):before { color: hsl( 60, 55%, 55%); }
+      li:nth-child(4):before { color: hsl(180, 40%, 40%); }
+      li:nth-child(5):before { color: hsl(180, 60%, 60%); }
+
+    .scheme-complement
+      li:nth-child(1):before { color: hsl(  0, 35%, 35%); }
+      li:nth-child(2):before { color: hsl(  0, 50%, 50%); }
+      li:nth-child(3):before { color: hsl(  0, 65%, 65%); }
+      li:nth-child(4):before { color: hsl(180, 40%, 40%); }
+      li:nth-child(5):before { color: hsl(180, 60%, 60%); }
+
+    .scheme-triad
+      li:nth-child(1):before { color: hsl(  0, 35%, 35%); }
+      li:nth-child(2):before { color: hsl(  0, 50%, 50%); }
+      li:nth-child(3):before { color: hsl(  0, 65%, 65%); }
+      li:nth-child(4):before { color: hsl(120, 60%, 60%); }
+      li:nth-child(5):before { color: hsl(240, 60%, 60%); }
+
+    .scheme-quad
+      li:nth-child(1):before { color: hsl(  0, 35%, 35%); }
+      li:nth-child(2):before { color: hsl(  0, 65%, 65%); }
+      li:nth-child(3):before { color: hsl( 90, 60%, 60%); }
+      li:nth-child(4):before { color: hsl(180, 60%, 60%); }
+      li:nth-child(5):before { color: hsl(270, 60%, 60%); }
+
+//menu icons
+.icon-colourcode:before { content: 'C'; padding-left: 1px; }
+.icon-convert:before    { content: 'y'; }
+.icon-save:before       { content: '_'; }
+.icon-menu:before       { content: 'R'; }
+.icon-link:before       { content: 'X'; }
+.icon-author:before     { content: 'z'; }
+.icon-social:before     { content: 'Y'; }
+.icon-saturation:before { content: 'B'; }
+.icon-less:before       { content: 'K'; }
+.icon-image:before      { content: 'E'; }
+.icon-image:before      { content: 'E'; }
+.icon-help:before       { content: '?'; }
+.icon-git:before        { content: 'G'; }
+.icon-bugs:before       { content: 'A'; }
+.icon-mail:before       { content: 'M'; }
+.icon-legal:before      { content: '§'; font-family: "open sans"; display: block; margin-top: -2px; }
+.icon-twitter:before    { content: 'T'; }
+.icon-web:before        { content: 'W'; }
+.icon-codepen:before    { content: 'H'; }
+.icon-dribbble:before   { content: 'D'; }
+.icon-commercial:before { content: 'Z'; }
+.icon-trash:before      { content: 'P'; }
+.icon-left:before       { content: '<'; }
+.icon-right:before      { content: '>'; }
+.icon-up:before         { content: '^'; }
+.icon-down:before       { content: 'V'; }
+.icon-plus:before       { content: '+'; }
+.icon-minus:before      { content: '-'; }
+.icon-lock:before       { content: 'L'; }
+.icon-marker:before     { content: '0'; }
+.icon-mouse-h:before    { content: 'y'; }
+.icon-mouse-v:before    { content: 'I'; }
+.icon-mouse-s:before    { content: 'O'; }
+.icon-mouse-clk:before  { content: '1'; }
+
+/***************
+* Base classes *
+***************/
+.pull-left
+  float left
+
+.pull-right
+  float right
+
+.perspective
+  background-color #222
+  position relative
+  perspective 1200px
+
+.pointer
+  cursor pointer
+
+/********
+* Pages *
+********/
+.page
+  width 100%
+  height 100%
+  position absolute
+  top 0
+  visibility hidden
+  overflow hidden
+  backface-visibility hidden
+  transform translate3d(0, 0, 0)
+  transform-style preserve-3d
+
+.page-current
+.no-js .page
+  visibility visible
+  z-index 1
+
+.page-ontop
+  z-index 999
+
+/* Text Styles, Colors, Backgrounds */
+
+.page h1
+  padding-top 0.5em
+  font-size 4.4em
+  line-height 1
+  letter-spacing 6px
+  margin 0
+  width 100%
+  text-align center
+  text-transform uppercase
+  word-spacing -0.3em
+  span
+    font-size 40%
+    text-transform none
+    word-spacing 0
+    letter-spacing 0
+    display block
+    opacity 0.4
+  b
+    color rgba(0,0,0,0.1)
+    font-weight 300
+
+.page-scheme
+  background #000
+
+  .scheme
+    position absolute
+    width 100%
+    height 100%
+
+    .swatches
+      height 100%
+      width 100.1%
+      overflow hidden
+
+    .swatch
+      transition width 0.3s ease-in-out
+      height 100%
+      float left
+      position relative
+
+      .icon-marker
+        position absolute
+        margin-top -0.5em
+        margin-left -0.75em
+        cursor default
+        opacity 0.25
+
+      .preview
+      .details
+        height 100%
+        width 100%
+        z-index 2
+
+        &:first-child { z-index: 3; }
+        &:last-child  { z-index: 1; }
+
+      .details
+        position absolute
+        .edit-color
+          width 9.5em
+          margin 0 auto
+          text-align left
+          color #777
+          &.active
+            color #ccc
+          span
+            display inline-block
+            width 2.5em
+            text-align left
+          input[type=text]
+            width 2em
+            padding-left 0
+            padding-right 0
+            color #aaa
+            border none
+            text-align center
+            background-color #333
+            &[data-type=hex]
+              width 6em
+        table
+          width 100%
+          input[type=range]
+            width 100%
+          td
+            padding 0 0.25em
+
+      [class*=icon-]
+      [data-type]
+        cursor pointer
+
+      [class*=icon-]
+        font-size 1.25em
+
+      &.lifted .preview
+        height 42%
+        .pos-b
+          top 40%
+          margin-top -1.25em
+
+      a
+        color inherit
+        text-decoration none
+
+      [class*=pos-]
+        position absolute
+        height 1em
+        font-size 1.1em
+        text-align center
+        width 100%
+
+        &.pos-t
+          top 2%
+
+          [class*=icon-]
+            margin 0 0.25em
+
+        &.pos-tc
+          top 25%
+          margin-top -0.5em
+
+        &.pos-c
+          top 50%
+          margin-top -1.5em
+
+          .icon-trash
+            margin-left 0.5em
+            margin-right 0.5em
+
+            &.no-first { margin-left:  1.5em;}
+            &.no-last  { margin-right: 1.5em;}
+
+        &.pos-bc
+          top 75%
+          margin-top -0.5em
+        &.pos-b
+          top 98%
+          margin-top -1.25em
+
+      .removed
+        width 0% !important
+
+    &.count-1  .swatch { width: 95.00%; }
+    &.count-2  .swatch { width: 47.50%; }
+    &.count-3  .swatch { width: 31.66%; }
+    &.count-4  .swatch { width: 23.75%; }
+    &.count-5  .swatch { width: 19.00%; font-size: 0.90em; }
+    &.count-6  .swatch { width: 15.83%; font-size: 0.85em; }
+    &.count-7  .swatch { width: 13.57%; font-size: 0.80em; }
+    &.count-8  .swatch { width: 11.87%; font-size: 0.75em; }
+    &.count-9  .swatch { width: 10.55%; font-size: 0.55em; .edit-color { width: 12em;}}
+    &.count-10 .swatch { width: 10.00%; font-size: 0.45em; &:last-child { display: none; } .edit-color { width: 14em;}}
+    .swatch:last-child { width:  5.00%; background-color: #333; color: #aaa; }
+
+    &.edit-active
+      &.count-0  .swatch { width: 100.0%; }
+      &.count-1  .swatch { width: 50.00%; }
+      &.count-2  .swatch { width: 33.33%; }
+      &.count-3  .swatch { width: 25.00%; }
+      &.count-4  .swatch { width: 20.00%; }
+      &.count-5  .swatch { width: 16.66%; }
+      &.count-6  .swatch { width: 14.28%; }
+      &.count-7  .swatch { width: 12.50%; }
+      &.count-8  .swatch { width: 11.11%; }
+      &.count-9  .swatch { width: 10.00%; }
+      &.count-10 .swatch { width: 10.00%; }
+
+    &.scheme-mode
+      &.count-1  .swatch { width: 95.00%; &:first-child { display: none; } }
+      &.count-2  .swatch { width: 47.50%; &:first-child { display: none; } }
+      &.count-3  .swatch { width: 31.66%; &:first-child { display: none; } }
+      &.count-4  .swatch { width: 23.75%; &:first-child { display: none; } }
+      &.count-5  .swatch { width: 18.00%; }
+      &.count-6  .swatch { width: 15.00%; }
+      &.count-7  .swatch { width: 12.85%; }
+      &.count-8  .swatch { width: 11.25%; }
+      &.count-9  .swatch { width: 10.00%; }
+      &.count-10 .swatch { width:  9.50%; &:last-child { display: none; }}
+      .swatch:last-child { width:  5.00%; background-color: #333; color: #aaa; }
+      .swatch:first-child {width:  5.00%; background-color: #333; color: #aaa; }
+
+.page-legal
+  overflow auto
+
+  > div
+    font-size 0.7em
+    padding 0.5em 2em
+
+    &:first-child
+      padding-top 15em
+
+.page-help, .page-legal, .page-loading
+  background #fdc162
+
+  > table
+    width 90%
+    margin 0 auto
+    > tbody > tr
+    > tr
+      > th
+        text-align left
+
+      > td
+      > th
+        width 33%
+        vertical-align top
+
+        > table
+          width 100%
+          > tbody > tr
+          > tr
+            > th { width: 15%; }
+            > td { width: 85%; }
+
+/*******
+* Menu *
+*******/
+.menu
+  background-color #222
+  color #aaa
+  vertical-align top
+  transition width 0.5s
+  overflow hidden
+  width 34px
+
+  a
+    text-decoration none
+
+  .menu-item
+    width 250px
+    opacity 0
+    transition opacity 0.5s
+    position absolute
+    margin-left 6px
+
+    &.active
+      border-left-color hsl(0, 50%, 50%)
+
+    *[class*=icon]
+      font-size 16px
+      padding 2px 2px 2px 4px
+      width 24px
+      float left
+
+      &[class*=scheme]
+        font-size 20px
+        margin-left -3px
+
+      &:before, & *:before
+        color #aaa
+        text-shadow 1px 1px 1px rgba(0,0,0,0.1)
+
+    > span
+      font-size 0.8em
+
+      input[type=text]
+        width 15px
+        font-size 8px
+        font-weight 400
+
+    &.menu-static
+      opacity 1
+      &:first-child > div
+        padding-top 10px
+        margin-left -0.15em
+        transition margin-left 0.5s ease-in-out
+        opacity 0.5
+        font-size 1.5em
+      &:first-child > span
+        transition margin-left 0.5s ease-in-out, opacity 0.5s ease-in-out
+        display inline-block
+        margin-left 4em
+        margin-top 0.4em
+        opacity 0
+      > span
+        transition opacity 0.5s
+        opacity 0
+
+    &.menu-convert
+      > span
+        vertical-align 6px
+
+    &.menu-saturation
+      > span
+        vertical-align 3px
+        > span
+          vertical-align 5px
+
+    &.menu-links
+      > div
+        float left
+      a
+        text-decoration none
+        width auto
+
+    &.menu-commercial
+      > div
+       float left
+      > div.ads
+        font-size 0.8em
+        width 160px
+        a
+          text-decoration none
+          color #aaa
+        .influads_powered_link
+          font-size 0.8em
+
+    &:nth-child(1)  { top:   0px; }
+    &:nth-child(2)  { top:  40px; }
+    &:nth-child(3)  { top:  65px; }
+    &:nth-child(4)  { top:  90px; }
+    &:nth-child(5)  { top: 115px; }
+    &:nth-child(6)  { top: 140px; }
+    &:nth-child(7)  { top: 165px; }
+    &:nth-child(8)  { top: 190px; }
+    &:nth-child(9)  { top: 215px; }
+    &:nth-child(10) { top: 240px; }
+    &:nth-child(11) { top: 270px; }
+    &:nth-child(12) { top: 280px; }
+    &:nth-child(13) { top: 310px; }
+    &:nth-child(14) { top: 320px; }
+    &:nth-child(15) { top: 350px; }
+    &:nth-child(16) { top: 360px; }
+    &:nth-child(17) { top: 415px; }
+    &:nth-child(18) { top: 427px; }
+    &:nth-child(19) { top: 578px; }
+    &:nth-child(20) { top: 590px; }
+
+  hr.menu-item
+    border 0
+    border-bottom 1px solid #000
+    width 215px
+    margin 0
+
+  &:hover
+    width 215px
+    .menu-item
+      opacity 1
+      &:first-child > div  { margin-left: 1em; }
+      &:first-child > span { margin-left: 0em; opacity: 1; }
+      &.menu-static > span { opacity: 1; }
+
+/*******************
+* Browser Specific *
+*******************/
+html.-moz-
+  .page
+    width 98%
+  .details .pos-c
+    display none
+
+html.-o-
+html.-ms-
+  .menu:hover
+    .menu-item
+      height 100%
+      z-index 100
+      background-color #222
+  .perspective
+    perspective none
+    width 100%
+    position inherit
+  .page
+    right 0
+    width 97%
+  .icon-up
+    display none
