@@ -9,7 +9,7 @@ getTextDataUrl = (text) ->
   BlobBuilder = window.BlobBuilder or window.WebKitBlobBuilder or window.MozBlobBuilder
   if BlobBuilder?
     bb = new BlobBuilder()
-    bb.append text 
+    bb.append text
     blob = bb.getBlob("text/plain")
   else
     blob = new Blob([text])

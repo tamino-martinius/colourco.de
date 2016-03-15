@@ -414,7 +414,7 @@
       [
         {
           ratio: 1
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value
           s:
@@ -429,7 +429,7 @@
       [
         {
           ratio: 0.4
-          h: 
+          h:
             "mode": "fixed" # unable to change
             origin: (value, seed) -> 0
           s:
@@ -441,7 +441,7 @@
         }
         {
           ratio: 0.6
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value
           s:
@@ -456,7 +456,7 @@
       [
         {
           ratio: 0.6
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value
           s:
@@ -468,7 +468,7 @@
         }
         {
           ratio: 0.4
-          h: 
+          h:
             "mode": "fixed" # unable to change
             origin: (value, seed) -> 0
           s:
@@ -483,7 +483,7 @@
       [
         {
           ratio: 1
-          h: 
+          h:
             "mode": "uniform" # changes spread on all sawtches on edit
             origin: (value, seed) -> value + seed * 0.5
           s:
@@ -498,7 +498,7 @@
       [
         {
           ratio: 0.4
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value + 0.5
           s:
@@ -510,7 +510,7 @@
         }
         {
           ratio: 0.6
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value
           s:
@@ -525,7 +525,7 @@
       [
         {
           ratio: 0.4
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value + 0.5
           s:
@@ -537,7 +537,7 @@
         }
         {
           ratio: 0.6
-          h: 
+          h:
             "mode": "uniform" # changes spread on all sawtches on edit
             origin: (value, seed) -> value + seed * 0.75
           s:
@@ -552,7 +552,7 @@
       [
         {
           ratio: 0.25
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value + 0.33
           s:
@@ -564,7 +564,7 @@
         }
         {
           ratio: 0.25
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value - 0.33
           s:
@@ -576,7 +576,7 @@
         }
         {
           ratio: 0.5
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value
           s:
@@ -591,7 +591,7 @@
       [
         {
           ratio: 0.20
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value + 0.25
           s:
@@ -603,7 +603,7 @@
         }
         {
           ratio: 0.20
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value + 0.5
           s:
@@ -615,7 +615,7 @@
         }
         {
           ratio: 0.20
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value - 0.25
           s:
@@ -627,7 +627,7 @@
         }
         {
           ratio: 0.40
-          h: 
+          h:
             "mode": "global" # changes hue on all swatches on edit
             origin: (value, seed) -> value
           s:
