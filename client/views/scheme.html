@@ -1,0 +1,185 @@
+<template name="scheme">
+  <div class="scheme count-{{colors.length}}{{#if editActive}} edit-active{{/if}}{{#if isSchemeMode}} scheme-mode{{/if}}">
+    <div class="swatches{{#if isSchemeMode}}{{#if editActive}} edit-scheme{{/if}}{{/if}}">
+      {{#if isSchemeMode}}
+        <div class="swatch remove-scheme" data-index="0">
+          <div class="pos-c">
+            <div class="hint--top" data-hint="remove swatch"><span class="icon-minus"></span></div>
+          </div>
+        </div>
+      {{/if}}
+      {{#each colors}}
+        <div class="swatch{{#if isLifted $index}} lifted{{/if}}" data-index="{{$index}}">
+          <div class="preview" style="
+            background-color: {{colorBack .}};
+            color: {{colorFore .}}
+          ">
+            {{#unless isLifted $index}}
+              {{#if isSchemeMode}}
+                {{#unless editActive}}
+                  <div class="pos-t">
+                    <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setSassExport(this);">
+                      <div class="hint--bottom" data-hint="download color as .scss">
+                        <span class="icon-sass" style="font-size: 1.6em;">$</span>
+                      </div>
+                    </a>
+                    <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setLessExport(this);">
+                      <div class="hint--bottom" data-hint="download color as .less">
+                        <span class="icon-less"></span>
+                      </div>
+                    </a>
+                    <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setPngExport(this);">
+                      <div class="hint--bottom" data-hint="download color as .png">
+                        <span class="icon-image"></span>
+                      </div>
+                    </a>
+                    <a target="_blank" href="{{linkPerma .}}">
+                      <div class="hint--bottom" data-hint="permalink to color">
+                        <span class="icon-link"></span>
+                      </div>
+                    </a>
+                  </div>
+                {{/unless}}
+              {{else}}
+                <div class="pos-t">
+                  <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setSassExport(this);">
+                    <div class="hint--bottom" data-hint="download color as .scss">
+                      <span class="icon-sass" style="font-size: 1.6em;">$</span>
+                    </div>
+                  </a>
+                  <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setLessExport(this);">
+                    <div class="hint--bottom" data-hint="download color as .less">
+                      <span class="icon-less"></span>
+                    </div>
+                  </a>
+                  <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setPngExport(this);">
+                    <div class="hint--bottom" data-hint="download color as .png">
+                      <span class="icon-image"></span>
+                    </div>
+                  </a>
+                  <a target="_blank" href="{{linkPerma .}}">
+                    <div class="hint--bottom" data-hint="permalink to color">
+                      <span class="icon-link"></span>
+                    </div>
+                  </a>
+                </div>
+              {{/if}}
+              <div class="pos-c">{{getColorTag . displayColorType}}<br/><br/>
+                {{#if isSchemeMode}}
+                  {{#unless editActive}}
+                    {{#if isCenter $index}}
+                      <div class="hint--top" data-hint="unlock scheme"><span class="icon-lock"></span></div>
+                    {{/if}}
+                  {{/unless}}
+                {{else}}
+                  {{#unless $first}}
+                    <div class="hint--top" data-hint="switch with left swatch"><span class="icon-left"></span></div>
+                  {{/unless}}
+                  <div class="hint--top" data-hint="remove swatch"><span class="icon-trash{{#if $first}} no-first{{/if}}{{#if $last}} no-last{{/if}}"></span></div>
+                  {{#unless $last}}
+                    <div class="hint--top" data-hint="switch with right swatch"><span class="icon-right"></span></div>
+                  {{/unless}}
+                {{/if}}
+              </div>
+              {{#if isSchemeMode}}
+                {{#if isCenter $index}}
+                  {{#unless editActive}}
+                    <div class="pos-b">
+                      <div class="hint--top" data-hint="show edit/details"><span class="icon-up"></span></div>
+                    </div>
+                  {{/unless}}
+                {{/if}}
+              {{else}}
+                <div class="pos-b">
+                  <div class="hint--top" data-hint="show edit/details"><span class="icon-up"></span></div>
+                </div>
+              {{/if}}
+            {{else}}
+              <div class="pos-b">
+                <div class="hint--top" data-hint="close details"><span class="icon-down"></span></div>
+              </div>
+            {{/unless}}
+          </div>
+          {{#if isLifted $index}}
+            {{#if isSchemeMode}}
+              <div
+                class="details"
+                data-index="{{$index}}"
+                style="
+                  background-color: #222;
+                  color: #aaa;
+                ">
+                <div class="pos-t">
+                  scheme root color<br/><br/>
+                  {{editColor "hex"  currentColor}}
+                  {{editColor "rgb"  currentColor}}
+                  {{editColor "hsl"  currentColor}}
+                  {{editColor "hsv"  currentColor}}
+                  {{editColor "cmy"  currentColor}}
+                  {{editColor "cmyk" currentColor}}
+                  {{editColor "XYZ"  currentColor}}
+                  {{editColor "Yxy"  currentColor}}
+                </div>
+                <div class="pos-c">
+                  {{colorSlider}}
+                </div>
+              </div>
+            {{else}}
+              <div
+                class="details"
+                data-index="{{$index}}"
+                style="
+                  background-color: #222;
+                  color: #aaa;
+                ">
+                <div class="pos-t">
+                  {{editColor "hex"  .}}
+                  {{editColor "rgb"  .}}
+                  {{editColor "hsl"  .}}
+                  {{editColor "hsv"  .}}
+                  {{editColor "cmy"  .}}
+                  {{editColor "cmyk" .}}
+                  {{editColor "XYZ"  .}}
+                  {{editColor "Yxy"  .}}
+                </div>
+                <div class="pos-c">
+                  {{colorSlider}}
+                </div>
+              </div>
+            {{/if}}
+          {{/if}}
+        </div>
+      {{/each}}
+      {{#if isSchemeMode}}
+        <div class="swatch add-scheme">
+          <div class="pos-c">
+            <div class="hint--left" data-hint="add new swatch"><span class="icon-plus"></span></div>
+          </div>
+        </div>
+      {{else}}
+        {{#if editActive}}
+          <div
+            class="swatch edit" style="
+              background-color: {{colorBack currentColor}};
+              color: {{colorFore currentColor}}"
+          >
+            <div class="pos-c">
+              {{getColorTag currentColor displayColorType}}
+            </div>
+            {{#each colors}}
+              <div class="icon-marker" style="
+              top:  {{markerTop .}};
+              left: {{markerLeft .}};"></div>
+            {{/each}}
+          </div>
+          {{else}}
+          <div class="swatch add">
+            <div class="pos-c">
+              <div class="hint--left" data-hint="add new swatch"><span class="icon-plus"></span></div>
+            </div>
+          </div>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+</template>

@@ -1,0 +1,28 @@
+<template name="app">
+  <table>
+    <colgroup>
+      <col width="30px">
+      <col width="*">
+    </colgroup>
+    <tr>
+      <td class="menu">
+        {{> menu}}
+      </td>
+      <td id="main" class="container perspective">
+        <div class="page page-loading">
+          {{> loading}}
+        </div>
+        <div class="page page-scheme">
+          {{> scheme}}
+        </div>
+        <div class="page page-help">
+          {{> help}}
+        </div>
+        <div class="page page-legal">
+          {{> legal}}
+        </div>
+      </td>
+    </tr>
+  </table>
+  {{> analytics}}
+</template>

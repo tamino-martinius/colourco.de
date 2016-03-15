@@ -1,0 +1,181 @@
+<template name="menu">
+  <div class="menu-item menu-static menu-logo">
+    <div class="icon-colourcode"></div>
+    <span><img src="/ColourCode.png?20130621" alt="logo"/></span>
+  </div>
+  <div
+    class="{{menuClass "menu-item menu-static pointer menu-none" "menu-none"}}"
+    data-page="1"
+    data-page-name="menu-none"
+  >
+    <ul class="icon-scheme scheme-none"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>free build</span>
+  </div>
+  <div
+    class="{{menuClass 'menu-item menu-static pointer menu-monochrome' "menu-monochrome"}}"
+    data-page="1"
+    data-page-name="menu-monochrome"
+  >
+    <ul class="icon-scheme scheme-monochrome"><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>monochrome</span>
+  </div>
+  <div
+    class="{{menuClass 'menu-item menu-static pointer' "menu-monochrome-dark"}} menu-monochrome-dark"
+    data-page="1"
+    data-page-name="menu-monochrome-dark"
+  >
+    <ul class="icon-scheme scheme-monochrome-dark"><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>monochrome &amp; dark gray</span>
+  </div>
+  <div
+    class="{{menuClass 'menu-item menu-static pointer' "menu-monochrome-light"}} menu-monochrome-light"
+    data-page="1"
+    data-page-name="menu-monochrome-light"
+  >
+    <ul class="icon-scheme scheme-monochrome-light"><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>monochrome &amp; light gray</span>
+  </div>
+  <div
+    class="{{menuClass 'menu-item menu-static pointer' "menu-analogic"}} menu-analogic"
+    data-page="1"
+    data-page-name="menu-analogic"
+  >
+    <ul class="icon-scheme scheme-analogic"><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>analogic</span>
+  </div>
+  <div
+    class="{{menuClass 'menu-item menu-static pointer' "menu-analogic-complement"}} menu-analogic-complement"
+    data-page="1"
+    data-page-name="menu-analogic-complement"
+  >
+    <ul class="icon-scheme scheme-analogic-complement"><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>analogic &amp; complement</span>
+  </div>
+  <div
+    class="{{menuClass 'menu-item menu-static pointer' "menu-complement"}} menu-complement"
+    data-page="1"
+    data-page-name="menu-complement"
+  >
+    <ul class="icon-scheme scheme-complement"><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>complement</span>
+  </div>
+  <div
+    class="{{menuClass 'menu-item menu-static pointer' "menu-triad"}} menu-triad"
+    data-page="1"
+    data-page-name="menu-triad"
+  >
+    <ul class="icon-scheme scheme-triad"><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>triad</span>
+  </div>
+  <div
+    class="{{menuClass 'menu-item menu-static pointer' "menu-quad"}} menu-quad"
+    data-page="1"
+    data-page-name="menu-quad"
+  >
+    <ul class="icon-scheme scheme-quad"><li></li><li></li><li></li><li></li><li></li></ul>
+    <span>quad</span>
+  </div>
+  <hr  class="menu-item"/>
+  <div class="menu-item menu-static menu-save">
+    <div class="hint--top" data-hint="save scheme"><div class="icon-save"></div></div>
+    <span>
+      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setSassExport(this);">
+        <div class="hint--top" data-hint="download scheme as .scss">
+          <span class="icon-sass pointer" style="font-size: 1.5em; color: #AAA;">$</span>
+        </div>
+      </a>
+      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setLessExport(this);">
+        <div class="hint--top" data-hint="download scheme as .less">
+          <span class="icon-less pointer"></span>
+        </div>
+      </a>
+      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setPngExport(this);">
+        <div class="hint--top" data-hint="download scheme as .png">
+          <span class="icon-image pointer"></span>
+        </div>
+      </a>
+      <a target="_blank" href="{{linkPerma}}">
+        <div class="hint--top" data-hint="permalink to scheme">
+          <span class="icon-link pointer"></span>
+        </div>
+      </a>
+    </span>
+  </div>
+  <hr  class="menu-item"/>
+  <div class="{{menuClass 'menu-item' "menu-submenu"}} menu-submenu">
+    <div class="hint--top" data-hint="submenu"><div class="icon-menu"></div></div>
+    <span>
+      <div class="hint--top" data-hint="help &amp; controls">
+        <span
+          class="icon-help pointer"
+          data-page="2"
+          data-page-name="menu-submenu"
+        ></span>
+      </div>
+      <a target="_blank" href="https://github.com/Zaku-eu/colourco.de">
+        <div class="hint--top" data-hint="view source on github">
+          <span class="icon-git pointer"></span>
+        </div>
+      </a>
+      <a target="_blank" href="https://github.com/Zaku-eu/colourco.de/issues?state=open">
+        <div class="hint--top" data-hint="file bugs &amp; request features">
+          <span class="icon-bugs pointer"></span>
+        </div>
+      </a>
+      <a href="mailto:dev@zaku.eu">
+        <div class="hint--top" data-hint="contact via mail">
+          <span class="icon-mail pointer"></span>
+        </div>
+      </a>
+      <div class="hint--top" data-hint="legal"><span
+        class="icon-legal pointer"
+        data-page="3"
+        data-page-name="menu-submenu"
+      ></span></div>
+    </span>
+  </div>
+  <hr  class="menu-item"/>
+  <div class="menu-item menu-links">
+    <div class="hint--top" data-hint="Links to the authors"><div class="icon-author"></div></div>
+    <span>
+      <table>
+        <tr>
+          <td>Tamino Martinius</td>
+          <td>
+            <div class="hint--top" data-hint="@TaminoMartinius on Twitter">
+              <a target="_blank" href="https://twitter.com/TaminoMartinius" class="icon-twitter"></a>
+            </div>
+          </td>
+          <td>
+            <div class="hint--top" data-hint="Homepage of Tamino Martinius">
+              <a target="_blank" href="http://zaku.eu" class="icon-web"></a>
+            </div>
+          </td>
+          <td>
+            <div class="hint--top" data-hint="Tamino Martinius on Codepen">
+              <a target="_blank" href="http://codepen.io/Zaku/" class="icon-codepen"></a>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Andreas Storm</td>
+          <td>
+            <div class="hint--top" data-hint="@st8rmi on Twitter">
+              <a target="_blank" href="https://twitter.com/st8rmi" class="icon-twitter"></a>
+            </div>
+          </td>
+          <td>
+            <div class="hint--top" data-hint="Homepage of Andreas Storm">
+              <a target="_blank" href="http://andreasstorm.com/" class="icon-web"></a>
+            </div>
+          </td>
+          <td>
+            <div class="hint--top" data-hint="Andreas Storm on Dribbble">
+              <a target="_blank" href="http://dribbble.com/andreasstorm" class="icon-dribbble"></a>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </span>
+  </div>
+</template>
