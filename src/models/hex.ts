@@ -10,12 +10,12 @@ export class Hex extends Color {
     };
   }
 
-  toHex(): Color {
-    return this;
-  }
-
   toRgb(): Color {
     return new Rgb(this.values);
+  }
+
+  toHex(): Color {
+    return this;
   }
 };
 

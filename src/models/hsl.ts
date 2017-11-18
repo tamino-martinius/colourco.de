@@ -42,6 +42,10 @@ export class Hsl extends Color {
       b + m,
     ]);
   }
+
+  toHsl(): Color {
+    return new Hsl(this.values);
+  }
 };
 
 export default Hsl;

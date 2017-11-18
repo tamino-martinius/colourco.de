@@ -17,6 +17,10 @@ export class Cmy extends Color {
       1 - this.values[2],
     ]);
   }
+
+  toCmy(): Color {
+    return new Cmy(this.values);
+  }
 };
 
 export default Cmy;

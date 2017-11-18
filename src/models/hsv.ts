@@ -44,6 +44,10 @@ export class Hsv extends Color {
     }
     return new Rgb([r, g, b]);
   }
+
+  toHsv(): Color {
+    return new Hsv(this.values);
+  }
 };
 
 export default Hsv;
