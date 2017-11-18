@@ -11,11 +11,11 @@ export class Hex extends Color {
   }
 
   toRgb(): Color {
-    return new Rgb(this.values);
+    return new Rgb(...this.values);
   }
 
   toHex(): Color {
-    return this;
+    return new Hex(...this.values);
   }
 };
 

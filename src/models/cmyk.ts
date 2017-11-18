@@ -11,15 +11,15 @@ export class Cmyk extends Color {
   }
 
   toRgb(): Color {
-    return new Rgb([
+    return new Rgb(
       1 - (this.values[0] * (1 - this.values[3]) + this.values[3]),
       1 - (this.values[1] * (1 - this.values[3]) + this.values[3]),
       1 - (this.values[2] * (1 - this.values[3]) + this.values[3]),
-    ]);
+    );
   }
 
   toCmyk(): Color {
-    return new Cmyk(this.values);
+    return new Cmyk(...this.values);
   }
 };
 

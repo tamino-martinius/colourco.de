@@ -11,15 +11,15 @@ export class Cmy extends Color {
   }
 
   toRgb(): Color {
-    return new Rgb([
+    return new Rgb(
       1 - this.values[0],
       1 - this.values[1],
       1 - this.values[2],
-    ]);
+    );
   }
 
   toCmy(): Color {
-    return new Cmy(this.values);
+    return new Cmy(...this.values);
   }
 };
 

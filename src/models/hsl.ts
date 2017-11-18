@@ -36,15 +36,15 @@ export class Hsl extends Color {
     // match lightness
     const m = this.values[2] - 0.5 * C;
 
-    return new Rgb([
+    return new Rgb(
       r + m,
       g + m,
       b + m,
-    ]);
+    );
   }
 
   toHsl(): Color {
-    return new Hsl(this.values);
+    return new Hsl(...this.values);
   }
 };
 

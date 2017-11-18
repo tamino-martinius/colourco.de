@@ -14,6 +14,8 @@ export interface Params {
 };
 
 export abstract class Color {
+  values: number[];
+
   static clamp(value: number, min: number, max: number): number {
     return Math.min(max, Math.max(value, min));
   }
@@ -26,7 +28,8 @@ export abstract class Color {
     return {};
   }
 
-  constructor(public values: number[]) {
+  constructor(...values: number[]) {
+    this.values = values;
     this.clamp();
   }
 

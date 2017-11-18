@@ -233,7 +233,7 @@ export class Scheme {
         sSeed += seedStep;
         const l = colorMapping.mappings[2].origin(color.values[2], lSeed);
         lSeed += seedStep;
-        colors.push(new Hsl([h, s, l]));
+        colors.push(new Hsl(h, s, l));
       }
     }
     return colors;

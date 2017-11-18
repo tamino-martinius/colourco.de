@@ -42,11 +42,11 @@ export class Hsv extends Color {
       if (5 <= H && H < 6) b = v2;
       if (2 <= H && H < 3) b = v3;
     }
-    return new Rgb([r, g, b]);
+    return new Rgb(r, g, b);
   }
 
   toHsv(): Color {
-    return new Hsv(this.values);
+    return new Hsv(...this.values);
   }
 };
 

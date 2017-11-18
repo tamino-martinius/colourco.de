@@ -7,7 +7,7 @@ import Cmyk from './cmyk';
 
 const lightThreshold = 96 / 255;
 
-const Rgb = class Rgb extends Color {
+export class Rgb extends Color {
   static get definition(): ColorDefinition {
     return {
       r: { min: 0, max: 1, f: 255, name: 'red' },
@@ -27,15 +27,15 @@ const Rgb = class Rgb extends Color {
   toFgc(): Color {
     const offset = this.isLight ? -lightThreshold : lightThreshold;
 
-    return new Rgb([
+    return new Rgb(
       this.values[0] + offset,
       this.values[1] + offset,
       this.values[2] + offset,
-    ]);
+    );
   }
 
   toHex(): Color {
-    return new Hex(this.values);
+    return new Hex(...this.values);
   }
 
   get hue(): number {
@@ -58,40 +58,40 @@ const Rgb = class Rgb extends Color {
       const s = l < 0.5 ?
         this.delta / (l * 2) :
         this.delta / (2 - this.min - this.max);
-      return new Hsl([this.hue, s, l]);
+      return new Hsl(this.hue, s, l);
     } else {
-      return new Hsl([0, 0, l]);
+      return new Hsl(0, 0, l);
     }
   }
 
   toHsv() {
     const v = this.max;
     if (this.delta > 0) {
-      return new Hsv([this.hue, this.delta / this.max, v]);
+      return new Hsv(this.hue, this.delta / this.max, v);
     } else {
-      return new Hsv([0, 0, v]);
+      return new Hsv(0, 0, v);
     }
   }
 
   toCmy() {
-    return new Cmy([
+    return new Cmy(
       1 - this.values[0],
       1 - this.values[1],
       1 - this.values[2],
-    ]);
+    );
   }
 
   toCmyk() {
     const k = 1 - this.max;
     if (k > 0.997) {
-      return new Cmyk([0, 0, 0, 1]);
+      return new Cmyk(0, 0, 0, 1);
     } else {
-      return new Cmyk([
+      return new Cmyk(
         (1 - this.values[0] - k) / (1 - k),
         (1 - this.values[1] - k) / (1 - k),
         (1 - this.values[2] - k) / (1 - k),
         k,
-      ]);
+      );
     }
   }
 };
