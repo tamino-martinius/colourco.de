@@ -1,9 +1,9 @@
 <template>
 </template>
 
-<script>
+<script lang="ts">
   export default {
-    test(value: string) : string {
+    test(value: string): string  {
       return value;
     },
   };
