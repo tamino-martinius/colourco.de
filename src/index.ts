@@ -1,5 +1,12 @@
-import './test.styl';
-// import Vue from 'vue';
+import './main.styl';
+import Vue from 'vue';
 import app from "./app";
 
-console.log(app)
+const root = document.createElement('div');
+root.id = 'app';
+document.body.appendChild(root);
+
+new Vue({
+  el: '#app',
+  render: display => display(app),
+});
