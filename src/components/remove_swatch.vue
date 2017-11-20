@@ -1,6 +1,6 @@
 <template>
-  <div class="navigation">
-    Navigation
+  <div class="remove-swatch">
+    Remove
   </div>
 </template>
 

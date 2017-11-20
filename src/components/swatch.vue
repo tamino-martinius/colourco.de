@@ -1,6 +1,6 @@
 <template>
-  <div class="navigation">
-    Navigation
+  <div class="swatch">
+    Swatch
   </div>
 </template>
 

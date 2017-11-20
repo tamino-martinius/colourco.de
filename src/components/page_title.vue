@@ -1,6 +1,6 @@
 <template>
-  <div class="navigation">
-    Navigation
+  <div class="page-title">
+    Title
   </div>
 </template>
 
