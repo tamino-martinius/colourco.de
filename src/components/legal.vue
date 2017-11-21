@@ -1,5 +1,5 @@
 <template>
-  <div class="legal">
+  <div :class="$style.root">
     <h1><span>who we are</span><b>About &amp;</b> Legal</h1>
     <table>
       <tr>
@@ -147,3 +147,9 @@
   export default {
   };
 </script>
+
+<style lang="stylus" module>
+  .root {
+    grid-area: content;
+  }
+</style>

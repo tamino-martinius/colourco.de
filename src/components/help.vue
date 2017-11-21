@@ -1,5 +1,5 @@
 <template>
-  <div class="help">
+  <div :class="$style.root">
     <h1><span>how it works</span><b>Help &amp;</b> Controls</h1>
     <table>
       <tr>
@@ -155,3 +155,9 @@
   export default {
   };
 </script>
+
+<style lang="stylus" module>
+  .root {
+    grid-area: content;
+  }
+</style>

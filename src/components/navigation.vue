@@ -1,5 +1,5 @@
 <template>
-  <div class="navigation">
+  <div :class="$style.root">
     Navigation
   </div>
 </template>
@@ -8,3 +8,9 @@
   export default {
   };
 </script>
+
+<style lang="stylus" module>
+  .root {
+    grid-area: nav;
+  }
+</style>

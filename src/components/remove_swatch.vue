@@ -1,5 +1,5 @@
 <template>
-  <div class="remove-swatch">
+  <div :class="$style.root">
     Remove
   </div>
 </template>
@@ -8,3 +8,9 @@
   export default {
   };
 </script>
+
+<style lang="stylus" module>
+  .root {
+    grid-area: remove;
+  }
+</style>

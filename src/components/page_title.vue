@@ -1,5 +1,5 @@
 <template>
-  <div class="page-title">
+  <div :class="$style.root">
     Title
   </div>
 </template>
@@ -8,3 +8,9 @@
   export default {
   };
 </script>
+
+<style lang="stylus" module>
+  .root {
+    grid-area: title;
+  }
+</style>

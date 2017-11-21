@@ -1,5 +1,5 @@
 <template>
-  <div class="scheme">
+  <div :class="$style.root">
     Scheme
   </div>
 </template>
@@ -8,3 +8,9 @@
   export default {
   };
 </script>
+
+<style lang="stylus" module>
+  .root {
+    grid-area: content;
+  }
+</style>
