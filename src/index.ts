@@ -1,6 +1,6 @@
 import './main.styl';
 import Vue from 'vue';
-import app from "./app";
+import app from './app';
 
 const root = document.createElement('div');
 root.id = 'app';

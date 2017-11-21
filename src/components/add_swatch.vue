@@ -1,12 +1,19 @@
 <template>
   <div :class="$style.root">
-    Add
+    +
   </div>
 </template>
 
 <script lang="ts">
-  export default {
+  import store from '../models/store';
+  import State from '../models/state';
 
+  export default {
+    data() {
+      return {
+        state: <State>store.state,
+      };
+    },
   };
 </script>
 

@@ -151,5 +151,6 @@
 <style lang="stylus" module>
   .root {
     grid-area: content;
+    display: none;
   }
 </style>

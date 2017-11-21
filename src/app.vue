@@ -5,7 +5,6 @@
       [$style.mobile]: isMobile,
     },
   ]">
-    App
     <addSwatch />
     <pageTitle />
     <removeSwatch />
@@ -25,8 +24,15 @@
   import legal from './components/legal';
   import help from './components/help';
   import navigation from './components/navigation';
+  import store from './models/store';
+  import State from './models/state';
 
   export default {
+    data() {
+      return {
+        state: <State>store.state,
+      };
+    },
     computed: {
       isMobile: () =>
         (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
