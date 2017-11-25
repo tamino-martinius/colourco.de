@@ -5,12 +5,12 @@
       [$style.mobile]: isMobile,
     },
   ]">
-    <addSwatch />
+    <addSwatch v-if="state.canAdd" @add="newSwatch" />
     <pageTitle />
-    <removeSwatch />
-    <scheme />
-    <legal />
-    <help />
+    <removeSwatch v-if="state.canAdd" @remove="removeSwatch" />
+    <scheme v-if="state.showScheme" :swatches="state.swatches" />
+    <legal v-if="state.showLegal" />
+    <help v-if="state.showHelp" />
     <navigation />
   </div>
 
@@ -36,6 +36,14 @@
     computed: {
       isMobile: () =>
         (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+    },
+    methods: {
+      newSwatch() {
+        console.log('new Swatch');
+      },
+      removeSwatch() {
+        console.log('new Swatch');
+      },
     },
     components: {
       addSwatch,

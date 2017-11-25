@@ -1,18 +1,15 @@
 <template>
-  <div :class="$style.root">
+  <div :class="$style.root" @click="handleEvent">
     +
   </div>
 </template>
 
 <script lang="ts">
-  import store from '../models/store';
-  import State from '../models/state';
-
   export default {
-    data() {
-      return {
-        state: <State>store.state,
-      };
+    methods: {
+      handleEvent() {
+        this.$emit('add');
+      },
     },
   };
 </script>

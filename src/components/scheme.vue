@@ -16,13 +16,14 @@
     },
     methods: {
       toggleEdit(_e: MouseEvent) {
+        // console.log(this.state);
         this.state.isEditing = !this.state.isEditing;
       },
-      move(e: MouseEvent) {
-        const scheme: HTMLElement = this.$el;
-        const x = e.offsetX / scheme.clientWidth;
-        const y = e.offsetY / scheme.clientHeight;
-        console.log(x, y);
+      move(_e: MouseEvent) {
+        // const scheme: HTMLElement = this.$el;
+        // const x = e.offsetX / scheme.clientWidth;
+        // const y = e.offsetY / scheme.clientHeight;
+        // console.log(x, y);
       },
     },
   };
