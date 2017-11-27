@@ -94,6 +94,14 @@ export class Rgb extends Color {
       );
     }
   }
+
+  toString(): string {
+    return `rgb(
+      ${this.values[0] * 255},
+      ${this.values[1] * 255},
+      ${this.values[2] * 255}
+    )`;
+  }
 };
 
 export default Rgb;

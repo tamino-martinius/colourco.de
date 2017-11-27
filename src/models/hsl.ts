@@ -46,6 +46,14 @@ export class Hsl extends Color {
   toHsl(): Color {
     return new Hsl(...this.values);
   }
+
+  toString(): string {
+    return `hsl(
+      ${this.values[0] * 360},
+      ${this.values[1] * 100}%,
+      ${this.values[2] * 100}%
+    )`;
+  }
 };
 
 export default Hsl;

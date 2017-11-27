@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.root" @click="handleEvent">
+  <div :class="$style.root" @click="handleClickEvent">
     -
   </div>
 </template>
@@ -7,7 +7,7 @@
 <script lang="ts">
   export default {
     methods: {
-      handleEvent() {
+      handleClickEvent() {
         this.$emit('remove');
       },
     },

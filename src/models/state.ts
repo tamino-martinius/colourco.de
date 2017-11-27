@@ -1,11 +1,12 @@
-import Swatch from './swatch';
+import Hsl from './hsl';
+import Scheme from './scheme';
 
 export type page = 'scheme' | 'help' | 'legal';
 
 export class State {
-  public isEditing: boolean = true;
+  public editIndex?: number = 0;
   public currentPage: page = 'scheme';
-  public swatches: Swatch[] = [];
+  public swatches: Hsl[] = [Scheme.randomPastelColor];
   public maxSwatches: number = 10;
 
   get canAdd(): boolean {
@@ -26,6 +27,10 @@ export class State {
 
   get showLegal(): boolean {
     return this.currentPage === 'legal';
+  }
+
+  get isEditing(): boolean {
+    return this.editIndex !== undefined;
   }
 };
 
