@@ -31,14 +31,15 @@
     "ts-node": "^3.3.0",
     "typescript": "^2.6.1",
     "vue-loader": "^13.5.0",
-    "vue-template-compiler": "2.4.2",
+    "vue-template-compiler": "2.5.9",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4",
     "webpack-merge": "^4.1.1",
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "flipping": "^0.7.0",
     "lodash": "^4.17.4",
-    "vue": "2.4.2"
+    "vue": "2.5.9"
   }
 }
