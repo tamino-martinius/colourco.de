@@ -3,39 +3,43 @@
     $style.app,
     {
       [$style.mobile]: isMobile,
+      [$style.showAdd]: state.canAdd,
+      [$style.showRemove]: state.canRemove,
     },
   ]">
     <addSwatch v-if="state.canAdd" @add="newSwatch" />
     <pageTitle />
-    <removeSwatch v-if="state.canAdd" @remove="removeSwatch" />
+    <removeSwatch v-if="state.canRemove" @remove="removeSwatch" />
     <scheme v-if="state.showScheme" >
       <div
+        :key="`swatch-${index}`"
         v-for="(swatch, index) in state.swatches"
         :is="state.editIndex === index ? 'newSwatch' : 'swatch'"
         :swatch="swatch"
-         @save="saveSwatch"
-         @change="changeSwatch"
+        :positions="state.positions"
+        @save="saveSwatch"
+        @change="changeSwatch"
       />
     </scheme>
     <legal v-if="state.showLegal" />
     <help v-if="state.showHelp" />
-    <navigation />
+    <navigation @changeScheme="changeScheme" />
   </div>
 
 </template>
 
 <script lang="ts">
-  import addSwatch from './components/add_swatch';
-  import newSwatch from './components/new_swatch';
-  import swatch from './components/swatch';
-  import pageTitle from './components/page_title';
-  import removeSwatch from './components/remove_swatch';
-  import scheme from './components/scheme';
-  import Scheme from './models/scheme';
+  import addSwatch from './components/add_swatch.vue';
+  import newSwatch from './components/new_swatch.vue';
+  import swatch from './components/swatch.vue';
+  import pageTitle from './components/page_title.vue';
+  import removeSwatch from './components/remove_swatch.vue';
+  import scheme from './components/scheme.vue';
+  import Scheme, { SchemeName } from './models/scheme';
   import Hsl from './models/hsl';
-  import legal from './components/legal';
-  import help from './components/help';
-  import navigation from './components/navigation';
+  import legal from './components/legal.vue';
+  import help from './components/help.vue';
+  import navigation from './components/navigation.vue';
   import store from './models/store';
   import State from './models/state';
 
@@ -69,6 +73,9 @@
       changeSwatch(hsl: Hsl) {
         this.state.swatches.splice(this.state.editIndex, 1, hsl);
       },
+      changeScheme(scheme: SchemeName) {
+        console.log('change scheme', scheme);
+      },
     },
     components: {
       addSwatch,
@@ -89,7 +96,7 @@
     display: grid;
     width: 100%;
     height: 100%;
-    grid-template-columns 50px 50px 1fr 50px;
+    grid-template-columns 50px 0 1fr 0;
     grid-template-rows: 50px 1fr;
     grid-template-areas: \
       "title remove content add"\
@@ -98,6 +105,14 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    &.show-remove {
+      grid-template-columns 50px 50px 1fr 0;
+    }
+
+    &.show-add.show-remove {
+      grid-template-columns 50px 50px 1fr 50px;
+    }
 
     &.mobile {
       grid-template-columns: 50px 1fr 50px;
