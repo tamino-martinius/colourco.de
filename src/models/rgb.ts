@@ -5,8 +5,6 @@ import Hsv from './hsv';
 import Cmy from './cmy';
 import Cmyk from './cmyk';
 
-const lightThreshold = 96 / 255;
-
 export class Rgb extends Color {
   static get definition(): ColorDefinition {
     return {
@@ -16,22 +14,8 @@ export class Rgb extends Color {
     };
   }
 
-  get isLight(): boolean {
-    return this.min > lightThreshold;
-  }
-
   toRgb(): Color {
     return this;
-  }
-
-  toFgc(): Color {
-    const offset = this.isLight ? -lightThreshold : lightThreshold;
-
-    return new Rgb(
-      this.values[0] + offset,
-      this.values[1] + offset,
-      this.values[2] + offset,
-    );
   }
 
   toHex(): Color {

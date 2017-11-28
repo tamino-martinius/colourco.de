@@ -43,6 +43,14 @@ export class Hsl extends Color {
     );
   }
 
+  toFgc(): Color {
+    return new Hsl(
+      this.values[0],
+      this.values[1],
+      this.values[2] < 0.5 ? this.values[2] + 0.5 : this.values[2] - 0.5,
+    );
+  }
+
   toHsl(): Color {
     return new Hsl(...this.values);
   }

@@ -59,7 +59,7 @@ export abstract class Color {
   abstract toRgb(): Color;
 
   toFgc(): Color {
-    return this.toRgb().toFgc();
+    return this.toHsl().toFgc();
   }
 
   toHex(): Color {
