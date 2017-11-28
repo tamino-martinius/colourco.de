@@ -2,6 +2,11 @@ import Hsl from './hsl';
 import Scheme from './scheme';
 
 export type page = 'scheme' | 'help' | 'legal';
+export interface Position {
+  x: number;
+  y: number;
+  isActive: boolean;
+};
 
 export class State {
   public editIndex?: number = 0;
@@ -31,6 +36,17 @@ export class State {
 
   get isEditing(): boolean {
     return this.editIndex !== undefined;
+  }
+
+  get positions(): Position[] {
+    return this.swatches.map((hsl, index) =>
+      ({
+        x: hsl.values[0],
+        y: hsl.values[2],
+        color: hsl.toString(),
+        isActive: index === this.editIndex,
+      })
+    )
   }
 };
 
