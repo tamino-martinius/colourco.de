@@ -14,24 +14,16 @@ const stylusRule = {
   ],
 };
 
-// CSS
-const cssRule = {
-  test: /\.css$/,
-  use: [
-    'style-loader',
-    'css-loader',
-  ],
-};
-
 // Vue
 const vueRule = {
-  test: /\.vue$/,
+  test: /\.vue$|\.svg$/,
   loader: 'vue-loader',
   options: {
     cssModules: {
       localIdentName: '[path][name]---[local]---[hash:base64:5]',
       camelCase: true,
     },
+    html: 'html-loader',
   },
 };
 
@@ -44,41 +36,6 @@ const tsRule = {
     appendTsSuffixTo: [/\.vue$/],
   },
 };
-
-// Images
-const imageRule = {
-  test: /\.(png|svg|jpg|gif)$/,
-  loader: 'file-loader',
-  options: {
-    name: '[name].[ext]?[hash]'
-  },
-};
-
-// Fonts
-const fontRule = {
-  test: /\.(woff|woff2|eot|ttf|otf)$/,
-  loader: 'file-loader',
-  options: {
-    name: '[name].[ext]?[hash]'
-  },
-};
-
-// CSV
-const csvRule = {
-  test: /\.(csv|tsv)$/,
-  use: [
-    'csv-loader',
-  ],
-};
-
-// XML
-const xmlRule = {
-  test: /\.xml$/,
-  use: [
-    'xml-loader',
-  ],
-};
-
 
 /// Plugin Options
 
@@ -124,12 +81,7 @@ const config = {
   module: {
     rules: [
       stylusRule,
-      cssRule,
       vueRule,
-      imageRule,
-      fontRule,
-      csvRule,
-      xmlRule,
       tsRule,
     ],
   },
@@ -137,6 +89,7 @@ const config = {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
     },
   },
   plugins: [
