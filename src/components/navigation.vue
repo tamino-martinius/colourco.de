@@ -14,11 +14,16 @@
         {{scheme}}
       </li>
     </ul>
+
   </div>
 </template>
 
 <script lang="ts">
   import { SchemeName } from '../models/scheme';
+
+console.log(
+    require('svg-loader!../icons/logo.html'),
+  );
 
   export default {
     data: () => ({
@@ -31,7 +36,10 @@
         'analogicComplement',
         'triad',
         'quad',
-      ]
+      ],
+      icons: {
+        // logo,
+      },
     }),
     methods: {
       handleSchemeClick(name: string) {
