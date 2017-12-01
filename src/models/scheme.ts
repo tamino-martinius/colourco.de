@@ -15,7 +15,8 @@ export type SchemeName =
   'complement' |
   'analogicComplement' |
   'triad' |
-  'quad'
+  'quad' |
+  'free'
 ;
 export interface Mapping {
   mode: ColorMode;

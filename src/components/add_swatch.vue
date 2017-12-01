@@ -28,13 +28,13 @@
 </template>
 
 <script lang="ts">
-  export default {
-    methods: {
-      handleClickEvent() {
-        this.$emit('add');
-      },
+export default {
+  methods: {
+    handleClickEvent() {
+      this.$emit('add');
     },
-  };
+  },
+};
 </script>
 
 <style lang="stylus" module>

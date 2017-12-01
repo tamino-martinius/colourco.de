@@ -33,29 +33,29 @@
 </template>
 
 <script lang="ts">
-  import Hsl from "../models/hsl";
+import Hsl from "../models/hsl";
 
-  export default {
-    props: [
-      'swatch',
-      'positions',
-    ],
-    methods: {
-      handleClickEvent() {
-        this.$emit('save');
-      },
-      handleMoveEvent(e: MouseEvent) {
-        const scheme: HTMLElement = this.$el;
-        const x = e.offsetX / scheme.clientWidth;
-        const y = e.offsetY / scheme.clientHeight;
-        this.$emit('change', new Hsl(
-          x,
-          this.swatch.values[1],
-          y,
-        ));
-      },
+export default {
+  props: [
+    'swatch',
+    'positions',
+  ],
+  methods: {
+    handleClickEvent() {
+      this.$emit('save');
     },
-  };
+    handleMoveEvent(e: MouseEvent) {
+      const scheme: HTMLElement = this.$el;
+      const x = e.offsetX / scheme.clientWidth;
+      const y = e.offsetY / scheme.clientHeight;
+      this.$emit('change', new Hsl(
+        x,
+        this.swatch.values[1],
+        y,
+      ));
+    },
+  },
+};
 </script>
 
 <style lang="stylus" module>

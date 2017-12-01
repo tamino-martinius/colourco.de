@@ -9,12 +9,12 @@
 </template>
 
 <script lang="ts">
-  export default {
-    props: [
-      'swatch',
-      'positions',
-    ],
-  };
+export default {
+  props: [
+    'swatch',
+    'positions',
+  ],
+};
 </script>
 
 <style lang="stylus" module>

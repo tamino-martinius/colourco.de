@@ -19,13 +19,13 @@
 </template>
 
 <script lang="ts">
-  export default {
-    methods: {
-      handleClickEvent() {
-        this.$emit('remove');
-      },
+export default {
+  methods: {
+    handleClickEvent() {
+      this.$emit('remove');
     },
-  };
+  },
+};
 </script>
 
 <style lang="stylus" module>

@@ -4,7 +4,7 @@
       <li
         @click="handleSchemeClick('free')"
       >
-        free
+        <Icon key="scheme"></Icon>
       </li>
       <li
         :key="scheme"
@@ -19,34 +19,39 @@
 </template>
 
 <script lang="ts">
-  import { SchemeName } from '../models/scheme';
+import { SchemeName } from '../models/scheme';
+import Icon from './icon.vue';
+
 
 console.log(
-    require('svg-loader!../icons/logo.html'),
-  );
+  Icon,
+);
 
-  export default {
-    data: () => ({
-      schemes: <SchemeName[]>[
-        'monochrome',
-        'monochromeDark',
-        'monochromeLight',
-        'analogic',
-        'complement',
-        'analogicComplement',
-        'triad',
-        'quad',
-      ],
-      icons: {
-        // logo,
-      },
-    }),
-    methods: {
-      handleSchemeClick(name: string) {
-        this.$emit('changeScheme', name);
-      }
+export default {
+  data: () => ({
+    schemes: <SchemeName[]>[
+      'monochrome',
+      'monochromeDark',
+      'monochromeLight',
+      'analogic',
+      'complement',
+      'analogicComplement',
+      'triad',
+      'quad',
+    ],
+    icons: {
+      // logo,
     },
-  };
+  }),
+  methods: {
+    handleSchemeClick(name: string) {
+      this.$emit('changeScheme', name);
+    }
+  },
+  complements: {
+    Icon,
+  },
+};
 </script>
 
 <style lang="stylus" module>
