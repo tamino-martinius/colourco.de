@@ -7,10 +7,10 @@
       [$style.showRemove]: state.canRemove,
     },
   ]">
-    <addSwatch v-if="state.canAdd" @add="newSwatch" />
-    <pageTitle />
-    <removeSwatch v-if="state.canRemove" @remove="removeSwatch" />
-    <scheme v-if="state.showScheme" >
+    <AddSwatch v-if="state.canAdd" @add="newSwatch" />
+    <PageTitle />
+    <RemoveSwatch v-if="state.canRemove" @remove="removeSwatch" />
+    <Scheme v-if="state.showScheme" >
       <div
         :key="`swatch-${index}`"
         v-for="(swatch, index) in state.swatches"
@@ -20,26 +20,27 @@
         @save="saveSwatch"
         @change="changeSwatch"
       />
-    </scheme>
-    <legal v-if="state.showLegal" />
-    <help v-if="state.showHelp" />
-    <navigation @changeScheme="changeScheme" />
+    </Scheme>
+    <Legal v-if="state.showLegal" />
+    <Help v-if="state.showHelp" />
+    <Navigation @changeScheme="changeScheme" />
   </div>
 
 </template>
 
 <script lang="ts">
-  import addSwatch from './components/add_swatch.vue';
-  import newSwatch from './components/new_swatch.vue';
-  import swatch from './components/swatch.vue';
-  import pageTitle from './components/page_title.vue';
-  import removeSwatch from './components/remove_swatch.vue';
-  import scheme from './components/scheme.vue';
-  import Scheme, { SchemeName } from './models/scheme';
+  import AddSwatch from './components/add_swatch.vue';
+  import NewSwatch from './components/new_swatch.vue';
+  import Swatch from './components/swatch.vue';
+  import PageTitle from './components/page_title.vue';
+  import RemoveSwatch from './components/remove_swatch.vue';
+  import Scheme from './components/scheme.vue';
+  import Legal from './components/legal.vue';
+  import Help from './components/help.vue';
+  import Navigation from './components/navigation.vue';
+
+import SchemeGenerator, { SchemeName } from './models/scheme';
   import Hsl from './models/hsl';
-  import legal from './components/legal.vue';
-  import help from './components/help.vue';
-  import navigation from './components/navigation.vue';
   import store from './models/store';
   import State from './models/state';
 
@@ -56,7 +57,7 @@
     methods: {
       newSwatch() {
         console.log('add');
-        this.state.swatches.push(Scheme.randomPastelColor);
+        this.state.swatches.push(SchemeGenerator.randomPastelColor);
         this.state.editIndex = this.state.swatches.length - 1;
       },
       removeSwatch() {
@@ -78,15 +79,15 @@
       },
     },
     components: {
-      addSwatch,
-      newSwatch,
-      swatch,
-      pageTitle,
-      removeSwatch,
-      navigation,
-      scheme,
-      legal,
-      help,
+      AddSwatch,
+      NewSwatch,
+      Swatch,
+      PageTitle,
+      RemoveSwatch,
+      Navigation,
+      Scheme,
+      Legal,
+      Help,
     },
   };
 </script>

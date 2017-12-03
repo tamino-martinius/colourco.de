@@ -1,27 +1,49 @@
 <template>
-  <div :class="$style.root">
+  <div :class="$style.root" :style="{
+    ['--test']: 'fuchsia',
+  }">
     <ul>
-      <li
-        @click="handleSchemeClick('free')"
-      >
-        <Icon key="scheme"></Icon>
+      <li @click="handleSchemeClick('free')">
+        <Icon
+          :class="$style.free"
+          name="scheme"
+        />
       </li>
       <li
         :key="scheme"
         v-for="scheme in schemes"
         @click="handleSchemeClick(scheme)"
       >
-        {{scheme}}
+        <Icon
+          :class="$style[key]"
+          name="scheme"
+        />
+      </li>
+      <li @click="handlePageChange('download')">
+        <Icon
+          :class="$style.download"
+          name="download"
+        />
+      </li>
+      <li @click="handlePageChange('help')">
+        <Icon
+          :class="$style.help"
+          name="help"
+        />
+      </li>
+      <li @click="handlePageChange('legal')">
+        <Icon
+          :class="$style.legal"
+          name="legal"
+        />
       </li>
     </ul>
-
   </div>
 </template>
 
 <script lang="ts">
 import { SchemeName } from '../models/scheme';
 import Icon from './icon.vue';
-
 
 console.log(
   Icon,
@@ -48,7 +70,7 @@ export default {
       this.$emit('changeScheme', name);
     }
   },
-  complements: {
+  components: {
     Icon,
   },
 };
@@ -57,5 +79,8 @@ export default {
 <style lang="stylus" module>
   .root {
     grid-area: nav;
+    li {
+      background: var(--test);
+    }
   }
 </style>

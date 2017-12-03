@@ -1,11 +1,8 @@
 <template>
-<div>
-  test
-</div>
-  <!-- <svg
+  <svg
     :viewBox="icon.attributes.viewBox"
     v-html="icon.content"
-  ></svg> -->
+  ></svg>
 </template>
 
 <script lang="ts">
@@ -32,11 +29,12 @@
 
 export default {
   props: [
-    'key',
+    'name',
   ],
   computed: {
     icon() {
-      return require(`svg-loader!../icons/${this.key}.html`);
+      console.log(this);
+      return require(`svg-loader!../icons/${this.name}.html`);
     },
   },
 };
