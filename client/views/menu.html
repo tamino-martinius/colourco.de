@@ -1,6 +1,6 @@
 <template name="menu">
   <div class="menu-item menu-static menu-logo">
-    <div class="icon-colourcode"></div>
+    {{> svg_logo}}
     <span><img src="/ColourCode.png?20130621" alt="logo"/></span>
   </div>
   <div
@@ -8,7 +8,7 @@
     data-page="1"
     data-page-name="menu-none"
   >
-    <ul class="icon-scheme scheme-none"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>free build</span>
   </div>
   <div
@@ -16,7 +16,7 @@
     data-page="1"
     data-page-name="menu-monochrome"
   >
-    <ul class="icon-scheme scheme-monochrome"><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>monochrome</span>
   </div>
   <div
@@ -24,7 +24,7 @@
     data-page="1"
     data-page-name="menu-monochrome-dark"
   >
-    <ul class="icon-scheme scheme-monochrome-dark"><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>monochrome &amp; dark gray</span>
   </div>
   <div
@@ -32,7 +32,7 @@
     data-page="1"
     data-page-name="menu-monochrome-light"
   >
-    <ul class="icon-scheme scheme-monochrome-light"><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>monochrome &amp; light gray</span>
   </div>
   <div
@@ -40,7 +40,7 @@
     data-page="1"
     data-page-name="menu-analogic"
   >
-    <ul class="icon-scheme scheme-analogic"><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>analogic</span>
   </div>
   <div
@@ -48,7 +48,7 @@
     data-page="1"
     data-page-name="menu-analogic-complement"
   >
-    <ul class="icon-scheme scheme-analogic-complement"><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>analogic &amp; complement</span>
   </div>
   <div
@@ -56,7 +56,7 @@
     data-page="1"
     data-page-name="menu-complement"
   >
-    <ul class="icon-scheme scheme-complement"><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>complement</span>
   </div>
   <div
@@ -64,7 +64,7 @@
     data-page="1"
     data-page-name="menu-triad"
   >
-    <ul class="icon-scheme scheme-triad"><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>triad</span>
   </div>
   <div
@@ -72,12 +72,14 @@
     data-page="1"
     data-page-name="menu-quad"
   >
-    <ul class="icon-scheme scheme-quad"><li></li><li></li><li></li><li></li><li></li></ul>
+    {{> svg_scheme}}
     <span>quad</span>
   </div>
   <hr  class="menu-item"/>
   <div class="menu-item menu-static menu-save">
-    <div class="hint--top" data-hint="save scheme"><div class="icon-save"></div></div>
+    <div class="hint--top" data-hint="save scheme">
+      {{> svg_download}}
+    </div>
     <span>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setSassExport(this);">
         <div class="hint--top" data-hint="download scheme as .scss">

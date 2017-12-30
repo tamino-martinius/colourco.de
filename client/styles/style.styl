@@ -77,158 +77,116 @@ b
     font-style normal
     height 1em
 
+*[class*=svg-]
+  width 16px
+  height 16px
+  fill #aaa
+  padding-left 2px
+  padding-right 6px
+
+.svg-logo
+  vertical-align 8px
+
 // code / schemes
 .menu-item
-  .icon-scheme
+  .svg-scheme
     list-style none
-    margin 0
-    padding 0
+    vertical-align -4px
+    circle
+      display none
+  &.menu-none .svg-scheme circle
+    display inherit
 
-    li
-      position absolute
-      font-weight 700 !important
+  &.menu-monochrome
+  &.menu-analogic
+    .svg-scheme
+      .w, .nw, .n, .ne, .e
+        display inherit
 
-    &.scheme-none
-      li:nth-child( 1):before { content: 'a'; }
-      li:nth-child( 2):before { content: 'c'; }
-      li:nth-child( 3):before { content: 'e'; }
-      li:nth-child( 4):before { content: 'g'; }
-      li:nth-child( 5):before { content: 'i'; }
-      li:nth-child( 6):before { content: 'k'; }
-      li:nth-child( 7):before { content: 'm'; }
-      li:nth-child( 8):before { content: 'o'; }
-      li:nth-child( 9):before { content: 'q'; }
-      li:nth-child(10):before { content: 's'; }
-      li:nth-child(11):before { content: 'u'; }
-      li:nth-child(12):before { content: 'w'; }
+  &.menu-monochrome-dark .svg-scheme
+    .w, .n, .ne, .e
+      display inherit
 
-    &.scheme-monochrome
-      li:nth-child(1):before { content: 'u'; }
-      li:nth-child(2):before { content: 'w'; }
-      li:nth-child(3):before { content: 'a'; }
-      li:nth-child(4):before { content: 'c'; }
-      li:nth-child(5):before { content: 'e'; }
+  &.menu-monochrome-light .svg-scheme
+    .w, .nw, .n, .e
+      display inherit
 
-    &.scheme-monochrome-dark
-      li:nth-child(1):before { content: 't'; }
-      li:nth-child(2):before { content: 'v'; }
-      li:nth-child(3):before { content: 'b'; }
-      li:nth-child(4):before { content: 'd'; }
-      li:nth-child(5):before { content: 'f'; }
+  &.menu-analogic-complement
+  &.menu-complement
+    .svg-scheme
+      .s, .nw, .n, .ne
+        display inherit
 
-    &.scheme-monochrome-light
-      li:nth-child(1):before { content: 't'; }
-      li:nth-child(2):before { content: 'v'; }
-      li:nth-child(3):before { content: 'x'; }
-      li:nth-child(4):before { content: 'd'; }
-      li:nth-child(5):before { content: 'f'; }
+  &.menu-triad .svg-scheme
+    .nw, .n, .ne, .sw, .se
+      display inherit
 
-    &.scheme-analogic
-      li:nth-child(1):before { content: 's'; }
-      li:nth-child(2):before { content: 'v'; }
-      li:nth-child(3):before { content: 'a'; }
-      li:nth-child(4):before { content: 'd'; }
-      li:nth-child(5):before { content: 'g'; }
-
-    &.scheme-analogic-complement
-      li:nth-child(1):before { content: 'v'; }
-      li:nth-child(2):before { content: 'a'; }
-      li:nth-child(3):before { content: 'd'; }
-      li:nth-child(4):before { content: 'l'; }
-      li:nth-child(5):before { content: 'n'; }
-
-    &.scheme-complement
-      li:nth-child(1):before { content: 'w'; }
-      li:nth-child(2):before { content: 'a'; }
-      li:nth-child(3):before { content: 'c'; }
-      li:nth-child(4):before { content: 'l'; }
-      li:nth-child(5):before { content: 'n'; }
-
-    &.scheme-triad
-      li:nth-child(1):before { content: 'w'; }
-      li:nth-child(2):before { content: 'a'; }
-      li:nth-child(3):before { content: 'c'; }
-      li:nth-child(4):before { content: 'j'; }
-      li:nth-child(5):before { content: 'p'; }
-
-    &.scheme-quad
-      li:nth-child(1):before { content: 'x'; }
-      li:nth-child(2):before { content: 'b'; }
-      li:nth-child(3):before { content: 'g'; }
-      li:nth-child(4):before { content: 'm'; }
-      li:nth-child(5):before { content: 's'; }
+  &.menu-quad .svg-scheme
+    .sw, .se, .nw, .ne
+      display inherit
 
   &:hover
   &.active
-    .scheme-none
-      li:nth-child( 1):before { color: hsl(  0, 50%, 50%); }
-      li:nth-child( 2):before { color: hsl( 30, 50%, 50%); }
-      li:nth-child( 3):before { color: hsl( 60, 50%, 50%); }
-      li:nth-child( 4):before { color: hsl( 90, 50%, 50%); }
-      li:nth-child( 5):before { color: hsl(120, 50%, 50%); }
-      li:nth-child( 6):before { color: hsl(150, 50%, 50%); }
-      li:nth-child( 7):before { color: hsl(180, 50%, 50%); }
-      li:nth-child( 8):before { color: hsl(210, 50%, 50%); }
-      li:nth-child( 9):before { color: hsl(240, 50%, 50%); }
-      li:nth-child(10):before { color: hsl(270, 50%, 50%); }
-      li:nth-child(11):before { color: hsl(300, 50%, 50%); }
-      li:nth-child(12):before { color: hsl(330, 50%, 50%); }
+    &.menu-none
+      .n  { fill: hsl(000, 50%, 50%); }
+      .ne { fill: hsl(045, 50%, 50%); }
+      .e  { fill: hsl(090, 50%, 50%); }
+      .se { fill: hsl(135, 50%, 50%); }
+      .s  { fill: hsl(180, 50%, 50%); }
+      .sw { fill: hsl(225, 50%, 50%); }
+      .w  { fill: hsl(270, 50%, 50%); }
+      .nw { fill: hsl(315, 50%, 50%); }
 
-    .scheme-monochrome
-      li:nth-child(1):before { color: hsl(0, 40%, 40%); }
-      li:nth-child(2):before { color: hsl(0, 45%, 45%); }
-      li:nth-child(3):before { color: hsl(0, 50%, 50%); }
-      li:nth-child(4):before { color: hsl(0, 55%, 55%); }
-      li:nth-child(5):before { color: hsl(0, 60%, 60%); }
+    &.menu-monochrome
+      .w  { fill: hsl(0, 40%, 40%); }
+      .nw { fill: hsl(0, 45%, 45%); }
+      .n  { fill: hsl(0, 50%, 50%); }
+      .ne { fill: hsl(0, 55%, 55%); }
+      .e  { fill: hsl(0, 60%, 60%); }
 
-    .scheme-monochrome-dark
-      li:nth-child(1):before { color: hsl(0,  0%, 20%); }
-      li:nth-child(2):before { color: hsl(0,  0%, 35%); }
-      li:nth-child(3):before { color: hsl(0, 50%, 50%); }
-      li:nth-child(4):before { color: hsl(0, 55%, 55%); }
-      li:nth-child(5):before { color: hsl(0, 60%, 60%); }
+    &.menu-monochrome-dark
+      .w  { fill: hsl(0,  0%, 35%); }
+      .n  { fill: hsl(0, 50%, 50%); }
+      .ne { fill: hsl(0, 55%, 55%); }
+      .e  { fill: hsl(0, 60%, 60%); }
 
-    .scheme-monochrome-light
-      li:nth-child(1):before { color: hsl(0, 40%, 40%); }
-      li:nth-child(2):before { color: hsl(0, 45%, 45%); }
-      li:nth-child(3):before { color: hsl(0, 50%, 50%); }
-      li:nth-child(4):before { color: hsl(0,  0%, 65%); }
-      li:nth-child(5):before { color: hsl(0,  0%, 80%); }
+    &.menu-monochrome-light
+      .w  { fill: hsl(0, 40%, 40%); }
+      .nw { fill: hsl(0, 45%, 45%); }
+      .n  { fill: hsl(0, 50%, 50%); }
+      .e  { fill: hsl(0,  0%, 65%); }
 
-    .scheme-analogic
-      li:nth-child(1):before { color: hsl(240, 40%, 40%); }
-      li:nth-child(2):before { color: hsl(300, 45%, 45%); }
-      li:nth-child(3):before { color: hsl(  0, 50%, 50%); }
-      li:nth-child(4):before { color: hsl( 60, 55%, 55%); }
-      li:nth-child(5):before { color: hsl(120, 60%, 60%); }
+    &.menu-analogic
+      .w  { fill: hsl(240, 40%, 40%); }
+      .nw { fill: hsl(300, 45%, 45%); }
+      .n  { fill: hsl(000, 50%, 50%); }
+      .ne { fill: hsl(060, 55%, 55%); }
+      .e  { fill: hsl(120, 60%, 60%); }
 
-    .scheme-analogic-complement
-      li:nth-child(1):before { color: hsl(300, 45%, 45%); }
-      li:nth-child(2):before { color: hsl(  0, 50%, 50%); }
-      li:nth-child(3):before { color: hsl( 60, 55%, 55%); }
-      li:nth-child(4):before { color: hsl(180, 40%, 40%); }
-      li:nth-child(5):before { color: hsl(180, 60%, 60%); }
+    &.menu-analogic-complement
+      .nw { fill: hsl(300, 45%, 45%); }
+      .n  { fill: hsl(000, 50%, 50%); }
+      .ne { fill: hsl(060, 55%, 55%); }
+      .s  { fill: hsl(180, 60%, 60%); }
 
-    .scheme-complement
-      li:nth-child(1):before { color: hsl(  0, 35%, 35%); }
-      li:nth-child(2):before { color: hsl(  0, 50%, 50%); }
-      li:nth-child(3):before { color: hsl(  0, 65%, 65%); }
-      li:nth-child(4):before { color: hsl(180, 40%, 40%); }
-      li:nth-child(5):before { color: hsl(180, 60%, 60%); }
+    &.menu-complement
+      .nw { fill: hsl(000, 35%, 35%); }
+      .n  { fill: hsl(000, 50%, 50%); }
+      .ne { fill: hsl(000, 65%, 65%); }
+      .s  { fill: hsl(180, 60%, 60%); }
 
-    .scheme-triad
-      li:nth-child(1):before { color: hsl(  0, 35%, 35%); }
-      li:nth-child(2):before { color: hsl(  0, 50%, 50%); }
-      li:nth-child(3):before { color: hsl(  0, 65%, 65%); }
-      li:nth-child(4):before { color: hsl(120, 60%, 60%); }
-      li:nth-child(5):before { color: hsl(240, 60%, 60%); }
+    &.menu-triad
+      .nw { fill: hsl(000, 35%, 35%); }
+      .n  { fill: hsl(000, 50%, 50%); }
+      .ne { fill: hsl(000, 65%, 65%); }
+      .sw { fill: hsl(120, 60%, 60%); }
+      .se { fill: hsl(240, 60%, 60%); }
 
-    .scheme-quad
-      li:nth-child(1):before { color: hsl(  0, 35%, 35%); }
-      li:nth-child(2):before { color: hsl(  0, 65%, 65%); }
-      li:nth-child(3):before { color: hsl( 90, 60%, 60%); }
-      li:nth-child(4):before { color: hsl(180, 60%, 60%); }
-      li:nth-child(5):before { color: hsl(270, 60%, 60%); }
+    &.menu-quad
+      .nw { fill: hsl(000, 65%, 65%); }
+      .ne { fill: hsl(090, 60%, 60%); }
+      .se { fill: hsl(180, 60%, 60%); }
+      .sw { fill: hsl(270, 60%, 60%); }
 
 //menu icons
 .icon-colourcode:before { content: 'C'; padding-left: 1px; }
@@ -458,7 +416,7 @@ b
     &.count-8  .swatch { width: 11.87%; font-size: 0.75em; }
     &.count-9  .swatch { width: 10.55%; font-size: 0.55em; .edit-color { width: 12em;}}
     &.count-10 .swatch { width: 10.00%; font-size: 0.45em; &:last-child { display: none; } .edit-color { width: 14em;}}
-    .swatch:last-child { width:  5.00%; background-color: #333; color: #aaa; }
+    .swatch:last-child { width:  5.00%; background-color: #333; path { fill: #aaa; }}
 
     &.edit-active
       &.count-0  .swatch { width: 100.0%; }
@@ -484,8 +442,8 @@ b
       &.count-8  .swatch { width: 11.25%; }
       &.count-9  .swatch { width: 10.00%; }
       &.count-10 .swatch { width:  9.50%; &:last-child { display: none; }}
-      .swatch:last-child { width:  5.00%; background-color: #333; color: #aaa; }
-      .swatch:first-child {width:  5.00%; background-color: #333; color: #aaa; }
+      .swatch:last-child { width:  5.00%; background-color: #333; path { fill: #aaa; }}
+      .swatch:first-child {width:  5.00%; background-color: #333; path { fill: #aaa; }}
 
 .page-legal
   overflow auto

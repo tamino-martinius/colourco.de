@@ -4,7 +4,9 @@
       {{#if isSchemeMode}}
         <div class="swatch remove-scheme" data-index="0">
           <div class="pos-c">
-            <div class="hint--top" data-hint="remove swatch"><span class="icon-minus"></span></div>
+            <div class="hint--top" data-hint="remove swatch">
+              {{> svg_minus}}
+            </div>
           </div>
         </div>
       {{/if}}
@@ -153,7 +155,9 @@
       {{#if isSchemeMode}}
         <div class="swatch add-scheme">
           <div class="pos-c">
-            <div class="hint--left" data-hint="add new swatch"><span class="icon-plus"></span></div>
+            <div class="hint--left" data-hint="add new swatch">
+              {{> svg_plus}}
+            </div>
           </div>
         </div>
       {{else}}
@@ -175,7 +179,9 @@
           {{else}}
           <div class="swatch add">
             <div class="pos-c">
-              <div class="hint--left" data-hint="add new swatch"><span class="icon-plus"></span></div>
+              <div class="hint--left" data-hint="add new swatch">
+               {{> svg_plus}}
+              </div>
             </div>
           </div>
         {{/if}}
