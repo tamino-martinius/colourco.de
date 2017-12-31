@@ -12,7 +12,7 @@
     "create-bucket": "aws s3 mb s3://$npm_package_config_awsBucketName --region $npm_package_config_awsRegion --profile $npm_package_config_awsProfile",
     "delete-bucket": "aws s3 rb s3://$npm_package_config_awsBucketName --region $npm_package_config_awsRegion --force --profile $npm_package_config_awsProfile",
     "upload": "aws s3 cp ./dist s3://$npm_package_config_awsBucketName --recursive --acl public-read --region $npm_package_config_awsRegion --profile $npm_package_config_awsProfile",
-    "deploy": "npm run build && npm run upload"
+    "deploy": "npm run build && npm run upload && rm -rf dist"
   },
   "dependencies": {
     "babel-runtime": "^6.26.0"
