@@ -93,7 +93,7 @@ b
     list-style none
     vertical-align -4px
     circle
-      display none
+      fill #fff2
   &.menu-none .svg-scheme circle
     display inherit
 
@@ -101,92 +101,92 @@ b
   &.menu-analogic
     .svg-scheme
       .w, .nw, .n, .ne, .e
-        display inherit
+        fill: #fff4
 
   &.menu-monochrome-dark .svg-scheme
     .w, .n, .ne, .e
-      display inherit
+      fill: #fff4
 
   &.menu-monochrome-light .svg-scheme
     .w, .nw, .n, .e
-      display inherit
+      fill: #fff4
 
   &.menu-analogic-complement
   &.menu-complement
     .svg-scheme
       .s, .nw, .n, .ne
-        display inherit
+        fill: #fff4
 
   &.menu-triad .svg-scheme
     .nw, .n, .ne, .sw, .se
-      display inherit
+      fill: #fff4
 
   &.menu-quad .svg-scheme
     .sw, .se, .nw, .ne
-      display inherit
+      fill: #fff4
 
   &:hover
   &.active
     &.menu-none
-      .n  { fill: hsl(000, 50%, 50%); }
-      .ne { fill: hsl(045, 50%, 50%); }
-      .e  { fill: hsl(090, 50%, 50%); }
-      .se { fill: hsl(135, 50%, 50%); }
-      .s  { fill: hsl(180, 50%, 50%); }
-      .sw { fill: hsl(225, 50%, 50%); }
-      .w  { fill: hsl(270, 50%, 50%); }
-      .nw { fill: hsl(315, 50%, 50%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(045, 75%, 50%); }
+      .e  { fill: hsl(090, 75%, 50%); }
+      .se { fill: hsl(135, 75%, 50%); }
+      .s  { fill: hsl(180, 75%, 50%); }
+      .sw { fill: hsl(225, 75%, 50%); }
+      .w  { fill: hsl(270, 75%, 50%); }
+      .nw { fill: hsl(315, 75%, 50%); }
 
     &.menu-monochrome
-      .w  { fill: hsl(0, 40%, 40%); }
-      .nw { fill: hsl(0, 45%, 45%); }
-      .n  { fill: hsl(0, 50%, 50%); }
-      .ne { fill: hsl(0, 55%, 55%); }
-      .e  { fill: hsl(0, 60%, 60%); }
+      .w  { fill: hsl(0, 85%, 40%); }
+      .nw { fill: hsl(0, 80%, 45%); }
+      .n  { fill: hsl(0, 75%, 50%); }
+      .ne { fill: hsl(0, 70%, 55%); }
+      .e  { fill: hsl(0, 65%, 60%); }
 
     &.menu-monochrome-dark
       .w  { fill: hsl(0,  0%, 35%); }
-      .n  { fill: hsl(0, 50%, 50%); }
-      .ne { fill: hsl(0, 55%, 55%); }
-      .e  { fill: hsl(0, 60%, 60%); }
+      .n  { fill: hsl(0, 70%, 50%); }
+      .ne { fill: hsl(0, 75%, 65%); }
+      .e  { fill: hsl(0, 80%, 80%); }
 
     &.menu-monochrome-light
-      .w  { fill: hsl(0, 40%, 40%); }
-      .nw { fill: hsl(0, 45%, 45%); }
-      .n  { fill: hsl(0, 50%, 50%); }
-      .e  { fill: hsl(0,  0%, 65%); }
+      .w  { fill: hsl(0, 70%, 35%); }
+      .nw { fill: hsl(0, 75%, 50%); }
+      .n  { fill: hsl(0, 80%, 65%); }
+      .e  { fill: hsl(0,  0%, 80%); }
 
     &.menu-analogic
-      .w  { fill: hsl(240, 40%, 40%); }
-      .nw { fill: hsl(300, 45%, 45%); }
-      .n  { fill: hsl(000, 50%, 50%); }
-      .ne { fill: hsl(060, 55%, 55%); }
-      .e  { fill: hsl(120, 60%, 60%); }
+      .w  { fill: hsl(240, 65%, 40%); }
+      .nw { fill: hsl(300, 70%, 45%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(060, 80%, 55%); }
+      .e  { fill: hsl(120, 85%, 60%); }
 
     &.menu-analogic-complement
-      .nw { fill: hsl(300, 45%, 45%); }
-      .n  { fill: hsl(000, 50%, 50%); }
-      .ne { fill: hsl(060, 55%, 55%); }
-      .s  { fill: hsl(180, 60%, 60%); }
+      .nw { fill: hsl(300, 70%, 45%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(060, 80%, 55%); }
+      .s  { fill: hsl(180, 75%, 50%); }
 
     &.menu-complement
-      .nw { fill: hsl(000, 35%, 35%); }
-      .n  { fill: hsl(000, 50%, 50%); }
-      .ne { fill: hsl(000, 65%, 65%); }
-      .s  { fill: hsl(180, 60%, 60%); }
+      .nw { fill: hsl(000, 70%, 45%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(000, 80%, 55%); }
+      .s  { fill: hsl(180, 75%, 50%); }
 
     &.menu-triad
-      .nw { fill: hsl(000, 35%, 35%); }
-      .n  { fill: hsl(000, 50%, 50%); }
-      .ne { fill: hsl(000, 65%, 65%); }
-      .sw { fill: hsl(120, 60%, 60%); }
-      .se { fill: hsl(240, 60%, 60%); }
+      .nw { fill: hsl(000, 70%, 45%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(000, 80%, 55%); }
+      .sw { fill: hsl(120, 75%, 50%); }
+      .se { fill: hsl(240, 75%, 50%); }
 
     &.menu-quad
-      .nw { fill: hsl(000, 65%, 65%); }
-      .ne { fill: hsl(090, 60%, 60%); }
-      .se { fill: hsl(180, 60%, 60%); }
-      .sw { fill: hsl(270, 60%, 60%); }
+      .nw { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(090, 75%, 50%); }
+      .se { fill: hsl(180, 75%, 50%); }
+      .sw { fill: hsl(270, 75%, 50%); }
 
 //menu icons
 .icon-colourcode:before { content: 'C'; padding-left: 1px; }
