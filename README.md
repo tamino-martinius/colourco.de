@@ -1,12 +1,23 @@
-colourco.de
-===========
+# colourco.de
 
 Pick colours based on hsl. Scheme-mode with monochromatic, analogic, complement, triad and quad colours.
 
+## How to build
 
-Requirements
-============
+Intall Meteor
 
-- [Meteor](http://meteor.com/)
-- [NodeJs](http://nodejs.org/)
-- [MongoDB](http://mongodb.org/)
+```sh
+curl https://install.meteor.com/ | sh
+```
+
+Intall Dependencies
+
+```sh
+meteor npm install
+```
+
+Start Meteor
+
+```sh
+meteor
+```
