@@ -15,55 +15,6 @@
             color: {{colorFore .}}
           ">
             {{#unless isLifted $index}}
-              {{#if isSchemeMode}}
-                {{#unless editActive}}
-                  <div class="pos-t">
-                    <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setSassExport(this);">
-                      <div class="hint--bottom" data-hint="download color as .scss">
-                        <span class="icon-sass" style="font-size: 1.6em;">$</span>
-                      </div>
-                    </a>
-                    <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setLessExport(this);">
-                      <div class="hint--bottom" data-hint="download color as .less">
-                        <span class="icon-less"></span>
-                      </div>
-                    </a>
-                    <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setPngExport(this);">
-                      <div class="hint--bottom" data-hint="download color as .png">
-                        <span class="icon-image"></span>
-                      </div>
-                    </a>
-                    <a target="_blank" href="{{linkPerma .}}">
-                      <div class="hint--bottom" data-hint="permalink to color">
-                        <span class="icon-link"></span>
-                      </div>
-                    </a>
-                  </div>
-                {{/unless}}
-              {{else}}
-                <div class="pos-t">
-                  <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setSassExport(this);">
-                    <div class="hint--bottom" data-hint="download color as .scss">
-                      <span class="icon-sass" style="font-size: 1.6em;">$</span>
-                    </div>
-                  </a>
-                  <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setLessExport(this);">
-                    <div class="hint--bottom" data-hint="download color as .less">
-                      <span class="icon-less"></span>
-                    </div>
-                  </a>
-                  <a target="_blank" data-colors="{{getColor . "hex"}}" href="#" onclick="setPngExport(this);">
-                    <div class="hint--bottom" data-hint="download color as .png">
-                      <span class="icon-image"></span>
-                    </div>
-                  </a>
-                  <a target="_blank" href="{{linkPerma .}}">
-                    <div class="hint--bottom" data-hint="permalink to color">
-                      <span class="icon-link"></span>
-                    </div>
-                  </a>
-                </div>
-              {{/if}}
               <div class="pos-c">{{getColorTag . displayColorType}}<br/><br/>
                 {{#if isSchemeMode}}
                   {{#unless editActive}}
