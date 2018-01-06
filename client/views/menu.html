@@ -77,27 +77,27 @@
   </div>
   <hr  class="menu-item"/>
   <div class="menu-item menu-static menu-save">
-    <div class="hint--top" data-hint="save scheme">
+    <div>
       {{> svg_download}}
     </div>
     <span>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setSassExport(this);">
-        <div class="hint--top" data-hint="download scheme as .scss">
+        <div>
           <span class="icon-sass pointer" style="font-size: 1.5em; color: #AAA;">$</span>
         </div>
       </a>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setLessExport(this);">
-        <div class="hint--top" data-hint="download scheme as .less">
+        <div>
           <span class="icon-less pointer"></span>
         </div>
       </a>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setPngExport(this);">
-        <div class="hint--top" data-hint="download scheme as .png">
+        <div>
           <span class="icon-image pointer"></span>
         </div>
       </a>
       <a target="_blank" href="{{linkPerma}}">
-        <div class="hint--top" data-hint="permalink to scheme">
+        <div>
           <span class="icon-link pointer"></span>
         </div>
       </a>
@@ -105,9 +105,9 @@
   </div>
   <hr  class="menu-item"/>
   <div class="{{menuClass 'menu-item' "menu-submenu"}} menu-submenu">
-    <div class="hint--top" data-hint="submenu"><div class="icon-menu"></div></div>
+    <div class="icon-menu"></div>
     <span>
-      <div class="hint--top" data-hint="help &amp; controls">
+      <div>
         <span
           class="icon-help pointer"
           data-page="2"
@@ -115,66 +115,58 @@
         ></span>
       </div>
       <a target="_blank" href="https://github.com/Zaku-eu/colourco.de">
-        <div class="hint--top" data-hint="view source on github">
+        <div>
           <span class="icon-git pointer"></span>
         </div>
       </a>
       <a target="_blank" href="https://github.com/Zaku-eu/colourco.de/issues?state=open">
-        <div class="hint--top" data-hint="file bugs &amp; request features">
+        <div>
           <span class="icon-bugs pointer"></span>
         </div>
       </a>
       <a href="mailto:dev@zaku.eu">
-        <div class="hint--top" data-hint="contact via mail">
+        <div>
           <span class="icon-mail pointer"></span>
         </div>
       </a>
-      <div class="hint--top" data-hint="legal"><span
+      <span
         class="icon-legal pointer"
         data-page="3"
         data-page-name="menu-submenu"
-      ></span></div>
+      ></span>
     </span>
   </div>
   <hr  class="menu-item"/>
   <div class="menu-item menu-links">
-    <div class="hint--top" data-hint="Links to the authors"><div class="icon-author"></div></div>
+    <div class="icon-author"></div>
     <span>
       <table>
         <tr>
           <td>Tamino Martinius</td>
           <td>
-            <div class="hint--top" data-hint="@TaminoMartinius on Twitter">
+            <div>
               <a target="_blank" href="https://twitter.com/TaminoMartinius" class="icon-twitter"></a>
             </div>
           </td>
           <td>
-            <div class="hint--top" data-hint="Homepage of Tamino Martinius">
+            <div>
               <a target="_blank" href="http://zaku.eu" class="icon-web"></a>
             </div>
           </td>
           <td>
-            <div class="hint--top" data-hint="Tamino Martinius on Codepen">
-              <a target="_blank" href="http://codepen.io/Zaku/" class="icon-codepen"></a>
-            </div>
+            <a target="_blank" href="http://codepen.io/Zaku/" class="icon-codepen"></a>
           </td>
         </tr>
         <tr>
           <td>Andreas Storm</td>
           <td>
-            <div class="hint--top" data-hint="@st8rmi on Twitter">
-              <a target="_blank" href="https://twitter.com/st8rmi" class="icon-twitter"></a>
-            </div>
+            <a target="_blank" href="https://twitter.com/st8rmi" class="icon-twitter"></a>
           </td>
           <td>
-            <div class="hint--top" data-hint="Homepage of Andreas Storm">
-              <a target="_blank" href="http://andreasstorm.com/" class="icon-web"></a>
-            </div>
+            <a target="_blank" href="http://andreasstorm.com/" class="icon-web"></a>
           </td>
           <td>
-            <div class="hint--top" data-hint="Andreas Storm on Dribbble">
-              <a target="_blank" href="http://dribbble.com/andreasstorm" class="icon-dribbble"></a>
-            </div>
+            <a target="_blank" href="http://dribbble.com/andreasstorm" class="icon-dribbble"></a>
           </td>
         </tr>
       </table>

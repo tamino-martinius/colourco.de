@@ -4,9 +4,7 @@
       {{#if isSchemeMode}}
         <div class="swatch remove-scheme" data-index="0">
           <div class="pos-c">
-            <div class="hint--top" data-hint="remove swatch">
-              {{> svg_minus}}
-            </div>
+            {{> svg_minus}}
           </div>
         </div>
       {{/if}}
@@ -70,16 +68,16 @@
                 {{#if isSchemeMode}}
                   {{#unless editActive}}
                     {{#if isCenter $index}}
-                      <div class="hint--top" data-hint="unlock scheme"><span class="icon-lock"></span></div>
+                      <span class="icon-lock"></span>
                     {{/if}}
                   {{/unless}}
                 {{else}}
                   {{#unless $first}}
-                    <div class="hint--top" data-hint="switch with left swatch"><span class="icon-left"></span></div>
+                    <span class="icon-left"></span>
                   {{/unless}}
-                  <div class="hint--top" data-hint="remove swatch"><span class="icon-trash{{#if $first}} no-first{{/if}}{{#if $last}} no-last{{/if}}"></span></div>
+                  <span class="icon-trash{{#if $first}} no-first{{/if}}{{#if $last}} no-last{{/if}}"></span>
                   {{#unless $last}}
-                    <div class="hint--top" data-hint="switch with right swatch"><span class="icon-right"></span></div>
+                    <span class="icon-right"></span>
                   {{/unless}}
                 {{/if}}
               </div>
@@ -87,18 +85,18 @@
                 {{#if isCenter $index}}
                   {{#unless editActive}}
                     <div class="pos-b">
-                      <div class="hint--top" data-hint="show edit/details"><span class="icon-up"></span></div>
+                      <span class="icon-up"></span>
                     </div>
                   {{/unless}}
                 {{/if}}
               {{else}}
                 <div class="pos-b">
-                  <div class="hint--top" data-hint="show edit/details"><span class="icon-up"></span></div>
+                  <span class="icon-up"></span>
                 </div>
               {{/if}}
             {{else}}
               <div class="pos-b">
-                <div class="hint--top" data-hint="close details"><span class="icon-down"></span></div>
+                <span class="icon-down"></span>
               </div>
             {{/unless}}
           </div>
@@ -119,8 +117,6 @@
                   {{editColor "hsv"  currentColor}}
                   {{editColor "cmy"  currentColor}}
                   {{editColor "cmyk" currentColor}}
-                  {{editColor "XYZ"  currentColor}}
-                  {{editColor "Yxy"  currentColor}}
                 </div>
                 <div class="pos-c">
                   {{colorSlider}}
@@ -141,8 +137,6 @@
                   {{editColor "hsv"  .}}
                   {{editColor "cmy"  .}}
                   {{editColor "cmyk" .}}
-                  {{editColor "XYZ"  .}}
-                  {{editColor "Yxy"  .}}
                 </div>
                 <div class="pos-c">
                   {{colorSlider}}
@@ -155,9 +149,7 @@
       {{#if isSchemeMode}}
         <div class="swatch add-scheme">
           <div class="pos-c">
-            <div class="hint--left" data-hint="add new swatch">
-              {{> svg_plus}}
-            </div>
+            {{> svg_plus}}
           </div>
         </div>
       {{else}}
@@ -179,9 +171,7 @@
           {{else}}
           <div class="swatch add">
             <div class="pos-c">
-              <div class="hint--left" data-hint="add new swatch">
-               {{> svg_plus}}
-              </div>
+              {{> svg_plus}}
             </div>
           </div>
         {{/if}}
