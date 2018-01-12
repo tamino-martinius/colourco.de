@@ -1,5 +1,12 @@
 ﻿@import 'nib';
 
+/************
+* Variables *
+************/
+
+--menu-back-color: #242424;
+--menu-fore-color: #fff;
+
 /*************
 * Animations *
 *************/
@@ -53,6 +60,12 @@ table {
   td {
     padding: 0;
   }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -429,9 +442,8 @@ svg {
 * Menu *
 *******/
 .menu
-  background-color #222
-  color #aaa
-  vertical-align top
+  background-color: var(--menu-back-color);
+  color: var(--menu-fore-color);
   transition width 0.5s
   overflow hidden
   width 3vh
