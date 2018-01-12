@@ -180,18 +180,27 @@ a {
   background-color: var(--menu-back-color);
   color: var(--menu-fore-color);
   overflow: hidden;
-  width: 3vh;
-  font-size: 2vh;
+  width: 5vh;
+  font-size: 1.7vh;
   line-height: 3vh;
   vertical-align: top;
+  padding-top: 2vh;
+
+  div, a {
+    white-space: nowrap ;
+  }
+
+  .link {
+    cursor: pointer;
+  }
 
   a {
     color: var(--menu-fore-color);
   }
 
   svg {
-    width: 2vh;
-    padding-left: 0.5vh;
+    width: 2.6vh;
+    padding-left: 1.2vh;
   }
 
   path {
@@ -203,8 +212,8 @@ a {
   }
 
   div, ul ul {
+    padding-left: 1vh;
     display: inline-block;
-    white-space: nowrap;
     transition: width 0.5s;
     width: 0;
     overflow: hidden;
@@ -212,14 +221,20 @@ a {
 
   &:hover {
     div, ul ul {
-      width: 28vh;
+      width: 22vh;
     }
   }
 
   .svg-scheme
+  .svg-download {
+    vertical-align: 8vh;
+  }
+
+  .svg-scheme {
     list-style none
     circle
       fill #fff2
+  }
 
   .menu-none .svg-scheme circle
     display inherit
