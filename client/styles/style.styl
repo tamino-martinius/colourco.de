@@ -4,8 +4,10 @@
 * Variables *
 ************/
 
---menu-back-color: #242424;
---menu-fore-color: #fff;
+:root {
+  --menu-back-color: #222;
+  --menu-fore-color: #ccc;
+}
 
 /*************
 * Animations *
@@ -77,6 +79,10 @@ body > table {
 
 svg {
   width: 2vw;
+}
+
+a {
+  text-decoration: none;
 }
 
 // code / schemes
@@ -444,99 +450,29 @@ svg {
 .menu
   background-color: var(--menu-back-color);
   color: var(--menu-fore-color);
-  transition width 0.5s
-  overflow hidden
-  width 3vh
+  overflow: hidden;
+  width: 3vh;
+  font-size: 2vh;
+  vertical-align: top;
 
-  svg
-    width 3vh
+  svg {
+    width: 3vh;
+  }
 
-  a
-    text-decoration none
+  li {
+    white-space: nowrap;
+  }
 
-  .menu-item
-    width 250px
-    opacity 0
-    transition opacity 0.5s
-    margin-left 6px
+  div, ul ul {
+    display: inline-block;
+    white-space: nowrap;
+    transition: width 0.5s;
+    width: 0;
+    overflow: hidden;
+  }
 
-    &.active
-      border-left-color hsl(0, 50%, 50%)
-
-    *[class*=icon]
-      font-size 16px
-      padding 2px 2px 2px 4px
-      width 24px
-      float left
-
-      &[class*=scheme]
-        font-size 20px
-        margin-left -3px
-
-      &:before, & *:before
-        color #aaa
-        text-shadow 1px 1px 1px rgba(0,0,0,0.1)
-
-    > span
-      position: absolute;
-      font-size 0.8em
-
-      input[type=text]
-        width 15px
-        font-size 8px
-        font-weight 400
-
-    &.menu-static
-      opacity 1
-      &:first-child > div
-        padding-top 10px
-        margin-left -0.15em
-        transition margin-left 0.5s ease-in-out
-        opacity 0.5
-        font-size 1.5em
-      &:first-child > span
-        transition margin-left 0.5s ease-in-out, opacity 0.5s ease-in-out
-        display inline-block
-        margin-left 4em
-        margin-top 0.4em
-        opacity 0
-      > span
-        transition opacity 0.5s
-        opacity 0
-
-    &.menu-convert
-      > span
-        vertical-align 6px
-
-    &.menu-saturation
-      > span
-        vertical-align 3px
-        > span
-          vertical-align 5px
-
-    &.menu-links
-      > div
-        float left
-      a
-        text-decoration none
-        width auto
-
-    &.menu-commercial
-      > div
-       float left
-      > div.ads
-        font-size 0.8em
-        width 160px
-        a
-          text-decoration none
-          color #aaa
-        .influads_powered_link
-          font-size 0.8em
-
-  &:hover
-    width 20vw
-    .menu-item
-      opacity 1
-      &:first-child > div  { margin-left: 1em; }
-      &:first-child > span { margin-left: 0em; opacity: 1; }
-      &.menu-static > span { opacity: 1; }
+  &:hover {
+    div, ul ul {
+      width: 20vw;
+    }
+  }
