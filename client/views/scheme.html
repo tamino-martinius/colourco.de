@@ -10,10 +10,13 @@
       {{/if}}
       {{#each colors}}
         <div class="swatch{{#if isLifted $index}} lifted{{/if}}" data-index="{{$index}}">
-          <div class="preview" style="
-            background-color: {{colorBack .}};
-            color: {{colorFore .}}
-          ">
+          <div
+            class="preview"
+            style="
+              --back-color: {{colorBack .}};
+              --fore-color: {{colorFore .}};
+            "
+          >
             {{#unless isLifted $index}}
               <div class="pos-c">{{getColorTag . displayColorType}}<br/><br/>
                 {{#if isSchemeMode}}
@@ -56,10 +59,7 @@
               <div
                 class="details"
                 data-index="{{$index}}"
-                style="
-                  background-color: #222;
-                  color: #aaa;
-                ">
+              >
                 <div class="pos-t">
                   scheme root color<br/><br/>
                   {{editColor "hex"  currentColor}}
@@ -77,10 +77,7 @@
               <div
                 class="details"
                 data-index="{{$index}}"
-                style="
-                  background-color: #222;
-                  color: #aaa;
-                ">
+              >
                 <div class="pos-t">
                   {{editColor "hex"  .}}
                   {{editColor "rgb"  .}}
@@ -106,17 +103,23 @@
       {{else}}
         {{#if editActive}}
           <div
-            class="swatch edit" style="
-              background-color: {{colorBack currentColor}};
-              color: {{colorFore currentColor}}"
+            class="swatch edit"
+            style="
+              --back-color: {{colorBack currentColor}};
+              --fore-color: {{colorFore currentColor}};
+            "
           >
             <div class="pos-c">
               {{getColorTag currentColor displayColorType}}
             </div>
             {{#each colors}}
-              <div class="icon-marker" style="
-              top:  {{markerTop .}};
-              left: {{markerLeft .}};"></div>
+              <div
+                class="marker"
+                style="
+                  top:  {{markerTop .}};
+                  left: {{markerLeft .}};
+                "
+              ></div>
             {{/each}}
           </div>
           {{else}}
