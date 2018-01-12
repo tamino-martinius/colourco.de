@@ -1,89 +1,70 @@
-﻿@import 'nib'
+﻿@import 'nib';
 
 /*************
 * Animations *
 *************/
-@keyframes rotateTopSideFirst
-  40%
-    transform rotateX(15deg)
-    opacity .8
-    animation-timing-function ease-out
-  100%
-    transform scale(0.8) translateZ(-200px)
-    opacity 0
+@keyframes rotateTopSideFirst {
+  40% {
+    transform: rotateX(15deg);
+    opacity: .8;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: scale(0.8) translateZ(-200px);
+    opacity: 0;
+  }
+}
 
-@keyframes moveFromTop
-  from
+@keyframes moveFromTop {
+  from {
     transform: translateY(-100%);
+  }
+}
 
-.page-rotateTopSideFirst
-  transform-origin 50% 100%
-  animation rotateTopSideFirst .8s both ease-in
+.page-rotateTopSideFirst {
+  transform-origin: 50% 100%;
+  animation: rotateTopSideFirst .8s both ease-in;
+}
 
-.page-moveFromTop
-  animation moveFromTop .6s ease both
+.page-moveFromTop {
+  animation: moveFromTop .6s ease both;
+}
 
-.page-delay200
-  animation-delay .2s
+.page-delay200 {
+  animation-delay: .2s;
+}
 
 /****************
 * Base elements *
 ****************/
-html
-body
-  height 100%
-  margin 0
-  padding 0
-  overflow hidden
-  font-family -apple-system, BlinkMacSystemFont, 'myriad-pro', sans-serif;
-  font-weight 400;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'myriad-pro', sans-serif;
+  font-weight: 400;
+}
 
-table
-  border-spacing 0
-  border-collapse collapse
-  tr
-  td
-    padding 0
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  tr,
+  td {
+    padding: 0;
+  }
+}
 
-html
-body
-body > table
-  height 100%
-  width 100%
+html,
+body,
+body > table {
+  height: 100vh;
+  width: 100vw;
+}
 
-b
-  font-weight 400
-
-/********
-* Icons *
-********/
-@font-face
-  font-family 'colourcode-icomoon'
-  src url('/css/fonts/icomoon.eot?20130621')
-  src:url('/css/fonts/icomoon.eot?20130621#iefix') format('embedded-opentype'),
-      url('/css/fonts/icomoon.woff?20130621') format('woff'),
-      url('/css/fonts/icomoon.ttf?20130621') format('truetype'),
-      url('/css/fonts/icomoon.svg?20130621#icomoon') format('svg');
-  font-weight normal
-  font-style normal
-
-*[class*=icon]
-  &
-  & * // TODO - Ugly and slow - needs to be specified
-    font-family 'colourcode-icomoon'
-    font-weight normal
-    font-style normal
-    height 1em
-
-*[class*=svg-]
-  width 16px
-  height 16px
-  fill #aaa
-  padding-left 2px
-  padding-right 6px
-
-.svg-logo
-  vertical-align 8px
+svg {
+  width: 2vw;
+}
 
 // code / schemes
 .menu-item
@@ -186,58 +167,26 @@ b
       .se { fill: hsl(180, 75%, 50%); }
       .sw { fill: hsl(270, 75%, 50%); }
 
-//menu icons
-.icon-colourcode:before { content: 'C'; padding-left: 1px; }
-.icon-convert:before    { content: 'y'; }
-.icon-save:before       { content: '_'; }
-.icon-menu:before       { content: 'R'; }
-.icon-link:before       { content: 'X'; }
-.icon-author:before     { content: 'z'; }
-.icon-social:before     { content: 'Y'; }
-.icon-saturation:before { content: 'B'; }
-.icon-less:before       { content: 'K'; }
-.icon-image:before      { content: 'E'; }
-.icon-image:before      { content: 'E'; }
-.icon-help:before       { content: '?'; }
-.icon-git:before        { content: 'G'; }
-.icon-bugs:before       { content: 'A'; }
-.icon-mail:before       { content: 'M'; }
-.icon-legal:before      { content: '§'; font-family: "open sans"; display: block; margin-top: -2px; }
-.icon-twitter:before    { content: 'T'; }
-.icon-web:before        { content: 'W'; }
-.icon-codepen:before    { content: 'H'; }
-.icon-dribbble:before   { content: 'D'; }
-.icon-commercial:before { content: 'Z'; }
-.icon-trash:before      { content: 'P'; }
-.icon-left:before       { content: '<'; }
-.icon-right:before      { content: '>'; }
-.icon-up:before         { content: '^'; }
-.icon-down:before       { content: 'V'; }
-.icon-plus:before       { content: '+'; }
-.icon-minus:before      { content: '-'; }
-.icon-lock:before       { content: 'L'; }
-.icon-marker:before     { content: '0'; }
-.icon-mouse-h:before    { content: 'y'; }
-.icon-mouse-v:before    { content: 'I'; }
-.icon-mouse-s:before    { content: 'O'; }
-.icon-mouse-clk:before  { content: '1'; }
-
 /***************
 * Base classes *
 ***************/
-.pull-left
-  float left
+.pull-left {
+  float: left;
+}
 
-.pull-right
-  float right
+.pull-right {
+  float: right;
+}
 
-.perspective
-  background-color #222
-  position relative
-  perspective 1200px
+.perspective {
+  background-color: #222;
+  position: relative;
+  perspective: 1200px;
+}
 
-.pointer
-  cursor pointer
+.pointer {
+  cursor: pointer;
+}
 
 /********
 * Pages *
@@ -485,7 +434,10 @@ b
   vertical-align top
   transition width 0.5s
   overflow hidden
-  width 34px
+  width 3vh
+
+  svg
+    width 3vh
 
   a
     text-decoration none
@@ -494,7 +446,6 @@ b
     width 250px
     opacity 0
     transition opacity 0.5s
-    position absolute
     margin-left 6px
 
     &.active
@@ -515,6 +466,7 @@ b
         text-shadow 1px 1px 1px rgba(0,0,0,0.1)
 
     > span
+      position: absolute;
       font-size 0.8em
 
       input[type=text]
@@ -569,35 +521,8 @@ b
         .influads_powered_link
           font-size 0.8em
 
-    &:nth-child(1)  { top:   0px; }
-    &:nth-child(2)  { top:  40px; }
-    &:nth-child(3)  { top:  65px; }
-    &:nth-child(4)  { top:  90px; }
-    &:nth-child(5)  { top: 115px; }
-    &:nth-child(6)  { top: 140px; }
-    &:nth-child(7)  { top: 165px; }
-    &:nth-child(8)  { top: 190px; }
-    &:nth-child(9)  { top: 215px; }
-    &:nth-child(10) { top: 240px; }
-    &:nth-child(11) { top: 270px; }
-    &:nth-child(12) { top: 280px; }
-    &:nth-child(13) { top: 310px; }
-    &:nth-child(14) { top: 320px; }
-    &:nth-child(15) { top: 350px; }
-    &:nth-child(16) { top: 360px; }
-    &:nth-child(17) { top: 415px; }
-    &:nth-child(18) { top: 427px; }
-    &:nth-child(19) { top: 578px; }
-    &:nth-child(20) { top: 590px; }
-
-  hr.menu-item
-    border 0
-    border-bottom 1px solid #000
-    width 215px
-    margin 0
-
   &:hover
-    width 215px
+    width 20vw
     .menu-item
       opacity 1
       &:first-child > div  { margin-left: 1em; }
