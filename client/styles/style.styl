@@ -373,3 +373,48 @@ a {
   }
 }
 
+/***********
+* Swatches *
+***********/
+
+.swatches {
+  display: flex;
+  height: 100vh;
+
+  .swatch {
+    color: var(--fore-color);
+    background-color: var(--back-color);
+    width: 100%;
+    position: relative;
+    font-size: 2vw;
+
+    path {
+      fill: var(--fore-color);
+    }
+
+    .pos-l,
+    .pos-r,
+    .pos-t,
+    .pos-b,
+    .pos-c {
+      position: absolute;
+      top: 55vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .pos-c { top: calc(50vh - 3vw); }
+    .pos-b { top: 95vh; }
+    .pos-l { left: 30%; }
+    .pos-r { left: 70%; }
+
+    .marker {
+      position: absolute;
+      background-color: var(--fore-color);
+      width: 1vw;
+      height: 1vw;
+      border-radius: 9999px;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
