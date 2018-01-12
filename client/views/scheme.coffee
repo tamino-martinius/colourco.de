@@ -179,7 +179,7 @@ Template.scheme.events
     Session.set "liftedColorIndex", null
     converter.scheme.generate Session.get("schemeMode")
     return false
-  "click .svg-trash": (e) ->
+  "click .pos-t": (e) ->
     $swatch = $(e.srcElement or e.target)
     while not $swatch.hasClass "swatch"
       $swatch = $swatch.parent()
@@ -189,7 +189,7 @@ Template.scheme.events
     Session.set "editActive", true if colors.length is 0
     Session.set "colors", colors
     Session.set "liftedColorIndex", null
-  "click .svg-left": (e) ->
+  "click .pos-l": (e) ->
     $swatch = $(e.srcElement or e.target)
     while not $swatch.hasClass "swatch"
       $swatch = $swatch.parent()
@@ -199,7 +199,7 @@ Template.scheme.events
     colors.splice index - 1, 0, color[0]
     Session.set "colors", colors
     Session.set "liftedColorIndex", null
-  "click .svg-right": (e) ->
+  "click .pos-r": (e) ->
     $swatch = $(e.srcElement or e.target)
     while not $swatch.hasClass "swatch"
       $swatch = $swatch.parent()
@@ -209,13 +209,13 @@ Template.scheme.events
     colors.splice index + 1, 0, color[0]
     Session.set "colors", colors
     Session.set "liftedColorIndex", null
-  "click .swatch:not(.lifted) .svg-toggles": (e) ->
+  "click .swatch:not(.lifted) .pos-b": (e) ->
     $swatch = $(e.srcElement or e.target)
     while not $swatch.hasClass "swatch"
       $swatch = $swatch.parent()
     index = $swatch.attr("data-index") * 1
     Session.set "liftedColorIndex", index
-  "click .swatch.lifted .svg-toggles": (e) ->
+  "click .swatch.lifted .pos-b": (e) ->
     Session.set "liftedColorIndex", null
   "click span[data-type]": (e) ->
     $span = $(e.srcElement or e.target)
