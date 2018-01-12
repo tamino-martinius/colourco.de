@@ -1,110 +1,126 @@
 <template name="menu">
-  <div class="menu-item menu-static menu-logo">
-    {{> svg_logo}}
-    <span>ColourCode</span>
-  </div>
-  <div
-    class="{{menuClass "menu-item menu-static pointer menu-none" "menu-none"}}"
-    data-page="1"
-    data-page-name="menu-none"
-  >
-    {{> svg_scheme}}
-    <span>free build</span>
-  </div>
-  <div
-    class="{{menuClass 'menu-item menu-static pointer menu-monochrome' "menu-monochrome"}}"
-    data-page="1"
-    data-page-name="menu-monochrome"
-  >
-    {{> svg_scheme}}
-    <span>monochrome</span>
-  </div>
-  <div
-    class="{{menuClass 'menu-item menu-static pointer' "menu-monochrome-dark"}} menu-monochrome-dark"
-    data-page="1"
-    data-page-name="menu-monochrome-dark"
-  >
-    {{> svg_scheme}}
-    <span>monochrome &amp; dark gray</span>
-  </div>
-  <div
-    class="{{menuClass 'menu-item menu-static pointer' "menu-monochrome-light"}} menu-monochrome-light"
-    data-page="1"
-    data-page-name="menu-monochrome-light"
-  >
-    {{> svg_scheme}}
-    <span>monochrome &amp; light gray</span>
-  </div>
-  <div
-    class="{{menuClass 'menu-item menu-static pointer' "menu-analogic"}} menu-analogic"
-    data-page="1"
-    data-page-name="menu-analogic"
-  >
-    {{> svg_scheme}}
-    <span>analogic</span>
-  </div>
-  <div
-    class="{{menuClass 'menu-item menu-static pointer' "menu-analogic-complement"}} menu-analogic-complement"
-    data-page="1"
-    data-page-name="menu-analogic-complement"
-  >
-    {{> svg_scheme}}
-    <span>analogic &amp; complement</span>
-  </div>
-  <div
-    class="{{menuClass 'menu-item menu-static pointer' "menu-complement"}} menu-complement"
-    data-page="1"
-    data-page-name="menu-complement"
-  >
-    {{> svg_scheme}}
-    <span>complement</span>
-  </div>
-  <div
-    class="{{menuClass 'menu-item menu-static pointer' "menu-triad"}} menu-triad"
-    data-page="1"
-    data-page-name="menu-triad"
-  >
-    {{> svg_scheme}}
-    <span>triad</span>
-  </div>
-  <div
-    class="{{menuClass 'menu-item menu-static pointer' "menu-quad"}} menu-quad"
-    data-page="1"
-    data-page-name="menu-quad"
-  >
-    {{> svg_scheme}}
-    <span>quad</span>
-  </div>
+  <ul>
+    <li>
+     {{> svg_logo}}
+      <span>ColourCode</span>
+    </li>
 
-  <div
-    class="{{menuClass 'menu-item menu-static pointer' " menu-help "}} menu-help" data-page="2" data-page-name="menu-help">
-    {{> svg_gear}}
-    <span>Controls</span>
-  </div>
+    <li
+     class="{{menuClass 'link menu-none' 'menu-none'}}"
+     data-page="1"
+     data-page-name="menu-none"
+    >
+     {{> svg_scheme}}
+      <span>Free Build</span>
+    </li>
+    <li
+      class="{{menuClass 'link menu-monochrome' 'menu-monochrome'}}"
+      data-page="1"
+      data-page-name="menu-monochrome"
+    >
+      {{> svg_scheme}}
+      <span>Monochrome</span>
+    </li>
+    <li
+      class="{{menuClass 'link' 'menu-monochrome-dark'}} menu-monochrome-dark"
+      data-page="1"
+      data-page-name="menu-monochrome-dark"
+    >
+      {{> svg_scheme}}
+      <span>Monochrome &amp; Dark Gray</span>
+    </li>
+    <li
+      class="{{menuClass 'link' 'menu-monochrome-light'}} menu-monochrome-light"
+      data-page="1"
+      data-page-name="menu-monochrome-light"
+    >
+      {{> svg_scheme}}
+      <span>Monochrome &amp; Light Gray</span>
+    </li>
+    <li
+      class="{{menuClass 'link' 'menu-analogic'}} menu-analogic"
+      data-page="1"
+      data-page-name="menu-analogic"
+    >
+      {{> svg_scheme}}
+      <span>Analogic</span>
+    </li>
+    <li
+      class="{{menuClass 'link' 'menu-analogic-complement'}} menu-analogic-complement"
+      data-page="1"
+      data-page-name="menu-analogic-complement"
+    >
+      {{> svg_scheme}}
+      <span>Analogic &amp; Complement</span>
+    </li>
+    <li
+      class="{{menuClass 'link' 'menu-triad'}} menu-triad"
+      data-page="1"
+      data-page-name="menu-triad"
+    >
+      {{> svg_scheme}}
+      <span>triad</span>
+    </li>
+    <li
+      class="{{menuClass 'link' "menu-quad"}} menu-quad"
+      data-page="1"
+      data-page-name="menu-quad"
+    >
+      {{> svg_scheme}}
+      <span>quad</span>
+    </li>
 
-  <div class="menu-item menu-static menu-save">
-    <div>
+    <li
+      class="{{menuClass 'link' " menu-help "}} menu-help"
+      data-page="2"
+      data-page-name="menu-help"
+    >
+      {{> svg_gear}}
+      <span>Controls</span>
+    </li>
+
+    <li>
       {{> svg_download}}
-    </div>
-    <span>
-      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setSassExport(this);">
-        .sass
-      </a>
-      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setLessExport(this);">
-        .less
-      </a>
-      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setPngExport(this);">
-        Image (Color Palette)
-      </a>
-      <a target="_blank" href="{{linkPerma}}">
-        Permalink
-      </a>
-    </span>
-  </div>
+      <ul>
+        <li>
+          <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setSassExport(this);">
+            .sass
+          </a>
+        </li>
+        <li>
+          <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setLessExport(this);">
+            .less
+          </a>
+        </li>
+        <li>
+          <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setPngExport(this);">
+            Image (Color Palette)
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="{{linkPerma}}">
+            Permalink
+          </a>
+        </li>
+      </ul>
+    </li>
 
-  <div class="{{menuClass 'menu-item' "menu-nextcode"}} menu-nextcode">
-    <div>
+    <li class="{{menuClass 'link' 'menu-nextcode'}} menu-nextcode">
       {{> svg_logo}}
+    </li>
+  </ul>
+
+  <li class="{{menuClass 'link' 'menu-nextcode'}} menu-nextcode">
+    {{> svg_logo}}
+    <ul>
+      <li
+        class="icon-legal pointer"
+        data-page="3"
+        data-page-name="menu-nextcode"
+      >
+        
+      </li>
+    </ul>
     </div>
     <span>
       <span
@@ -113,5 +129,5 @@
         data-page-name="menu-nextcode"
       ></span>
     </span>
-  </div>
+  </li>
 </template>
