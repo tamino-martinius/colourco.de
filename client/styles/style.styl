@@ -8,6 +8,10 @@
   --menu-back-color: #222;
   --menu-fore-color: #ccc;
   --menu-fore-color-active: #fff;
+
+  --icon-dark: #fff2;
+  --icon-light: #fff4;
+  --icon-active: #fff8;
 }
 
 /*************
@@ -177,10 +181,6 @@ a {
 * Menu *
 *******/
 .menu {
-  --icon-dark: #fff2;
-  --icon-light: #fff4;
-  --icon-active: #fff8;
-
   background-color: var(--menu-back-color);
   color: var(--menu-fore-color);
   overflow: hidden;
@@ -382,14 +382,34 @@ a {
   height: 100vh;
 
   .swatch {
+    flex: auto;
     color: var(--fore-color);
     background-color: var(--back-color);
-    width: 100%;
     position: relative;
     font-size: 1.5vw;
 
+    &.add,
+    &.add-scheme,
+    &.remove-scheme {
+      cursor: pointer;
+      flex: 0 0 5vw;
+
+      &:hover {
+        path {
+          fill: var(--icon-active);
+        }
+      }
+    }
+
     path {
       fill: var(--fore-color);
+    }
+
+    .svg-plus,
+    .svg-minus {
+      path {
+        fill: var(--icon-light);
+      }
     }
 
     .pos-l,
