@@ -7,12 +7,11 @@ Session.setDefault "displayColorType", "hex"
 Session.setDefault "liftedColorIndex", null
 
 Meteor.startup () ->
-  Meteor._reload.onMigrate () ->
-    return true
-    # if confirm("The application has been updated!\nPress OK to restart the application.\n(The current status will maybe lost)")
-    #   [true]
-    # else
-    #   false
+  # Meteor._reload.onMigrate () ->
+  #   if confirm("The application has been updated!\nPress OK to restart the application.\n(The current status will maybe lost)")
+  #     [true]
+  #   else
+  #     false
   path = window.location.pathname
   pathParts = path.split "/"
   if pathParts.length is 3 and pathParts[1] is "none"
