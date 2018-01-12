@@ -9,48 +9,59 @@
         </div>
       {{/if}}
       {{#each colors}}
-        <div class="swatch{{#if isLifted $index}} lifted{{/if}}" data-index="{{$index}}">
+        <div
+          style="
+            --back-color: {{colorBack .}};
+            --fore-color: {{colorFore .}};
+          "
+          class="swatch{{#if isLifted $index}} lifted{{/if}}"
+          data-index="{{$index}}"
+        >
           <div
             class="preview"
-            style="
-              --back-color: {{colorBack .}};
-              --fore-color: {{colorFore .}};
-            "
           >
             {{#unless isLifted $index}}
-              <div class="pos-c">{{getColorTag . displayColorType}}<br/><br/>
-                {{#if isSchemeMode}}
-                  {{#unless editActive}}
-                    {{#if isCenter $index}}
-                      <span class="icon-lock"></span>
-                    {{/if}}
-                  {{/unless}}
-                {{else}}
-                  {{#unless $first}}
-                    <span class="icon-left"></span>
-                  {{/unless}}
-                  <span class="icon-trash{{#if $first}} no-first{{/if}}{{#if $last}} no-last{{/if}}"></span>
-                  {{#unless $last}}
-                    <span class="icon-right"></span>
-                  {{/unless}}
-                {{/if}}
-              </div>
+              {{#if isSchemeMode}}
+                <div class="pos-c">
+                  {{getColorTag . displayColorType}}
+                </div>
+              {{else}}
+                {{#unless $first}}
+                  <div class="pos-l">
+                    {{> svg_left}}
+                  </div>
+                {{/unless}}
+                <div class="pos-c">
+                  {{getColorTag . displayColorType}}
+                </div>
+                <div class="pos-t">
+                  {{> svg_trash}}
+                </div>
+                {{#unless $last}}
+                  <div class="pos-r">
+                    {{> svg_right}}
+                  </div>
+                {{/unless}}
+              {{/if}}
               {{#if isSchemeMode}}
                 {{#if isCenter $index}}
                   {{#unless editActive}}
                     <div class="pos-b">
-                      <span class="icon-up"></span>
+                      {{> svg_toggles}}
+                    </div>
+                    <div class="pos-t">
+                      {{> svg_trash}}
                     </div>
                   {{/unless}}
                 {{/if}}
               {{else}}
                 <div class="pos-b">
-                  <span class="icon-up"></span>
+                  {{> svg_toggles}}
                 </div>
               {{/if}}
             {{else}}
               <div class="pos-b">
-                <span class="icon-down"></span>
+                {{> svg_toggles}}
               </div>
             {{/unless}}
           </div>
