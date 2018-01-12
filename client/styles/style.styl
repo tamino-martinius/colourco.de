@@ -401,6 +401,23 @@ a {
       top: 55vh;
       left: 50%;
       transform: translate(-50%, -50%);
+      padding: 0.5vw;
+    }
+
+    .pos-l,
+    .pos-r,
+    .pos-t,
+    .pos-b {
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--fore-color);
+        border-radius: 9999px;
+
+        path {
+          fill: var(--back-color);
+        }
+      }
     }
 
     .pos-c { top: calc(50vh - 3vw); }
