@@ -85,107 +85,6 @@ a {
   text-decoration: none;
 }
 
-// code / schemes
-.menu-item
-  .svg-scheme
-    list-style none
-    vertical-align -4px
-    circle
-      fill #fff2
-  &.menu-none .svg-scheme circle
-    display inherit
-
-  &.menu-monochrome
-  &.menu-analogic
-    .svg-scheme
-      .w, .nw, .n, .ne, .e
-        fill: #fff4
-
-  &.menu-monochrome-dark .svg-scheme
-    .w, .n, .ne, .e
-      fill: #fff4
-
-  &.menu-monochrome-light .svg-scheme
-    .w, .nw, .n, .e
-      fill: #fff4
-
-  &.menu-analogic-complement
-  &.menu-complement
-    .svg-scheme
-      .s, .nw, .n, .ne
-        fill: #fff4
-
-  &.menu-triad .svg-scheme
-    .nw, .n, .ne, .sw, .se
-      fill: #fff4
-
-  &.menu-quad .svg-scheme
-    .sw, .se, .nw, .ne
-      fill: #fff4
-
-  &:hover
-  &.active
-    &.menu-none
-      .n  { fill: hsl(000, 75%, 50%); }
-      .ne { fill: hsl(045, 75%, 50%); }
-      .e  { fill: hsl(090, 75%, 50%); }
-      .se { fill: hsl(135, 75%, 50%); }
-      .s  { fill: hsl(180, 75%, 50%); }
-      .sw { fill: hsl(225, 75%, 50%); }
-      .w  { fill: hsl(270, 75%, 50%); }
-      .nw { fill: hsl(315, 75%, 50%); }
-
-    &.menu-monochrome
-      .w  { fill: hsl(0, 85%, 40%); }
-      .nw { fill: hsl(0, 80%, 45%); }
-      .n  { fill: hsl(0, 75%, 50%); }
-      .ne { fill: hsl(0, 70%, 55%); }
-      .e  { fill: hsl(0, 65%, 60%); }
-
-    &.menu-monochrome-dark
-      .w  { fill: hsl(0,  0%, 35%); }
-      .n  { fill: hsl(0, 70%, 50%); }
-      .ne { fill: hsl(0, 75%, 65%); }
-      .e  { fill: hsl(0, 80%, 80%); }
-
-    &.menu-monochrome-light
-      .w  { fill: hsl(0, 70%, 35%); }
-      .nw { fill: hsl(0, 75%, 50%); }
-      .n  { fill: hsl(0, 80%, 65%); }
-      .e  { fill: hsl(0,  0%, 80%); }
-
-    &.menu-analogic
-      .w  { fill: hsl(240, 65%, 40%); }
-      .nw { fill: hsl(300, 70%, 45%); }
-      .n  { fill: hsl(000, 75%, 50%); }
-      .ne { fill: hsl(060, 80%, 55%); }
-      .e  { fill: hsl(120, 85%, 60%); }
-
-    &.menu-analogic-complement
-      .nw { fill: hsl(300, 70%, 45%); }
-      .n  { fill: hsl(000, 75%, 50%); }
-      .ne { fill: hsl(060, 80%, 55%); }
-      .s  { fill: hsl(180, 75%, 50%); }
-
-    &.menu-complement
-      .nw { fill: hsl(000, 70%, 45%); }
-      .n  { fill: hsl(000, 75%, 50%); }
-      .ne { fill: hsl(000, 80%, 55%); }
-      .s  { fill: hsl(180, 75%, 50%); }
-
-    &.menu-triad
-      .nw { fill: hsl(000, 70%, 45%); }
-      .n  { fill: hsl(000, 75%, 50%); }
-      .ne { fill: hsl(000, 80%, 55%); }
-      .sw { fill: hsl(120, 75%, 50%); }
-      .se { fill: hsl(240, 75%, 50%); }
-
-    &.menu-quad
-      .nw { fill: hsl(000, 75%, 50%); }
-      .ne { fill: hsl(090, 75%, 50%); }
-      .se { fill: hsl(180, 75%, 50%); }
-      .sw { fill: hsl(270, 75%, 50%); }
-
 /***************
 * Base classes *
 ***************/
@@ -453,10 +352,20 @@ a {
   overflow: hidden;
   width: 3vh;
   font-size: 2vh;
+  line-height: 3vh;
   vertical-align: top;
 
+  a {
+    color: var(--menu-fore-color);
+  }
+
   svg {
-    width: 3vh;
+    width: 2vh;
+    padding-left: 0.5vh;
+  }
+
+  path {
+    fill: #fff4;
   }
 
   li {
@@ -473,6 +382,105 @@ a {
 
   &:hover {
     div, ul ul {
-      width: 20vw;
+      width: 28vh;
     }
   }
+
+  .svg-scheme
+    list-style none
+    circle
+      fill #fff2
+
+  .menu-none .svg-scheme circle
+    display inherit
+
+  .menu-monochrome
+  .menu-analogic
+    .svg-scheme
+      .w, .nw, .n, .ne, .e
+        fill: #fff4
+
+  .menu-monochrome-dark .svg-scheme
+    .w, .n, .ne, .e
+      fill: #fff4
+
+  .menu-monochrome-light .svg-scheme
+    .w, .nw, .n, .e
+      fill: #fff4
+
+  .menu-analogic-complement
+  .menu-complement
+    .svg-scheme
+      .s, .nw, .n, .ne
+        fill: #fff4
+
+  .menu-triad .svg-scheme
+    .nw, .n, .ne, .sw, .se
+      fill: #fff4
+
+  .menu-quad .svg-scheme
+    .sw, .se, .nw, .ne
+      fill: #fff4
+
+  li:hover
+  li.active
+    &.menu-none
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(045, 75%, 50%); }
+      .e  { fill: hsl(090, 75%, 50%); }
+      .se { fill: hsl(135, 75%, 50%); }
+      .s  { fill: hsl(180, 75%, 50%); }
+      .sw { fill: hsl(225, 75%, 50%); }
+      .w  { fill: hsl(270, 75%, 50%); }
+      .nw { fill: hsl(315, 75%, 50%); }
+
+    &.menu-monochrome
+      .w  { fill: hsl(0, 85%, 40%); }
+      .nw { fill: hsl(0, 80%, 45%); }
+      .n  { fill: hsl(0, 75%, 50%); }
+      .ne { fill: hsl(0, 70%, 55%); }
+      .e  { fill: hsl(0, 65%, 60%); }
+
+    &.menu-monochrome-dark
+      .w  { fill: hsl(0,  0%, 35%); }
+      .n  { fill: hsl(0, 70%, 50%); }
+      .ne { fill: hsl(0, 75%, 65%); }
+      .e  { fill: hsl(0, 80%, 80%); }
+
+    &.menu-monochrome-light
+      .w  { fill: hsl(0, 70%, 35%); }
+      .nw { fill: hsl(0, 75%, 50%); }
+      .n  { fill: hsl(0, 80%, 65%); }
+      .e  { fill: hsl(0,  0%, 80%); }
+
+    &.menu-analogic
+      .w  { fill: hsl(240, 65%, 40%); }
+      .nw { fill: hsl(300, 70%, 45%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(060, 80%, 55%); }
+      .e  { fill: hsl(120, 85%, 60%); }
+
+    &.menu-analogic-complement
+      .nw { fill: hsl(300, 70%, 45%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(060, 80%, 55%); }
+      .s  { fill: hsl(180, 75%, 50%); }
+
+    &.menu-complement
+      .nw { fill: hsl(000, 70%, 45%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(000, 80%, 55%); }
+      .s  { fill: hsl(180, 75%, 50%); }
+
+    &.menu-triad
+      .nw { fill: hsl(000, 70%, 45%); }
+      .n  { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(000, 80%, 55%); }
+      .sw { fill: hsl(120, 75%, 50%); }
+      .se { fill: hsl(240, 75%, 50%); }
+
+    &.menu-quad
+      .nw { fill: hsl(000, 75%, 50%); }
+      .ne { fill: hsl(090, 75%, 50%); }
+      .se { fill: hsl(180, 75%, 50%); }
+      .sw { fill: hsl(270, 75%, 50%); }
