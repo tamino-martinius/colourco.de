@@ -1,7 +1,7 @@
 <template name="menu">
   <div class="menu-item menu-static menu-logo">
     {{> svg_logo}}
-    <span><img src="/ColourCode.png?20130621" alt="logo"/></span>
+    <span>ColourCode</span>
   </div>
   <div
     class="{{menuClass "menu-item menu-static pointer menu-none" "menu-none"}}"
@@ -75,101 +75,43 @@
     {{> svg_scheme}}
     <span>quad</span>
   </div>
-  <hr  class="menu-item"/>
+
+  <div
+    class="{{menuClass 'menu-item menu-static pointer' " menu-help "}} menu-help" data-page="2" data-page-name="menu-help">
+    {{> svg_gear}}
+    <span>Controls</span>
+  </div>
+
   <div class="menu-item menu-static menu-save">
     <div>
       {{> svg_download}}
     </div>
     <span>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setSassExport(this);">
-        <div>
-          <span class="icon-sass pointer" style="font-size: 1.5em; color: #AAA;">$</span>
-        </div>
+        .sass
       </a>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setLessExport(this);">
-        <div>
-          <span class="icon-less pointer"></span>
-        </div>
+        .less
       </a>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setPngExport(this);">
-        <div>
-          <span class="icon-image pointer"></span>
-        </div>
+        Image (Color Palette)
       </a>
       <a target="_blank" href="{{linkPerma}}">
-        <div>
-          <span class="icon-link pointer"></span>
-        </div>
+        Permalink
       </a>
     </span>
   </div>
-  <hr  class="menu-item"/>
-  <div class="{{menuClass 'menu-item' "menu-submenu"}} menu-submenu">
-    <div class="icon-menu"></div>
+
+  <div class="{{menuClass 'menu-item' "menu-nextcode"}} menu-nextcode">
+    <div>
+      {{> svg_logo}}
+    </div>
     <span>
-      <div>
-        <span
-          class="icon-help pointer"
-          data-page="2"
-          data-page-name="menu-submenu"
-        ></span>
-      </div>
-      <a target="_blank" href="https://github.com/Zaku-eu/colourco.de">
-        <div>
-          <span class="icon-git pointer"></span>
-        </div>
-      </a>
-      <a target="_blank" href="https://github.com/Zaku-eu/colourco.de/issues?state=open">
-        <div>
-          <span class="icon-bugs pointer"></span>
-        </div>
-      </a>
-      <a href="mailto:dev@zaku.eu">
-        <div>
-          <span class="icon-mail pointer"></span>
-        </div>
-      </a>
       <span
         class="icon-legal pointer"
         data-page="3"
-        data-page-name="menu-submenu"
+        data-page-name="menu-nextcode"
       ></span>
-    </span>
-  </div>
-  <hr  class="menu-item"/>
-  <div class="menu-item menu-links">
-    <div class="icon-author"></div>
-    <span>
-      <table>
-        <tr>
-          <td>Tamino Martinius</td>
-          <td>
-            <div>
-              <a target="_blank" href="https://twitter.com/TaminoMartinius" class="icon-twitter"></a>
-            </div>
-          </td>
-          <td>
-            <div>
-              <a target="_blank" href="http://zaku.eu" class="icon-web"></a>
-            </div>
-          </td>
-          <td>
-            <a target="_blank" href="http://codepen.io/Zaku/" class="icon-codepen"></a>
-          </td>
-        </tr>
-        <tr>
-          <td>Andreas Storm</td>
-          <td>
-            <a target="_blank" href="https://twitter.com/st8rmi" class="icon-twitter"></a>
-          </td>
-          <td>
-            <a target="_blank" href="http://andreasstorm.com/" class="icon-web"></a>
-          </td>
-          <td>
-            <a target="_blank" href="http://dribbble.com/andreasstorm" class="icon-dribbble"></a>
-          </td>
-        </tr>
-      </table>
     </span>
   </div>
 </template>
