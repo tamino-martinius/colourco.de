@@ -77,23 +77,17 @@ Template.scheme.helpers
       max = bound.max * bound.f
       valueTag = ""
       valueTag = "value=\"#{value}\""
-      gradientSteps = 10
+      gradientSteps = 11
       gradientRange = bound.max - bound.min
       gradientStep = gradientRange / gradientSteps
-      gradientBody = ""
+      gradient = ""
       for stepIndex in [0..gradientSteps]
         percentage = (100 / gradientSteps) * stepIndex
         gradientValue = bound.min + gradientStep * stepIndex
         gradientColor = jQuery.extend {}, color
         gradientColor[key] = gradientValue
         rgb = converter.stringlify.rgb(converter.convert type, "rgb", gradientColor)
-        gradientBody += ", #{rgb} #{percentage.toFixed(2)}%"
-      gradient = ""
-      gradient += "background:-webkit-linear-gradient(left    #{gradientBody});"
-      gradient += "background:   -moz-linear-gradient(left    #{gradientBody});"
-      gradient += "background:    -ms-linear-gradient(left    #{gradientBody});"
-      gradient += "background:     -o-linear-gradient(left    #{gradientBody});"
-      gradient += "background:        linear-gradient(to right#{gradientBody});"
+        gradient += "--bg-#{stepIndex}: #{rgb};"
       rows += """
         <tr>
           <td>
@@ -116,9 +110,9 @@ Template.scheme.helpers
     new Handlebars.SafeString """
       <table>
         <colgroup>
-          <col width="2em" />
+          <col width="30px" />
           <col width="*" />
-          <col width="4em" />
+          <col width="50px" />
         </colgroup>
         <tbody>
           #{rows}
