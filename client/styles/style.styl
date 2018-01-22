@@ -464,5 +464,23 @@ input {
       border-radius: 9999px;
       transform: translate(-50%, -50%);
     }
+
+    .preview {
+      height: 100vh;
+      position: relative;
+    }
+
+    &.lifted {
+      .preview {
+        height: calc(100vh - 450px);
+      }
+    }
+
+    .details {
+      height: 450px;
+      background-color: #242425;
+      color: #fff;
+      text-transform: uppercase;
+    }
   }
 }
