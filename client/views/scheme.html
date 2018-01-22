@@ -71,7 +71,7 @@
                 class="details"
                 data-index="{{$index}}"
               >
-                <div class="pos-t">
+                <div class="inputs">
                   scheme root color<br/><br/>
                   {{editColor "hex"  currentColor}}
                   {{editColor "rgb"  currentColor}}
@@ -80,7 +80,7 @@
                   {{editColor "cmy"  currentColor}}
                   {{editColor "cmyk" currentColor}}
                 </div>
-                <div class="pos-c">
+                <div class="sliders">
                   {{colorSlider}}
                 </div>
               </div>
@@ -89,7 +89,7 @@
                 class="details"
                 data-index="{{$index}}"
               >
-                <div class="pos-t">
+                <div class="inputs">
                   {{editColor "hex"  .}}
                   {{editColor "rgb"  .}}
                   {{editColor "hsl"  .}}
@@ -97,7 +97,7 @@
                   {{editColor "cmy"  .}}
                   {{editColor "cmyk" .}}
                 </div>
-                <div class="pos-c">
+                <div class="sliders">
                   {{colorSlider}}
                 </div>
               </div>
