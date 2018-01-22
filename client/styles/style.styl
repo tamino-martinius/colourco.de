@@ -482,5 +482,39 @@ input {
       color: #fff;
       text-transform: uppercase;
     }
+
+    .edit-color {
+      text-align: center;
+      padding: 2px 0;
+    }
+
+    .hint--left {
+      display: inline-block;
+      width: 70px;
+      text-align: left;
+    }
+
+    input[type='text'] {
+      width: 87px;
+      text-transform: uppercase;
+      &:first-of-type {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &:last-of-type {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      &[data-type='hex'] {
+        width: 263px;
+      }
+      &[data-type='cmyk'] {
+        width: 65px;
+      }
+    }
+
+    .inputs {
+      padding: 40px 0;
+    }
   }
 }
