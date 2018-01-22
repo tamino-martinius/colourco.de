@@ -516,5 +516,37 @@ input {
     .inputs {
       padding: 40px 0;
     }
+
+    input[type='range'] {
+      appearance: none;
+      background: none;
+      width: 260px;
+
+      &::-webkit-slider-runnable-track {
+        height: 8px;
+        background: linear-gradient(left, var(--bg-0) 0%, var(--bg-1) 10%, var(--bg-2) 20%, var(--bg-3) 30%, var(--bg-4) 40%, var(--bg-5) 50%, var(--bg-6) 60%, var(--bg-7) 70%, var(--bg-8) 80%, var(--bg-9) 90%, var(--bg-10) 100%);
+        border-radius: 9999px;
+      }
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        background: #fff;
+        width: 20px;
+        height: 20px;
+        margin-top: -7px;
+        border-radius: 999px;
+      }
+    }
+
+    .sliders {
+      table {
+        margin: 0 auto;
+        width: 340px;
+      }
+      td:last-child {
+        text-align: right;
+      }
+    }
   }
 }
