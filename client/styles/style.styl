@@ -14,40 +14,6 @@
   --icon-active: #fff8;
 }
 
-/*************
-* Animations *
-*************/
-@keyframes rotateTopSideFirst {
-  40% {
-    transform: rotateX(15deg);
-    opacity: .8;
-    animation-timing-function: ease-out;
-  }
-  100% {
-    transform: scale(0.8) translateZ(-200px);
-    opacity: 0;
-  }
-}
-
-@keyframes moveFromTop {
-  from {
-    transform: translateY(-100%);
-  }
-}
-
-.page-rotateTopSideFirst {
-  transform-origin: 50% 100%;
-  animation: rotateTopSideFirst .8s both ease-in;
-}
-
-.page-moveFromTop {
-  animation: moveFromTop .6s ease both;
-}
-
-.page-delay200 {
-  animation-delay: .2s;
-}
-
 /****************
 * Base elements *
 ****************/
