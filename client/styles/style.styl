@@ -412,6 +412,10 @@ input {
       }
     }
 
+    svg {
+      margin: 0.1vw 0.145vw -0.1vw 0.145vw;
+    }
+
     path {
       fill: var(--fore-color);
     }
@@ -452,7 +456,7 @@ input {
     }
 
     .pos-c { top: calc(50vh - 3vw); }
-    .pos-b { top: 95%; }
+    .pos-b { top: calc(100% - 5vh); }
     .pos-l { left: 30%; }
     .pos-r { left: 70%; }
 
@@ -479,16 +483,20 @@ input {
     .details {
       height: 450px;
       background-color: #242425;
-      color: #fff;
+      color: #ddd;
       text-transform: uppercase;
     }
 
     .edit-color {
       text-align: center;
       padding: 2px 0;
+      &.active {
+        color: #fff;
+      }
     }
 
     .hint--left {
+      cursor: pointer;
       display: inline-block;
       width: 70px;
       text-align: left;
