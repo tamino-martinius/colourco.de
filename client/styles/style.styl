@@ -183,8 +183,8 @@ input {
   color: var(--menu-fore-color);
   overflow: hidden;
   width: 50px;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 29px;
   vertical-align: top;
   padding-top: 11px;
 
@@ -205,7 +205,7 @@ input {
 
   svg {
     width: 28px;
-    padding: 2px 11px;
+    padding: 2px 6px 2px 11px;
   }
 
   path {
@@ -260,6 +260,12 @@ input {
       float: right;
       &:first-child {
         float: left;
+      }
+      svg {
+        width: 16px;
+      }
+      .svg-facebook {
+        margin-right: 10px;
       }
     }
   }
@@ -398,7 +404,7 @@ input {
     color: var(--fore-color);
     background-color: var(--back-color);
     position: relative;
-    font-size: 1.5vw;
+    font-size: 18px;
 
     &.add,
     &.add-scheme,
@@ -462,7 +468,7 @@ input {
     .pos-b { top: calc(100% - 50px); }
     .pos-l { left: calc(50% - 80px); }
     .pos-r { left: calc(50% + 80px); }
-    .pos-c { font-size: 16px; }
+    .pos-c { font-size: 24px; text-transform: uppercase; }
 
     .marker {
       position: absolute;
@@ -508,6 +514,7 @@ input {
 
     input[type='text'] {
       width: 87px;
+      font-size: 16px;
       text-transform: uppercase;
       &:first-of-type {
         border-top-left-radius: 5px;
