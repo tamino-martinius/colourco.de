@@ -77,7 +77,7 @@ input {
 .perspective {
   background-color: #222;
   position: relative;
-  perspective: 100vw;
+  overflow: hidden;
 }
 
 .page
@@ -85,23 +85,16 @@ input {
   height 100%
   position absolute
   top 0
-  visibility hidden
   overflow hidden
-  backface-visibility hidden
-  transform translate3d(0, 0, 0)
-  transform-style preserve-3d
+  pointer-events: none;
 
-.page-current
-.no-js .page
+.page-scheme
   visibility visible
-  z-index 1
-
-.page-ontop
-  z-index 999
-
-/* Text Styles, Colors, Backgrounds */
 
 .page-legal
+.page-help
+  background #fff
+  opacity: 0
   width: 540px;
   height: calc(100vh - 100px);
   margin-left: calc(50% - 270px);
@@ -110,6 +103,7 @@ input {
   box-sizing: border-box;
   overflow: auto;
   border-radius: 5px;
+  box-shadow: 0 0 0 9999px #0006, 0 20px 40px #0008;
 
   > div
     font-size 0.7em
@@ -118,28 +112,10 @@ input {
     &:first-child
       padding-top 15em
 
-.page-help, .page-legal, .page-loading
-  background #fff
-
-  > table
-    width 90%
-    margin 0 auto
-    > tbody > tr
-    > tr
-      > th
-        text-align left
-
-      > td
-      > th
-        width 33%
-        vertical-align top
-
-        > table
-          width 100%
-          > tbody > tr
-          > tr
-            > th { width: 15%; }
-            > td { width: 85%; }
+.page-current
+  z-index 1
+  opacity: 1;
+  pointer-events: auto;
 
 /*******
 * Menu *
