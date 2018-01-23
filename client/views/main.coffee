@@ -49,40 +49,14 @@ Meteor.startup () ->
 
   $main = $ "#main"
   $pages = $main.children "div.page"
-  isAnimating = false
-  endCurrPage = false
-  endNextPage = false
-  animationEvents = 'animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd'
   current = 0
-
-  $pages.each () ->
-    $page = $ @
-    $page.data "originalClassList", $page.attr("class")
 
   $pages.eq(current).addClass("page-current")
 
   window.nextPage = (index) ->
-    return false if isAnimating
-    isAnimating = true;
-    $currPage = $pages.eq current
+    $pages.removeClass('page-current')
+    $pages.eq(index).addClass("page-current")
     current = index
-
-    $nextPage = $pages.eq(current)
-    isAnimating = false if $nextPage.hasClass "page-current"
-    return if $nextPage.hasClass "page-current"
-    $nextPage.addClass("page-current")
-    outClass = "page-rotateTopSideFirst"
-    inClass = "page-moveFromTop page-delay200 page-ontop"
-
-    $currPage.addClass(outClass).on animationEvents, () ->
-      $currPage.off(animationEvents)
-      endCurrPage = true
-      onEndAnimation($currPage, $nextPage) if endNextPage
-
-    $nextPage.addClass(inClass).on animationEvents, () ->
-      $nextPage.off animationEvents
-      endNextPage = true
-      onEndAnimation($currPage, $nextPage) if endCurrPage
 
   wheelEvent = (e) ->
     delta = if (e.wheelDelta || e.detail || e.originalEvent.wheelDelta || e.originalEvent.detail) > 0 then 0.025 else -0.025
@@ -104,7 +78,3 @@ Meteor.startup () ->
   resetPage = ($outpage, $inpage) ->
     $outpage.attr 'class', $outpage.data('originalClassList')
     $inpage.attr 'class', $inpage.data('originalClassList') + ' page-current'
-
-  setTimeout () ->
-    window.nextPage current + 1
-  , 250
