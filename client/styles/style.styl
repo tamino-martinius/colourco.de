@@ -136,7 +136,14 @@ input {
 /* Text Styles, Colors, Backgrounds */
 
 .page-legal
-  overflow auto
+  width: 540px;
+  height: calc(100vh - 100px);
+  margin-left: calc(50% - 270px);
+  margin-top: 50px;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: auto;
+  border-radius: 5px;
 
   > div
     font-size 0.7em
@@ -146,7 +153,7 @@ input {
       padding-top 15em
 
 .page-help, .page-legal, .page-loading
-  background #fdc162
+  background #fff
 
   > table
     width 90%
