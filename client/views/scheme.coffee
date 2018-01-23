@@ -148,9 +148,9 @@ Template.scheme.events
     Session.set "colors", colors
     Session.set "editActive", false
     Session.set "liftedColorIndex", null
-  # "click .edit-scheme": (e) ->
-  #   Session.set "editActive", false
-  #   Session.set "liftedColorIndex", null
+  "click .edit-scheme": (e) ->
+    Session.set "editActive", false
+    Session.set "liftedColorIndex", null
   # "click .icon-lock": (e) ->
   #   Session.set "editActive", true
   #   Session.set "liftedColorIndex", null
