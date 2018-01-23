@@ -1,5 +1,8 @@
 <template name="scheme">
-  <div class="scheme count-{{colors.length}}{{#if editActive}} edit-active{{/if}}{{#if isSchemeMode}} scheme-mode{{/if}}">
+  <div
+    class="scheme{{#if editActive}} edit-active{{/if}}{{#if isSchemeMode}} scheme-mode{{/if}}"
+    style="--swatch-count: {{colors.length}};"
+  >
     <div class="swatches{{#if isSchemeMode}}{{#if editActive}} edit-scheme{{/if}}{{/if}}">
       {{#if isSchemeMode}}
         <div class="swatch remove-scheme" data-index="0">
