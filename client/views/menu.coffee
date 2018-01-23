@@ -32,7 +32,7 @@ Template.menu.rendered = () ->
     $this = $ @
     pageIndex = $this.attr("data-page") * 1
     pageName = $this.attr("data-page-name")
-    if pageIndex is 1
+    if pageIndex is 0
       Session.set "liftedColorIndex", null
       Session.set "schemeMode", pageName.replace("menu-","")
       if Session.equals "schemeMode", "none"
