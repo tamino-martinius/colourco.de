@@ -394,6 +394,7 @@ input {
 
   .swatch {
     flex: auto;
+    width: calc(100vw / var(--swatch-count))
     color: var(--fore-color);
     background-color: var(--back-color);
     position: relative;
@@ -413,7 +414,7 @@ input {
     }
 
     svg {
-      margin: 0.1vw 0.145vw -0.1vw 0.145vw;
+      margin: 7px;
     }
 
     path {
@@ -431,12 +432,14 @@ input {
     .pos-r,
     .pos-t,
     .pos-b,
+    .pos-a,
     .pos-c {
       position: absolute;
-      top: 55vh;
+      top: 50vh;
       left: 50%;
       transform: translate(-50%, -50%);
       padding: 0.5vw;
+      font-size: 0;
     }
 
     .pos-l,
@@ -455,10 +458,11 @@ input {
       }
     }
 
-    .pos-c { top: calc(50vh - 3vw); }
-    .pos-b { top: calc(100% - 5vh); }
-    .pos-l { left: 30%; }
-    .pos-r { left: 70%; }
+    .pos-c { top: calc(100% - 100px); }
+    .pos-b { top: calc(100% - 50px); }
+    .pos-l { left: calc(50% - 80px); }
+    .pos-r { left: calc(50% + 80px); }
+    .pos-c { font-size: 16px; }
 
     .marker {
       position: absolute;
