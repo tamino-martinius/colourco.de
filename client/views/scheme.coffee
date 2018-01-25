@@ -8,6 +8,7 @@ Template.scheme.helpers
       res[0].$first = true
       res[res.length - 1].$last = true
     res
+  colorCount: () -> Session.get("colors").length || 1
   currentColor: () -> Session.get "currentColor"
   editActive: () -> Session.get "editActive"
   isLifted: (index) -> Session.equals "liftedColorIndex", index
@@ -174,14 +175,17 @@ Template.scheme.events
     converter.scheme.generate Session.get("schemeMode")
     return false
   "click .pos-t": (e) ->
-    $swatch = $(e.srcElement or e.target)
-    while not $swatch.hasClass "swatch"
-      $swatch = $swatch.parent()
-    index = $swatch.attr "data-index"
-    colors = Session.get "colors"
-    colors.splice index, 1
-    Session.set "editActive", true if colors.length is 0
-    Session.set "colors", colors
+    if Session.equals "schemeMode", "none"
+      $swatch = $(e.srcElement or e.target)
+      while not $swatch.hasClass "swatch"
+        $swatch = $swatch.parent()
+      index = $swatch.attr "data-index"
+      colors = Session.get "colors"
+      colors.splice index, 1
+      Session.set "editActive", true if colors.length is 0
+      Session.set "colors", colors
+    else
+      Session.set "editActive", true
     Session.set "liftedColorIndex", null
   "click .pos-l": (e) ->
     $swatch = $(e.srcElement or e.target)
