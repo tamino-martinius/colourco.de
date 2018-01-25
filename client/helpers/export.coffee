@@ -50,3 +50,24 @@ getImageDataUrl = (colors) ->
     index = i + 1 if colors.length > 1
     text += "$color#{index}: #{color};\n"
   a.href = getTextDataUrl text
+
+@setStylExport = (a) ->
+  colors = a.dataset.colors.split ";"
+  a.download = getFileName colors, ".styl"
+  text = ""
+  for color, i in colors
+    index = ""
+    index = i + 1 if colors.length > 1
+    text += "$color#{index} #{color}\n"
+  a.href = getTextDataUrl text
+
+@setCssExport = (a) ->
+  colors = a.dataset.colors.split ";"
+  a.download = getFileName colors, ".css"
+  text = ":root {\n"
+  for color, i in colors
+    index = ""
+    index = i + 1 if colors.length > 1
+    text += "  --color#{index}: #{color};\n"
+  text += "}\n"
+  a.href = getTextDataUrl text
