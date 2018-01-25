@@ -23,50 +23,44 @@
           <div
             class="preview"
           >
-            {{#unless isLifted $index}}
-              {{#if isSchemeMode}}
-                <div class="pos-c">
-                  {{getColorTag . displayColorType}}
+            {{#if isSchemeMode}}
+              <div class="pos-c">
+                {{getColorTag . displayColorType}}
+              </div>
+            {{else}}
+              {{#unless $first}}
+                <div class="pos-l">
+                  {{> svg_left}}
                 </div>
-              {{else}}
-                {{#unless $first}}
-                  <div class="pos-l">
-                    {{> svg_left}}
+              {{/unless}}
+              <div class="pos-c">
+                {{getColorTag . displayColorType}}
+              </div>
+              <div class="pos-t">
+                {{> svg_trash}}
+              </div>
+              {{#unless $last}}
+                <div class="pos-r">
+                  {{> svg_right}}
+                </div>
+              {{/unless}}
+            {{/if}}
+            {{#if isSchemeMode}}
+              {{#if isCenter $index}}
+                {{#unless editActive}}
+                  <div class="pos-b">
+                    {{> svg_toggles}}
+                  </div>
+                  <div class="pos-t">
+                    {{> svg_trash}}
                   </div>
                 {{/unless}}
-                <div class="pos-c">
-                  {{getColorTag . displayColorType}}
-                </div>
-                <div class="pos-t">
-                  {{> svg_trash}}
-                </div>
-                {{#unless $last}}
-                  <div class="pos-r">
-                    {{> svg_right}}
-                  </div>
-                {{/unless}}
-              {{/if}}
-              {{#if isSchemeMode}}
-                {{#if isCenter $index}}
-                  {{#unless editActive}}
-                    <div class="pos-b">
-                      {{> svg_toggles}}
-                    </div>
-                    <div class="pos-t">
-                      {{> svg_trash}}
-                    </div>
-                  {{/unless}}
-                {{/if}}
-              {{else}}
-                <div class="pos-b">
-                  {{> svg_toggles}}
-                </div>
               {{/if}}
             {{else}}
               <div class="pos-b">
                 {{> svg_toggles}}
               </div>
-            {{/unless}}
+            {{/if}}
           </div>
           {{#if isLifted $index}}
             {{#if isSchemeMode}}
