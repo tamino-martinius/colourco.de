@@ -80,21 +80,20 @@ input {
   overflow: hidden;
 }
 
-.page
-  width 100%
-  height 100%
-  position absolute
-  top 0
-  overflow hidden
+.page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
   pointer-events: none;
+}
 
-.page-scheme
-  visibility visible
-
-.page-legal
-.page-help
-  background #fff
-  opacity: 0
+.page-legal,
+.page-help{
+  background: #fff;
+  transition: opacity 0.5s ease;
+  opacity: 0;
   width: 540px;
   height: calc(100vh - 100px);
   margin-left: calc(50% - 270px);
@@ -103,19 +102,36 @@ input {
   box-sizing: border-box;
   overflow: auto;
   border-radius: 5px;
-  box-shadow: 0 0 0 9999px #0006, 0 20px 40px #0008;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.8), 0 20px 40px #000;
 
-  > div
-    font-size 0.7em
-    padding 0.5em 2em
+  h1 {
+    margin-top: 0;
+  }
 
-    &:first-child
-      padding-top 15em
+  .close {
+    appearance: none;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    outline: none;
+    cursor: pointer;
+  }
 
-.page-current
-  z-index 1
+  > div {
+    font-size: 0.7em;
+    padding: 0.5em 2em;
+    &:first-child {
+      padding-top: 15em;
+    }
+  }
+}
+
+.page-current {
   opacity: 1;
   pointer-events: auto;
+}
 
 /*******
 * Menu *
@@ -129,6 +145,15 @@ input {
   line-height: 29px;
   vertical-align: top;
   padding-top: 11px;
+
+  .svg-logo path {
+    transition: all 0.5s ease;
+  }
+
+  .drop {
+    transform: translateX(200px);
+    opacity: 0;
+  }
 
   div, a {
     white-space: nowrap ;
@@ -146,6 +171,7 @@ input {
   }
 
   svg {
+    overflow: visible;
     width: 28px;
     padding: 2px 6px 2px 11px;
   }
@@ -169,6 +195,13 @@ input {
     div, ul ul {
       width: 260px;
     }
+    .drop {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    .svg-logo path {
+      fill: #fff;
+    }
   }
 
   > ul > li:hover {
@@ -182,7 +215,7 @@ input {
   }
 
   .svg-download {
-    vertical-align: 90px;
+    vertical-align: 140px;
   }
 
   .svg-scheme {
@@ -195,6 +228,9 @@ input {
   .menu-nextcode {
     position: absolute;
     bottom: 0;
+    .svg-nextcode {
+      vertical-align: -2px;
+    }
     ul {
       width: 260px
     }
@@ -208,6 +244,9 @@ input {
       }
       .svg-facebook {
         margin-right: 10px;
+      }
+      a:hover path {
+        fill: var(--icon-active);
       }
     }
   }
@@ -341,12 +380,16 @@ input {
   height: 100vh;
 
   .swatch {
-    flex: auto;
-    width: calc(100vw / var(--swatch-count))
+    flex: calc(100vw / var(--swatch-count)) 0 1;
+    transition: all 0.5s ease;
     color: var(--fore-color);
     background-color: var(--back-color);
     position: relative;
     font-size: 18px;
+
+    &.edit {
+      transition: none;
+    }
 
     &.add,
     &.add-scheme,
@@ -392,6 +435,7 @@ input {
       transform: translate(-50%, -50%);
       padding: 0.5vw;
       font-size: 0;
+      transition: opacity 0.2s ease;
     }
 
     .pos-l,
@@ -428,11 +472,20 @@ input {
     .preview {
       height: 100vh;
       position: relative;
+      transition: height 0.3s ease;
     }
 
     &.lifted {
+      flex-shrink: 0;
+      flex-grow: 1;
       .preview {
         height: calc(100vh - 450px);
+      }
+      .pos-c,
+      .pos-l,
+      .pos-r,
+      .pos-t {
+        opacity: 0;
       }
     }
 
@@ -444,8 +497,9 @@ input {
     }
 
     .edit-color {
+      white-space: nowrap;
       text-align: center;
-      padding: 2px 0;
+      padding: 2px 30px;
       &.active {
         color: #fff;
       }
