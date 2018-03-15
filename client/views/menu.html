@@ -70,14 +70,14 @@
       <div>Quad</div>
     </li>
 
-    <li
+    <!-- <li
       class="{{menuClass 'link' " menu-help "}} menu-help"
       data-page="1"
       data-page-name="menu-help"
     >
       {{> svg_gear}}
       <div>Controls</div>
-    </li>
+    </li> -->
 
     <li>
       {{> svg_download}}
@@ -150,22 +150,40 @@
     </li>
 
     <li class="{{menuClass 'link' 'menu-nextcode'}} menu-nextcode">
-      {{> svg_nextcode}}
+      <a
+        href="https://nextco.de"
+        target="_blank"
+      >
+        {{> svg_nextcode}}
+      </a>
       <ul>
+        <li>
+          <a
+            href="https://github.com/tamino-martinius/colourco.de"
+            target="_blank"
+          >
+            Source Code
+          </a>
+        </li>
         <li
-          class="link"
           data-page="2"
           data-page-name="menu-nextcode"
         >
-          Imprint
+          {{> svg_legal}}
         </li>
-        <li>
-          <a href="">
+        <!-- <li>
+          <a
+            href=""
+            target="_blank"
+          >
             {{> svg_facebook}}
           </a>
-        </li>
+        </li> -->
         <li>
-          <a href="">
+          <a
+            href="https://twitter.com/wearenextcode"
+            target="_blank"
+          >
             {{> svg_twitter}}
           </a>
         </li>
