@@ -3,10 +3,10 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-stylus@2.513.13
-coffeescript
+stylus@2.513.14
+coffeescript@1.0.17
 standard-app-packages
-standard-minifier-css
-standard-minifier-js
-shell-server
-dynamic-import
+standard-minifier-css@1.4.1
+standard-minifier-js@2.3.2
+shell-server@0.3.1
+dynamic-import@0.3.0
