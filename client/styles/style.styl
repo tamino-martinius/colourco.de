@@ -562,3 +562,22 @@ input {
     }
   }
 }
+
+#cookie-info {
+  position: absolute;
+  top: 0;
+  background: #222222;
+  color: #5a5a5a;
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: transform .5s ease;
+  &.hidden {
+    transform: translateY(-100%);
+  }
+  .close {
+    padding-left: 20px;
+  }
+}
