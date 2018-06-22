@@ -7,19 +7,26 @@
     "awsProfile": "nextcode"
   },
   "scripts": {
-    "start": "meteor run",
-    "build": "meteor-build-client ./dist",
+    "build": "webpack",
     "create-bucket": "aws s3 mb s3://$npm_package_config_awsBucketName --region $npm_package_config_awsRegion --profile $npm_package_config_awsProfile",
     "delete-bucket": "aws s3 rb s3://$npm_package_config_awsBucketName --region $npm_package_config_awsRegion --force --profile $npm_package_config_awsProfile",
     "upload": "aws s3 cp ./dist s3://$npm_package_config_awsBucketName --recursive --acl public-read --region $npm_package_config_awsRegion --profile $npm_package_config_awsProfile",
     "deploy": "npm run build && npm run upload && rm -rf dist"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.48",
-    "babel-runtime": "^6.26.0",
-    "core-js": "^2.5.6"
+    "vue": "^2.5.16",
+    "vue-class-component": "^6.2.0",
+    "vue-property-decorator": "^6.1.0",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
-    "meteor-build-client": "^0.4.1"
+    "css-loader": "^0.28.11",
+    "ts-loader": "^4.4.1",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.2",
+    "vue-loader": "^15.2.4",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.12.0"
   }
 }
