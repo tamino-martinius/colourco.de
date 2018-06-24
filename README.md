@@ -4,20 +4,14 @@ Pick colours based on hsl. Scheme-mode with monochromatic, analogic, complement,
 
 ## How to build
 
-Intall Meteor
-
-```sh
-curl https://install.meteor.com/ | sh
-```
-
 Intall Dependencies
 
 ```sh
-meteor npm install
+npm install
 ```
 
-Start Meteor
+Start local webserver
 
 ```sh
-meteor
+npm run start
 ```
