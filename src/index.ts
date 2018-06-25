@@ -3,6 +3,8 @@ import Hello from './components/Hello';
 import HelloDecorator from './components/HelloDecorator';
 import HelloVue from './components/Hello.vue';
 import HelloDecoratorVue from './components/HelloDecorator.vue';
+import Icon from './components/Icon';
+import { IconType } from './types';
 
 const v = new vue({
   el: '#app',
@@ -19,13 +21,19 @@ const v = new vue({
       <hello-vue :name="name" :initialEnthusiasm="5" />
       <h1>Hello Vue Decorator Component</h1>
       <hello-decorator-vue :name="name" :initialEnthusiasm="5" />
+
+      <icon :type="IconType.CROSS" />
     </div>
   `,
-  data: { name: 'World' },
+  data: {
+    IconType,
+    name: 'World',
+  },
   components: {
     Hello,
     HelloDecorator,
     HelloVue,
     HelloDecoratorVue,
+    Icon,
   },
 });
