@@ -27,7 +27,15 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        loader: 'svg-inline-loader',
+        loader: 'vue-svg-loader',
+        options: {
+          svgo: {
+            plugins: [
+              { removeDoctype: true },
+              { removeComments: true },
+            ],
+          },
+        },
       },
       {
         test: /\.(png|jpg|gif)$/,
