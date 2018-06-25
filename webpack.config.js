@@ -26,10 +26,15 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.svg$/,
+        loader: 'svg-inline-loader',
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]?[hash]',
+          publicPath: 'assets/',
         },
       },
       {
