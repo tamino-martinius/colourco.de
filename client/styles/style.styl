@@ -58,6 +58,13 @@ a {
   text-decoration: none;
 }
 
+h4{
+  margin: 10px auto 5px
+}
+p{
+  margin: 0 auto 10px
+}
+
 input {
   &[type='text'] {
     background-color: #fff1;
@@ -125,6 +132,12 @@ input {
     top: 20px;
     outline: none;
     cursor: pointer;
+    svg{
+      width: 14px;
+      height 14px;
+      opacity: .75;
+    }
+
   }
 
   > div {
@@ -133,6 +146,29 @@ input {
     &:first-child {
       padding-top: 15em;
     }
+  }
+}
+
+.download-options{
+  margin-top: 70px
+  li{
+    width: 33.3333%
+    float: left;
+    text-align: center;
+    padding: 20px 0
+    &:nth-child(2){
+      box-shadow: 1px 0 0 rgba(black,.08), -1px 0 0 rgba(black,.08)
+    }
+    a{
+      display: block;
+      width: 100%;
+      color: var(--menu-back-color)
+    }
+  }
+  svg{
+    width: 56px;
+    height: 56px;
+    margin-bottom: 10px
   }
 }
 
@@ -151,7 +187,6 @@ input {
   overflow: hidden;
   width: 50px;
   vertical-align: top;
-  padding-top: 6px;
   user-select: none
   .svg-logo path {
     transition: all .3s ease;
@@ -449,7 +484,7 @@ input {
     .pos-b { top: calc(100% - 50px); }
     .pos-l { left: calc(50% - 80px); }
     .pos-r { left: calc(50% + 80px); }
-    .pos-c { font-size: 24px; text-transform: uppercase; }
+    .pos-c { font-size: 20px; text-transform: uppercase; }
 
     .marker {
       position: absolute;
@@ -562,22 +597,21 @@ input {
 }
 
 #cookie-info {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
   background: #ef689a;
   color: white;
   font-weight: 500;
-  padding: 20px;
+  padding: 12px 18px;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
-  transition: transform .5s ease;
   &.hidden {
-    transform: translateY(-120%);
+    transform: translateY(50px);
+    visibility: hidden
   }
   .close {
-    padding-left: 20px;
+    padding-left: 15px;
   }
 }

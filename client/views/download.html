@@ -3,20 +3,23 @@
     {{> svg_cross}}
   </button>
   <h1>Download</h1>
-  <ul>
+  <ul class="download-options">
     <li>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setSassExport(this);" class="link">
-        .sass
+        {{> svg_sass}}
+        <div>Stylesheet</div>
       </a>
     </li>
     <li>
       <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setPngExport(this);" class="link">
-        Image (Color Palette)
+        {{> svg_palette}}
+        <div>Color palette</div>
       </a>
     </li>
     <li>
       <a target="_blank" href="{{linkPerma}}" class="link">
-        Permalink
+        {{> svg_link}}
+        <div>Permalink</div>
       </a>
     </li>
   </ul>
