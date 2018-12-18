@@ -1,10 +1,5 @@
 <template name="menu">
   <ul>
-    <li>
-      {{> svg_logo}}
-      <div>ColourCode</div>
-    </li>
-
     <li class="{{menuClass 'link menu-none' 'menu-none'}}" data-page="0" data-page-name="menu-none">
       {{> svg_scheme}}
       <div>Free Build</div>
@@ -33,52 +28,35 @@
       {{> svg_scheme}}
       <div>Triad</div>
     </li>
-    <li class="{{menuClass 'link' "menu-quad"}} menu-quad" data-page="0" data-page-name="menu-quad">
+    <li class="{{menuClass 'link' 'menu-quad'}} menu-quad" data-page="0" data-page-name="menu-quad">
       {{> svg_scheme}}
       <div>Quad</div>
     </li>
-
-    <!-- <li
-      class="{{menuClass 'link' " menu-help "}} menu-help"
-      data-page="1"
-      data-page-name="menu-help"
-    >
-      {{> svg_gear}}
-      <div>Controls</div>
-    </li> -->
-
     <li class="link" data-page="3" data-page-name="menu-download">
       {{> svg_download}}
       <div>Download</div>
     </li>
-
-    <li class="{{menuClass 'link' 'menu-nextcode'}} menu-nextcode">
-      <a href="https://nextco.de" target="_blank">
-        {{> svg_nextcode}}
+    <!--<li class="{{menuClass 'link' " menu-help "}} menu-help" data-page="1" data-page-name="menu-help">
+      {{> svg_gear}}
+      <div>Controls</div>
+    </li>-->
+  </ul>
+  <ul class="menu-btm">
+    <li class="link">
+      <a href="https://github.com/tamino-martinius/colourco.de" target="_blank">
+        {{> svg_github}}
+        <div>Github</div>
       </a>
-      <ul>
-        <li>
-          <a href="https://github.com/tamino-martinius/colourco.de" target="_blank">
-            Source Code
-          </a>
-        </li>
-        <li data-page="2" data-page-name="menu-nextcode">
-          {{> svg_legal}}
-        </li>
-        <!-- <li>
-          <a
-            href=""
-            target="_blank"
-          >
-            {{> svg_facebook}}
-          </a>
-        </li> -->
-        <li>
-          <a href="https://twitter.com/wearenextcode" target="_blank">
-            {{> svg_twitter}}
-          </a>
-        </li>
-      </ul>
+    </li>
+    <li class="link">
+        <a href="https://twitter.com/wearenextcode" target="_blank">
+          {{> svg_twitter}}
+          <div>Twitter</div>
+        </a>
+      </li>
+    <li class="link" data-page="2" data-page-name="menu-nextcode">
+        {{> svg_logo}}
+      <div>Legal</div>
     </li>
   </ul>
 </template>

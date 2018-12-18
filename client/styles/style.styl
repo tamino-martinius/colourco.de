@@ -89,6 +89,14 @@ input {
   pointer-events: none;
 }
 
+.page-download{
+    height: 360px;
+}
+
+.page-legal{
+  height: calc(100vh - 100px);
+}
+
 .page-download,
 .page-legal,
 .page-help{
@@ -96,7 +104,6 @@ input {
   transition: opacity 0.5s ease;
   opacity: 0;
   width: 540px;
-  height: calc(100vh - 100px);
   margin-left: calc(50% - 270px);
   margin-top: 50px;
   padding: 20px;
@@ -138,20 +145,27 @@ input {
 * Menu *
 *******/
 .menu {
+  position: relative;
   background-color: var(--menu-back-color);
   color: var(--menu-fore-color);
   overflow: hidden;
   width: 50px;
-  font-size: 16px;
   vertical-align: top;
+  padding-top: 6px;
+  user-select: none
   .svg-logo path {
-    transition: all .5s ease;
+    transition: all .3s ease;
   }
-
   .link {
     cursor: pointer;
+    margin-top: 6px;
+    a{
+      width: 100%;
+      display: inline-block;
+    }
     &:hover {
       color: var(--menu-fore-color-active);
+      background: rgba(black,.2)
     }
   }
 
@@ -163,7 +177,7 @@ input {
     overflow: visible;
     width: 28px;
     padding: 5px;
-    margin: 0 6px
+    vertical-align: middle;
   }
 
   path {
@@ -171,37 +185,46 @@ input {
   }
 
   li {
+    width: 38px;
+    overflow: hidden;
     white-space: nowrap;
+    border-radius: 5px;
+    margin: 0 6px
   }
 
-  div, ul ul {
+  div{
     display: inline-block;
-    transition: width 0.5s;
+    transition: width .5s;
     width: 0;
     overflow: hidden;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: -4px;
   }
 
   &:hover {
-    div, ul ul {
-      width: 260px;
+    div{
+      width: 200px;
     }
-    .svg-logo path {
-      fill: #fff;
+    li{
+      width: auto;
+      overflow: auto;
     }
   }
 
   > ul > li:hover {
+    .svg-github,
+    .svg-twitter,
     .svg-gear,
     .svg-download,
-    .svg-nextcode {
+    .svg-logo {
       path {
         fill: var(--icon-active);
       }
+      .drop {
+        fill: #EF689A;
+      }
     }
-  }
-
-  .svg-download {
-    vertical-align: 150px;
   }
 
   .svg-scheme {
@@ -211,29 +234,12 @@ input {
     }
   }
 
-  .menu-nextcode {
+  .menu-btm{
     position: absolute;
-    bottom: 0;
-    .svg-nextcode {
-      vertical-align: 6px;
-    }
-    ul {
-      width: 260px
-    }
-    li {
-      float: right;
-      &:first-child {
-        float: left;
-      }
-      svg {
-        width: 16px;
-      }
-      .svg-facebook {
-        margin-right: 10px;
-      }
-      a:hover path {
-        fill: var(--icon-active);
-      }
+    bottom: 6px;
+    svg{
+      width: 24px;
+      padding: 7px
     }
   }
 
@@ -380,7 +386,7 @@ input {
     &.add-scheme,
     &.remove-scheme {
       cursor: pointer;
-      flex: 0 0 5vw;
+      flex: 0 0 50px;
 
       &:hover {
         path {
@@ -418,7 +424,7 @@ input {
       top: 50vh;
       left: 50%;
       transform: translate(-50%, -50%);
-      padding: 0.5vw;
+      padding: .5vw;
       font-size: 0;
       transition: opacity 0.2s ease;
     }
