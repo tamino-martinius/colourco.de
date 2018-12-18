@@ -1,0 +1,38 @@
+<template name="download">
+  <button class="close">
+    {{> svg_cross}}
+  </button>
+  <h1>Download</h1>
+  <ul>
+    <li>
+      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setSassExport(this);" class="link">
+        .sass
+      </a>
+    </li>
+    <li>
+      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setLessExport(this);" class="link">
+        .less
+      </a>
+    </li>
+    <li>
+      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setStylExport(this);" class="link">
+        .styl
+      </a>
+    </li>
+    <li>
+      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setCssExport(this);" class="link">
+        .css
+      </a>
+    </li>
+    <li>
+      <a target="_blank" data-colors="{{colorStr}}" href="#" onclick="setPngExport(this);" class="link">
+        Image (Color Palette)
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="{{linkPerma}}" class="link">
+        Permalink
+      </a>
+    </li>
+  </ul>
+</template>
