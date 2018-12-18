@@ -142,18 +142,9 @@ input {
   overflow: hidden;
   width: 50px;
   font-size: 16px;
-  line-height: 29px;
   vertical-align: top;
-  padding-top: 11px;
-
   .svg-logo path {
-    transition: all 0.5s ease;
-  }
-
-  div, a {
-    white-space: nowrap;
-    vertical-align: 8px;
-    line-height: 15px;
+    transition: all .5s ease;
   }
 
   .link {
@@ -170,7 +161,8 @@ input {
   svg {
     overflow: visible;
     width: 28px;
-    padding: 2px 6px 2px 11px;
+    padding: 5px;
+    margin: 0 6px
   }
 
   path {
@@ -455,10 +447,10 @@ input {
     .marker {
       position: absolute;
       background-color: var(--fore-color);
-      width: 1vw;
-      height: 1vw;
-      border-radius: 9999px;
-      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 6px;
+      margin: -6px 0 0 -6px
     }
 
     .preview {
