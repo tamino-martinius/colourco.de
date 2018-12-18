@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "meteor run",
-    "build": "meteor-build-client ./dist",
+    "build": "tpx-meteor-build-client ./dist",
     "create-bucket": "aws s3 mb s3://$npm_package_config_awsBucketName --region $npm_package_config_awsRegion --profile $npm_package_config_awsProfile",
     "delete-bucket": "aws s3 rb s3://$npm_package_config_awsBucketName --region $npm_package_config_awsRegion --force --profile $npm_package_config_awsProfile",
     "upload": "aws s3 cp ./dist s3://$npm_package_config_awsBucketName --recursive --acl public-read --region $npm_package_config_awsRegion --profile $npm_package_config_awsProfile",
@@ -20,6 +20,6 @@
     "core-js": "^2.5.6"
   },
   "devDependencies": {
-    "meteor-build-client": "^0.4.1"
+    "tpx-meteor-build-client": "^0.5.3"
   }
 }
