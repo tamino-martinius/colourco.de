@@ -1,71 +1,39 @@
 <template name="menu">
   <ul>
     <li>
-     {{> svg_logo}}
+      {{> svg_logo}}
       <div>ColourCode</div>
     </li>
 
-    <li
-     class="{{menuClass 'link menu-none' 'menu-none'}}"
-     data-page="0"
-     data-page-name="menu-none"
-    >
-     {{> svg_scheme}}
+    <li class="{{menuClass 'link menu-none' 'menu-none'}}" data-page="0" data-page-name="menu-none">
+      {{> svg_scheme}}
       <div>Free Build</div>
     </li>
-    <li
-      class="{{menuClass 'link menu-monochrome' 'menu-monochrome'}}"
-      data-page="0"
-      data-page-name="menu-monochrome"
-    >
+    <li class="{{menuClass 'link menu-monochrome' 'menu-monochrome'}}" data-page="0" data-page-name="menu-monochrome">
       {{> svg_scheme}}
       <div>Monochrome</div>
     </li>
-    <li
-      class="{{menuClass 'link' 'menu-monochrome-dark'}} menu-monochrome-dark"
-      data-page="0"
-      data-page-name="menu-monochrome-dark"
-    >
+    <li class="{{menuClass 'link' 'menu-monochrome-dark'}} menu-monochrome-dark" data-page="0" data-page-name="menu-monochrome-dark">
       {{> svg_scheme}}
       <div>Monochrome &amp; Dark Gray</div>
     </li>
-    <li
-      class="{{menuClass 'link' 'menu-monochrome-light'}} menu-monochrome-light"
-      data-page="0"
-      data-page-name="menu-monochrome-light"
-    >
+    <li class="{{menuClass 'link' 'menu-monochrome-light'}} menu-monochrome-light" data-page="0" data-page-name="menu-monochrome-light">
       {{> svg_scheme}}
       <div>Monochrome &amp; Light Gray</div>
     </li>
-    <li
-      class="{{menuClass 'link' 'menu-analogic'}} menu-analogic"
-      data-page="0"
-      data-page-name="menu-analogic"
-    >
+    <li class="{{menuClass 'link' 'menu-analogic'}} menu-analogic" data-page="0" data-page-name="menu-analogic">
       {{> svg_scheme}}
       <div>Analogic</div>
     </li>
-    <li
-      class="{{menuClass 'link' 'menu-analogic-complement'}} menu-analogic-complement"
-      data-page="0"
-      data-page-name="menu-analogic-complement"
-    >
+    <li class="{{menuClass 'link' 'menu-analogic-complement'}} menu-analogic-complement" data-page="0" data-page-name="menu-analogic-complement">
       {{> svg_scheme}}
       <div>Analogic &amp; Complement</div>
     </li>
-    <li
-      class="{{menuClass 'link' 'menu-triad'}} menu-triad"
-      data-page="0"
-      data-page-name="menu-triad"
-    >
+    <li class="{{menuClass 'link' 'menu-triad'}} menu-triad" data-page="0" data-page-name="menu-triad">
       {{> svg_scheme}}
       <div>Triad</div>
     </li>
-    <li
-      class="{{menuClass 'link' "menu-quad"}} menu-quad"
-      data-page="0"
-      data-page-name="menu-quad"
-    >
+    <li class="{{menuClass 'link' "menu-quad"}} menu-quad" data-page="0" data-page-name="menu-quad">
       {{> svg_scheme}}
       <div>Quad</div>
     </li>
@@ -79,96 +47,22 @@
       <div>Controls</div>
     </li> -->
 
-    <li>
+    <li class="link" data-page="3" data-page-name="menu-download">
       {{> svg_download}}
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            data-colors="{{colorStr}}"
-            href="#"
-            onclick="setSassExport(this);"
-            class="link"
-          >
-            .sass
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            data-colors="{{colorStr}}"
-            href="#"
-            onclick="setLessExport(this);"
-            class="link"
-          >
-            .less
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            data-colors="{{colorStr}}"
-            href="#"
-            onclick="setStylExport(this);"
-            class="link"
-          >
-            .styl
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            data-colors="{{colorStr}}"
-            href="#"
-            onclick="setCssExport(this);"
-            class="link"
-          >
-            .css
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            data-colors="{{colorStr}}"
-            href="#"
-            onclick="setPngExport(this);"
-            class="link"
-          >
-            Image (Color Palette)
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="{{linkPerma}}"
-            class="link"
-          >
-            Permalink
-          </a>
-        </li>
-      </ul>
+      <div>Download</div>
     </li>
 
     <li class="{{menuClass 'link' 'menu-nextcode'}} menu-nextcode">
-      <a
-        href="https://nextco.de"
-        target="_blank"
-      >
+      <a href="https://nextco.de" target="_blank">
         {{> svg_nextcode}}
       </a>
       <ul>
         <li>
-          <a
-            href="https://github.com/tamino-martinius/colourco.de"
-            target="_blank"
-          >
+          <a href="https://github.com/tamino-martinius/colourco.de" target="_blank">
             Source Code
           </a>
         </li>
-        <li
-          data-page="2"
-          data-page-name="menu-nextcode"
-        >
+        <li data-page="2" data-page-name="menu-nextcode">
           {{> svg_legal}}
         </li>
         <!-- <li>
@@ -180,10 +74,7 @@
           </a>
         </li> -->
         <li>
-          <a
-            href="https://twitter.com/wearenextcode"
-            target="_blank"
-          >
+          <a href="https://twitter.com/wearenextcode" target="_blank">
             {{> svg_twitter}}
           </a>
         </li>
