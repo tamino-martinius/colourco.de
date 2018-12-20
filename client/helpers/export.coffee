@@ -16,14 +16,15 @@ getTextDataUrl = (text) ->
   URL.createObjectURL blob
 
 getImageDataUrl = (colors) ->
-  tileSize = 25
+  tileSize = 100
+  ratio = 2
   canvas = document.createElement "canvas"
-  canvas.height = tileSize
+  canvas.height = tileSize * ratio
   canvas.width = tileSize * colors.length
   ctx = canvas.getContext "2d"
   for color, i in colors
     ctx.fillStyle = color
-    ctx.fillRect tileSize * i, 0, tileSize * (i + 1), tileSize
+    ctx.fillRect tileSize * i, 0, tileSize * (i + 1), tileSize * ratio
   canvas.toDataURL()
 
 @setPngExport = (a) ->
