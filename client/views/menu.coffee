@@ -22,6 +22,7 @@ Template.menu.rendered = () ->
           {h: .3, s: 0.5, l: 0.3}
           {h: .4, s: 0.5, l: 0.3}
         ]
+        Session.set('colors', Session.get('colors').splice(0, 4)) if Session.get('schemeMode') is 'quad'
         converter.scheme.generate Session.get("schemeMode")
     Session.set "currentMenu", pageName
     window.nextPage pageIndex
