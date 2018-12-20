@@ -1,9 +1,5 @@
 ﻿@import 'nib';
 
-/************
-* Variables *
-************/
-
 :root {
   --menu-back-color: #222;
   --menu-fore-color: #ccc;
@@ -14,9 +10,6 @@
   --icon-active: #ccc;
 }
 
-/****************
-* Base elements *
-****************/
 html,
 body {
   margin: 0;
@@ -72,14 +65,12 @@ input {
     color: #fff;
     height: 32px;
     text-align: center;
-    margin-right: 1px;
     padding: 0;
+    &:not(:last-child){
+      box-shadow: inset -3px 0 0 #242425
+    }
   }
 }
-
-/********
-* Pages *
-********/
 
 .perspective {
   background-color: #222;
@@ -177,9 +168,6 @@ input {
   pointer-events: auto;
 }
 
-/*******
-* Menu *
-*******/
 .menu {
   position: relative;
   background-color: var(--menu-back-color);
@@ -187,7 +175,7 @@ input {
   overflow: hidden;
   width: 50px;
   vertical-align: top;
-  user-select: none
+  user-select: none;
   .svg-logo path {
     transition: all .3s ease;
   }
@@ -273,8 +261,8 @@ input {
     position: absolute;
     bottom: 6px;
     svg{
-      width: 24px;
-      padding: 7px
+      width: 20px;
+      padding: 6px 9px
     }
   }
 
@@ -398,10 +386,6 @@ input {
   }
 }
 
-/***********
-* Swatches *
-***********/
-
 .swatches {
   display: flex;
   height: 100vh;
@@ -411,7 +395,7 @@ input {
     color: var(--fore-color);
     background-color: var(--back-color);
     position: relative;
-    font-size: 18px;
+    font-size: 14px;
 
     &.edit {
       transition: none;
@@ -459,9 +443,10 @@ input {
       top: 50vh;
       left: 50%;
       transform: translate(-50%, -50%);
-      padding: .5vw;
+      padding: 5px;
+      border-radius: 50px;
       font-size: 0;
-      transition: opacity 0.2s ease;
+      transition: all .150ms ease;
     }
 
     .pos-l,
@@ -469,14 +454,9 @@ input {
     .pos-t,
     .pos-b {
       cursor: pointer;
-
       &:hover {
-        background-color: var(--fore-color);
-        border-radius: 9999px;
-
-        path {
-          fill: var(--back-color);
-        }
+        opacity: .8;
+        //background-color: var(--fore-color);
       }
     }
 
@@ -484,15 +464,15 @@ input {
     .pos-b { top: calc(100% - 50px); }
     .pos-l { left: calc(50% - 80px); }
     .pos-r { left: calc(50% + 80px); }
-    .pos-c { font-size: 20px; text-transform: uppercase; }
+    .pos-c { font-size: 18px; text-transform: uppercase; font-weight: 500; white-space: nowrap}
 
     .marker {
       position: absolute;
       background-color: var(--fore-color);
-      width: 12px;
-      height: 12px;
-      border-radius: 6px;
-      margin: -6px 0 0 -6px
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      margin: -4px 0 0 -4px
     }
 
     .preview {
@@ -502,12 +482,9 @@ input {
     }
 
     &.lifted {
-      flex-shrink: 0;
-      flex-grow: 1;
       .preview {
-        height: calc(100vh - 450px);
+        height: calc(100vh - 400px);
       }
-      .pos-c,
       .pos-l,
       .pos-r,
       .pos-t {
@@ -516,7 +493,7 @@ input {
     }
 
     .details {
-      height: 450px;
+      height: 400px;
       background-color: #242425;
       color: #ddd;
       text-transform: uppercase;
@@ -525,22 +502,35 @@ input {
     .edit-color {
       white-space: nowrap;
       text-align: center;
-      padding: 2px 30px;
+      padding: 2px 0px;
       &.active {
         color: #fff;
+        .hint--left{
+          position: relative;
+          &:before{
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 6px;
+            border-radius: 4px;
+            width: 6px;
+            height 6px;
+            background: white
+          }
+        }
       }
     }
 
     .hint--left {
       cursor: pointer;
       display: inline-block;
-      width: 70px;
+      width: 50px;
       text-align: left;
     }
 
     input[type='text'] {
-      width: 87px;
-      font-size: 16px;
+      width: 60px;
+      font-size: 14px;
       text-transform: uppercase;
       &:first-of-type {
         border-top-left-radius: 5px;
@@ -551,24 +541,24 @@ input {
         border-bottom-right-radius: 5px;
       }
       &[data-type='hex'] {
-        width: 263px;
+        width: 180px;
       }
       &[data-type='cmyk'] {
-        width: 65px;
+        width: 45px;
       }
     }
 
     .inputs {
-      padding: 40px 0;
+      padding: 30px 0;
     }
 
     input[type='range'] {
       appearance: none;
       background: none;
-      width: 260px;
-
+      width: 180px;
+      outline: none;
       &::-webkit-slider-runnable-track {
-        height: 8px;
+        height: 6px;
         background: linear-gradient(left, var(--bg-0) 0%, var(--bg-1) 10%, var(--bg-2) 20%, var(--bg-3) 30%, var(--bg-4) 40%, var(--bg-5) 50%, var(--bg-6) 60%, var(--bg-7) 70%, var(--bg-8) 80%, var(--bg-9) 90%, var(--bg-10) 100%);
         border-radius: 9999px;
       }
@@ -577,17 +567,20 @@ input {
         -webkit-appearance: none;
         appearance: none;
         background: #fff;
-        width: 20px;
-        height: 20px;
-        margin-top: -7px;
-        border-radius: 999px;
+        width: 18px;
+        height: 18px;
+        margin-top: -6px;
+        border-radius: 20px;
       }
     }
 
     .sliders {
       table {
         margin: 0 auto;
-        width: 340px;
+        width: 234px;
+      }
+      td{
+        padding: 4px 0
       }
       td:last-child {
         text-align: right;
@@ -600,8 +593,8 @@ input {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  background: #ef689a;
-  color: white;
+  background: black;
+  color: #ccc;
   font-weight: 500;
   padding: 12px 18px;
   border-radius: 5px;
