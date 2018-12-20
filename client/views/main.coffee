@@ -14,10 +14,13 @@ Meteor.startup () ->
   #     false
   path = window.location.pathname
   pathParts = path.split "/"
+  pathParts[1] = 'none' if pathParts[1] is 'freebuild'
   if pathParts.length is 3 and pathParts[1] is "none"
-    colorStrings = decodeURIComponent(pathParts[2]).split(",")
+    decoded = decodeURIComponent(pathParts[2])
+    colorStrings = if decoded.indexOf('-') > 0 then decoded.split('-') else decoded.split(',')
     colors = []
     for colorString, colorIndex in colorStrings
+      colorString = "##{colorString}" if colorString.length is 6
       if colorString.length is 7
         r = parseInt colorString.substr(1, 2), 16
         g = parseInt colorString.substr(3, 2), 16
@@ -30,6 +33,7 @@ Meteor.startup () ->
       Session.set "editActive", false
   if pathParts.length is 4
     colorString = decodeURIComponent(pathParts[3])
+    colorString = "##{colorString}" if colorString.length is 6
     if colorString.length is 7
       r = parseInt colorString.substr(1, 2), 16
       g = parseInt colorString.substr(3, 2), 16
