@@ -454,16 +454,16 @@ input {
     .pos-t,
     .pos-b {
       cursor: pointer;
+      opacity: .25;
       &:hover {
-        opacity: .8;
-        //background-color: var(--fore-color);
+        opacity: 1;
       }
     }
 
     .pos-c { top: calc(100% - 100px); }
     .pos-b { top: calc(100% - 50px); }
-    .pos-l { left: calc(50% - 80px); }
-    .pos-r { left: calc(50% + 80px); }
+    .pos-l { left: calc(50% - 50px); }
+    .pos-r { left: calc(50% + 50px); }
     .pos-c { font-size: 18px; text-transform: uppercase; font-weight: 500; white-space: nowrap}
 
     .marker {
