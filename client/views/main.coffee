@@ -14,7 +14,7 @@ Meteor.startup () ->
   #     false
   path = window.location.pathname
   pathParts = path.split "/"
-  if pathParts.length is 4 and pathParts[1] is "none"
+  if pathParts.length is 3 and pathParts[1] is "none"
     colorStrings = decodeURIComponent(pathParts[2]).split(",")
     colors = []
     for colorString, colorIndex in colorStrings
@@ -28,7 +28,7 @@ Meteor.startup () ->
     if colors.length > 0
       Session.set "colors", colors
       Session.set "editActive", false
-  if pathParts.length is 5
+  if pathParts.length is 4
     colorString = decodeURIComponent(pathParts[3])
     if colorString.length is 7
       r = parseInt colorString.substr(1, 2), 16

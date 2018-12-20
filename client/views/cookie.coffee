@@ -11,5 +11,5 @@ Template.cookie.helpers
 Template.cookie.events
   "click #cookie-info": (e) ->
     cookie.cookieInfo = true
-    document.cookie = 'json=' + JSON.stringify(cookie)
+    document.cookie = 'json=' + JSON.stringify(cookie) + ';max-age=31536000'
     $('#cookie-info').addClass('hidden')
