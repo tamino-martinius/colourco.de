@@ -1,5 +1,5 @@
 Session.setDefault "colors", []
-Session.setDefault "currentColor", {h: 0, s: 0.5, l: 0.5}
+Session.setDefault "currentColor", {h: Math.random(), s: 0.5, l: 0.5}
 Session.setDefault "currentMenu", "menu-none"
 Session.setDefault "schemeMode", "none"
 Session.setDefault "editActive", true
