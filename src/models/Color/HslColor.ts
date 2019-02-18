@@ -29,12 +29,8 @@ export class HslColor extends Color {
 
   public bounds = [360, 100, 100];
 
-  // Workaround is needed because color extends Array
-  // see: https://github.com/Microsoft/TypeScript/wiki/FAQ#why-doesnt-extending-built-ins-like-error-array-and-map-work
   constructor(h: number, ...sl: number[]) {
     super(((h % 360) + 360) % 360, ...sl);
-    Object.setPrototypeOf(this, HslColor.prototype);
-    this.clamp();
   }
 
   public toRgb(): RgbColor {

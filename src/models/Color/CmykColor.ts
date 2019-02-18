@@ -15,17 +15,9 @@ export class CmykColor extends CmyColor {
 
   public bounds = [100, 100, 100, 100];
 
-  // Workaround is needed because color extends Array
-  // see: https://github.com/Microsoft/TypeScript/wiki/FAQ#why-doesnt-extending-built-ins-like-error-array-and-map-work
-  constructor(...items: number[]) {
-    super(...items);
-    Object.setPrototypeOf(this, CmykColor.prototype);
-    this.clamp();
-  }
-
   public toRgb(): RgbColor {
-    const cmy = this.slice(0, 3);
-    const k = this[3];
+    const cmy = this.values.slice(0, 3);
+    const k = this.values[3];
     const inv = 100 - k;
     return new CmyColor(...cmy.map((num) => num * inv + k)).toRgb();
   }
