@@ -1,25 +1,36 @@
 import ColorFormat from './ColorFormat';
 
-export abstract class Color extends Array<number> {
+export abstract class Color {
   public static EPSILON = 0.01;
-  public abstract bounds: number[];
+  public static bounds: number[];
+
+  protected values: number[];
+
+  constructor(...values: number[]) {
+    this.values = values;
+    this.clamp();
+  }
+
+  public map<T>(fn: (num: number, index: number) => T): T[] {
+    return this.values.map(fn);
+  }
 
   public norm(): number[] {
-    return this.map((num, index) => num / this.bounds[index]);
+    const { bounds } = this.constructor as typeof Color;
+    return this.map((num, index) => num / bounds[index]);
   }
 
   public min(): number {
-    return Math.min(...this);
+    return Math.min(...this.values);
   }
 
   public max(): number {
-    return Math.max(...this);
+    return Math.max(...this.values);
   }
 
   protected clamp(): void {
-    for (let index = 0; index < this.length; index += 1) {
-      this[index] = Math.max(0, Math.min(this.bounds[index]), this[index]);
-    }
+    const { bounds } = this.constructor as typeof Color;
+    this.values = this.values.map((num, index) => Math.max(0, Math.min(bounds[index], num)));
   }
 }
 
