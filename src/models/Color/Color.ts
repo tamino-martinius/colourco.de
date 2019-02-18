@@ -4,7 +4,7 @@ export abstract class Color {
   public static EPSILON = 0.01;
   public static bounds: number[];
 
-  protected values: number[];
+  public values: number[];
 
   constructor(...values: number[]) {
     this.values = values;
