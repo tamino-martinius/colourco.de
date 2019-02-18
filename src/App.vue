@@ -1,24 +1,38 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/free-build">Free Build</router-link>|
-      <router-link to="/about">About</router-link>
+      <router-link v-for="route in routes" :key="route.name" :to="route.path">{{route.name}}</router-link>
     </div>
     <router-view/>
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import { routes } from '@/views/Schemes';
+
+@Component
+export default class App extends Vue {
+  public routes = routes;
+}
+</script>
+
 <style>
-#app {
+body {
+  padding: 0;
+  margin: 0;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
+#app {
+  display: flex;
+  height: 100vh;
+}
+
 #nav {
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #nav a {
