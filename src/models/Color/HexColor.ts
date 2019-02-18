@@ -6,8 +6,13 @@ export class HexColor extends RgbColor {
   }
 
   public toString() {
-    const values = this.map((num) => `${num.toString(16).padStart(2, '0')}`);
-    return `#${values.join('')}`;
+    const values = this.map(
+      (num) =>
+        `${Math.round(num)
+          .toString(16)
+          .padStart(2, '0')}`,
+    );
+    return `#${values.join('')}`.toUpperCase();
   }
 }
 
