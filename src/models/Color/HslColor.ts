@@ -2,6 +2,8 @@ import Color from './Color';
 import RgbColor from './RgbColor';
 
 export class HslColor extends Color {
+  public static bounds = [360, 100, 100];
+
   public static fromRgb(rgb: RgbColor): HslColor {
     const rgbNorm = rgb.norm();
     const min = Math.min(...rgbNorm);
@@ -26,8 +28,6 @@ export class HslColor extends Color {
     }
     return new HslColor(h, s, l);
   }
-
-  public bounds = [360, 100, 100];
 
   constructor(h: number, ...sl: number[]) {
     super(((h % 360) + 360) % 360, ...sl);

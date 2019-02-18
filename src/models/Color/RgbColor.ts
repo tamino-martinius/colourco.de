@@ -1,7 +1,7 @@
 import Color from './Color';
 
 export class RgbColor extends Color {
-  public bounds = [255, 255, 255];
+  public static bounds = [255, 255, 255];
 
   public static fromRgb(rgb: RgbColor): RgbColor {
     return new RgbColor(...rgb.values);

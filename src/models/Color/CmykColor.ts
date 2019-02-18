@@ -3,6 +3,8 @@ import RgbColor from './RgbColor';
 import Color from './Color';
 
 export class CmykColor extends CmyColor {
+  public static bounds = [100, 100, 100, 100];
+
   public static fromRgb(rgb: RgbColor): CmykColor {
     const cmy = super.fromRgb(rgb);
     const k = cmy.min();
@@ -12,8 +14,6 @@ export class CmykColor extends CmyColor {
     }
     return new CmykColor(...cmy.map((num) => (num - k) / inv), k);
   }
-
-  public bounds = [100, 100, 100, 100];
 
   public toRgb(): RgbColor {
     const cmy = this.values.slice(0, 3);
