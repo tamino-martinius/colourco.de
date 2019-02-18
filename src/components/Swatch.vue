@@ -9,10 +9,6 @@ import { RgbColor } from '@/models/Color';
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private color!: RgbColor;
-
-  mounted() {
-    console.log(this);
-  }
 }
 </script>
 
