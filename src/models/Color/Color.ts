@@ -4,11 +4,6 @@ export abstract class Color extends Array<number> {
   public static EPSILON = 0.01;
   public abstract bounds: number[];
 
-  constructor(...items: number[]) {
-    super(...items);
-    this.clamp();
-  }
-
   public norm(): number[] {
     return this.map((num, index) => num / this.bounds[index]);
   }
@@ -21,7 +16,7 @@ export abstract class Color extends Array<number> {
     return Math.max(...this);
   }
 
-  private clamp(): void {
+  protected clamp(): void {
     for (let index = 0; index < this.length; index += 1) {
       this[index] = Math.max(0, Math.min(this.bounds[index]), this[index]);
     }

@@ -27,8 +27,12 @@ export class HsvColor extends Color {
 
   public bounds = [360, 100, 100];
 
-  constructor(h: number, ...sl: number[]) {
-    super(((h % 360) + 360) % 360, ...sl);
+  // Workaround is needed because color extends Array
+  // see: https://github.com/Microsoft/TypeScript/wiki/FAQ#why-doesnt-extending-built-ins-like-error-array-and-map-work
+  constructor(h: number, ...sv: number[]) {
+    super(((h % 360) + 360) % 360, ...sv);
+    Object.setPrototypeOf(this, HsvColor.prototype);
+    this.clamp();
   }
 
   public toRgb(): RgbColor {
@@ -80,6 +84,11 @@ export class HsvColor extends Color {
       }
     }
     return new RgbColor(r * 255, g * 255, b * 255);
+  }
+
+  public toString() {
+    const values = this.map((num, index) => `${num.toFixed(0)}${index > 0 ? '%' : ''}`);
+    return `hsv(${values.join(', ')})`;
   }
 }
 
