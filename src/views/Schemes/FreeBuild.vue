@@ -28,7 +28,7 @@ export default class FreeBuild extends Vue {
     const cmy = CmyColor.fromRgb(rgb).toRgb();
     const cmyk = CmykColor.fromRgb(rgb).toRgb();
     console.log(rgb.toString(), HsvColor.fromRgb(rgb).toString());
-    this.colors = [hsl, hsv, rgb, cmy, cmyk];
+    this.colors = [hsl.toRgb(), hsv, rgb, cmy, cmyk];
     console.log({ x, y });
 
     // console.dir(this.$refs.main);
