@@ -14,13 +14,13 @@ export class HslColor extends Color {
     const l = ((max + min) / 2) * 100;
     if (diff > Color.EPSILON) {
       if (max === rgbNorm[0]) {
-        h = 0 + (120 * (rgbNorm[1] - rgbNorm[2])) / diff;
+        h = 60 * (0 + (rgbNorm[1] - rgbNorm[2]) / diff);
       }
       if (max === rgbNorm[1]) {
-        h = 120 + (120 * (rgbNorm[2] - rgbNorm[0])) / diff;
+        h = 60 * (2 + (rgbNorm[2] - rgbNorm[0]) / diff);
       }
       if (max === rgbNorm[2]) {
-        h = 240 + (120 * (rgbNorm[0] - rgbNorm[1])) / diff;
+        h = 60 * (4 + (rgbNorm[0] - rgbNorm[1]) / diff);
       }
       if (1 - min > Color.EPSILON) {
         s = (diff / (1 - Math.abs(max + min - 1))) * 100;
