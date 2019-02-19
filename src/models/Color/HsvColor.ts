@@ -33,53 +33,32 @@ export class HsvColor extends Color {
 
   public toRgb(): RgbColor {
     const [h, s, v] = this.norm();
-    let r = v;
-    let g = v;
-    let b = v;
+    let r = 0;
+    let g = 0;
+    let b = 0;
+    const C = v * s;
     const H = h * 6;
-    const hDiff = H - Math.round(H);
-    const v1 = v * (1 - s);
-    const v2 = v * (1 - s * hDiff);
-    const v3 = v * (1 - s * (1 - hDiff));
-    if (s > Color.EPSILON) {
-      if ((0 <= H && H < 1) || (5 <= H && H < 6)) {
-        r = v;
-      }
-      if (2 <= H && H < 4) {
-        r = v1;
-      }
-      if (1 <= H && H < 2) {
-        r = v2;
-      }
-      if (4 <= H && H < 5) {
-        r = v3;
-      }
-      if (1 <= H && H < 3) {
-        g = v;
-      }
-      if (4 <= H && H < 6) {
-        g = v1;
-      }
-      if (3 <= H && H < 4) {
-        g = v2;
-      }
-      if (0 <= H && H < 1) {
-        g = v3;
-      }
-      if (3 <= H && H < 5) {
-        b = v;
-      }
-      if (0 <= H && H < 2) {
-        b = v1;
-      }
-      if (5 <= H && H < 6) {
-        b = v2;
-      }
-      if (2 <= H && H < 3) {
-        b = v3;
-      }
+    const X = C * (1 - Math.abs((H % 2) - 1));
+    const m = v - C;
+    if ((0 <= H && H < 1) || (5 <= H && H < 6)) {
+      r = C;
     }
-    return new RgbColor(r * 255, g * 255, b * 255);
+    if ((1 <= H && H < 2) || (4 <= H && H < 5)) {
+      r = X;
+    }
+    if (1 <= H && H < 3) {
+      g = C;
+    }
+    if ((0 <= H && H < 1) || (3 <= H && H < 4)) {
+      g = X;
+    }
+    if (3 <= H && H < 5) {
+      b = C;
+    }
+    if ((2 <= H && H < 3) || (5 <= H && H < 6)) {
+      b = X;
+    }
+    return new RgbColor((r + m) * 255, (g + m) * 255, (b + m) * 255);
   }
 
   public toString() {
