@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: colourcode-app
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/home/node/app
+      - /home/node/app/node_modules
+    user: 1000:1000
+    ports:
+      - 3000:3000
+    command: ["meteor"]

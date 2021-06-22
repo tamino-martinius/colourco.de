@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "meteor run",
+    "start:docker": "docker-compose up",
     "build": "tpx-meteor-build-client ./dist",
     "create-bucket": "aws s3 mb s3://$npm_package_config_awsBucketName --region $npm_package_config_awsRegion --profile $npm_package_config_awsProfile",
     "delete-bucket": "aws s3 rb s3://$npm_package_config_awsBucketName --region $npm_package_config_awsRegion --force --profile $npm_package_config_awsProfile",
